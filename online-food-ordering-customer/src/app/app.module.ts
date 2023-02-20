@@ -8,12 +8,14 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ToastComponent } from './components/toast/toast.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LandingComponent } from './components/landing/landing.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    ToastComponent
+    ToastComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

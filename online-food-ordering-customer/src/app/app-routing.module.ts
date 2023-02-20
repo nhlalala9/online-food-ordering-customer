@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { SignupGuard } from './guards/signup.guard';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-
+import { LandingComponent } from './components/landing/landing.component';
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: LandingComponent },
   
   { path: 'login', component: LoginComponent },
   {
