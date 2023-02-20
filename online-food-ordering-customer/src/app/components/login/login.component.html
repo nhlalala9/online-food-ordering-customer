@@ -1,0 +1,50 @@
+<!-- <div class="d-flex flex-column align-items-center">
+    <app-title title="Login" subtitle="Login to take a quiz"></app-title>
+    <form class="d-flex flex-column align-items-center mt-3" [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="form-group d-flex flex-column  align-items-center">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control login-input" formControlName="email">
+        </div>
+        <div class="form-group d-flex flex-column  align-items-center">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control login-input" formControlName="password">
+        </div>
+        <button type="submit" class="btn btn-dark" [disabled]="!loginForm.valid">Login</button>
+    </form>
+</div> -->
+
+<section class=" gradient-custom">
+    <div class="container ">
+        <div class="row justify-content-center align-items-center ">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <div class="text-center">
+  
+                            <h1 class="text-center text-dark mt-2 mb-3">WELCOME!</h1>
+                            <!-- <P> get the best from our app </P> -->
+  
+                        </div>
+                      
+                        <form class="d-flex flex-column align-items-center mt-3" [formGroup]="loginForm" (ngSubmit)="login()">
+                            <div class="form-group d-flex flex-column ">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control login-input" formControlName="email">
+                            </div>
+                            <div class="form-group d-flex flex-column  mb-3">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control login-input" formControlName="password">
+                            </div>
+                            <button type="submit" class="btn btn-dark" [disabled]="!loginForm.valid">Login</button>
+                        </form>
+                        <div class="form-group ">
+                            <p>Don't have account? <a routerLink='/register'class="reg" >Register</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+  
+    </div>
+  </section> 

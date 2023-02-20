@@ -14,7 +14,7 @@ import { HttpClient } from '@angular/common/http';
       providedIn: 'root'
     })
     export class AuthenticationService {
-      private url = `${environment.appUrl}/auth/local`;
+      private url = `${environment.appUrl}/auth/local/`;
       private loginTracker = new BehaviorSubject(this.checkIfLoggedIn());
     
       loggedInStatus$ = this.loginTracker.asObservable();
@@ -26,7 +26,7 @@ import { HttpClient } from '@angular/common/http';
       }
     
       register(username: string, email: string, password: string) {
-        return this.http.post<AuthResponse>(`${this.url}/register`, { username, email, password });
+        return this.http.post<AuthResponse>(`${this.url}register`, { username, email, password });
       }
     
       checkIfLoggedIn() {
