@@ -5,9 +5,6 @@
     .p-card{
       width: 48%;
     }
-  /*   .footer-info{
-      justify-content: space-between;
-    } */
   }
   @media (max-width: 1050px){
     .container{
@@ -76,19 +73,19 @@
       margin: 20px auto;
     }
   }
-  
-  #main {
+
+  .landing{
+    background: url('../../../assets/banner.png')no-repeat right;
+    border: 3px solid blue;
+    /* margin: 1px; */
+    width: 100%;
+    height: 100vh;
+  }
+  /* .main {
     width: 100%;
     height: 100%;
-    position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
-  
-    background-image: url('../../../assets/banner.png');
-    /* background-image:url(https://imgs.search.brave.com/Fz-br9hu6MhG3LL56SWHi19X7BbTdOC7vNSSKzoO858/rs:fit:665:443:1/g:ce/aHR0cHM6Ly9zMy5h/bWF6b25hd3MuY29t/L2hvdGVsLWltYWdl/cy12MS9pbWcvaG90/ZWxsaXN0aW5ncy9U/aGUtSG9sb2hvbG8t/R3JpbGwtMjAxODA4/MjExNDExMjNfUC5q/cGc) no-repeat right ; */
-
-    /* background-color: linear-gradient(106.37deg, #ffe1bc 19.63%, #ffcfd1 41.55%, #f3c6f1 80.85%);   */
-}
+    background: url('../../../assets/banner.png');
+  } */
 
 
 .header-heading {
@@ -99,7 +96,7 @@
   top: 55%;
   text-align: left;
   transform: translate(-25%, -55%);
-  
+ 
 }
  
 .header-heading span {
@@ -143,7 +140,7 @@
   align-items: center;
   font-size: 1.4rem;
   font-family: 'Lato';
-  background-color: blue;
+  background-color: grey;
   box-shadow: 5px 10px 30px ;
   border-radius: 5px;
   color: #ffffff;
