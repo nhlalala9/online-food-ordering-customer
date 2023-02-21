@@ -1,0 +1,18 @@
+.label-cart{
+    position: fixed;
+    top: 15px;
+    right: 10px;
+    z-index: 4px;
+    cursor: pointer;
+}
+
+.logo{
+    position: fixed;
+    /* background-color: black; */
+    color: lightgray;
+    width: 100%;
+    text-align: center;
+    padding: 15px 420px 15px 60px;
+    top: 0;
+    z-index: 2;
+}
