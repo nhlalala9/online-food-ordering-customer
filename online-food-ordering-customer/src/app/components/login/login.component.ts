@@ -15,8 +15,11 @@ import { ToastService } from '../../service/toast.service';
 export class LoginComponent implements OnDestroy {
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required]],
+    password: ['', [Validators.required,Validators.minLength(6), Validators.maxLength(40)]],
   });
+
+  // submitted = false; 
+  // errorMessage: String = " "
 
   private loginSub: Subscription | undefined;
   constructor(
