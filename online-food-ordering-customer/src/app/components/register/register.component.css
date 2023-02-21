@@ -1,3 +1,7 @@
+.signup-input {
+    min-width: 25vw;
+}
+
 .card-registration{
     background: #f5f5f5;
     border: 1px solid #D9D9D9;

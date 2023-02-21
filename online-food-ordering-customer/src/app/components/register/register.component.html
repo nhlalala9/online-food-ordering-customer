@@ -1,3 +1,27 @@
+<!-- <div class="d-flex flex-column align-items-center">
+    <app-title title="Register" subtitle="Create an account to take a quiz"></app-title>
+    <form class="d-flex flex-column align-items-center mt-3" [formGroup]="signupForm" (ngSubmit)="signup()">
+        <div class="form-group d-flex flex-column  align-items-center">
+            <label for="exampleInputEmail1">Username</label>
+            <input type="text" class="form-control signup-input" formControlName="username">
+        </div>
+        <div class="form-group d-flex flex-column  align-items-center">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control signup-input" formControlName="email">
+        </div>
+        <div class="form-group d-flex flex-column  align-items-center">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control signup-input" formControlName="password">
+        </div>
+        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="alert alert-danger"
+            role="alert">
+            Your password should be at least 8 characters long.
+        </div>
+        <button type="submit" class="btn btn-dark" [disabled]="!signupForm.valid">Register</button>
+    </form>
+</div> -->
+
+
 <section class="gradient-custom">
     <div class="container all">
         <div class="row justify-content-center align-items-center">
@@ -9,110 +33,24 @@
                             <h3 class="mb-0  text-uppercase text-center">create Account</h3>
                             <h6 class="text-center ">Let's get started!</h6>
                         </div>
-                        <form>
-                            <!-- <div class="alert alert-danger" role="alert"
-                               >
-                                <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:" height="20">
-                                    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                                  </svg>
-                               Register failed
-                            </div> -->
-
-                            <!-- <div class="column"> -->
-                               
-                                <div class="form-group col-md-12 mb-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                                    class="bi bi-person i" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-                                </svg>
-                                    <input type="text"  formControlName="name" placeholder="Full Name"
-                                        class="form-control fullname"  />
-                                    <div class="invalid-feedback">
-                                        <div>
-                                            First name is required
-                                        </div>
-                                    </div>
-                                </div>
-                            <!-- </div> -->
-
-                            <!-- <div class="column"> -->
-                                
-                                <div class="form-group col-md-12 mb-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
-                                    class="bi bi-envelope" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
-                                </svg>
-                                    <input type="text" formControlName="email" placeholder="Email"
-                                        class="form-control email"
-                                         />
-                                    <div  class="invalid-feedback">
-                                        <div >
-                                            Email is required
-                                        </div>
-                                        <div >
-                                            Email is invalid
-                                        </div>
-                                    </div>
-                                </div>
-                            <!-- </div> -->
-
-                            <!-- <div class="column"> -->
-                                <div class="column">
-                                    
-                                    <div class="form-group col-md-12 mb-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                                        class="bi bi-lock" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" />
-                                        </svg>
-                                        <input type="password" formControlName="password" placeholder="Password"
-                                            class="form-control lock" 
-                                             />
-                                        <div  class="invalid-feedback">
-                                            <div >
-                                                Password is required
-                                            </div>
-                                            <div >
-                                                Password must be at least 6 character
-                                            </div>
-                                            <div>
-                                                Password must not exceed 40 character
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="column">
-                                   
-                                    <div class="form-group col-md-12 mb-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                                        class="bi bi-lock" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" />
-                                         </svg>
-                                        <input type="password" formControlName="confirmpassword"
-                                            placeholder="Confirm Password" class="form-control locker" [ngClass]="{
-                                                
-                                            }" />
-                                            <div  class="invalid-feedback">
-                                                <div >
-                                                    Confirm Password is required
-                                                </div>
-    
-                                                <div >
-                                                    Password must match
-                                                </div>
-                                            </div>
-                                    </div>
-                                </div>
-                           
-                            <div class="form-group">
-                                <button type="submit" class="submit btn btn-secondary btn-block btn-lg"
-                                >
-                                    Register
-                                </button>
+                        <form class="d-flex flex-column align-items-center mt-3" [formGroup]="signupForm" (ngSubmit)="signup()">
+                            <div class="form-group d-flex flex-column  ">
+                                <label for="exampleInputEmail1">Username</label>
+                                <input type="text" class="form-control signup-input" formControlName="username">
                             </div>
+                            <div class="form-group d-flex flex-column  ">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control signup-input" formControlName="email">
+                            </div>
+                            <div class="form-group d-flex flex-column mb-3 ">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control signup-input" formControlName="password">
+                            </div>
+                            <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="alert alert-danger"
+                                role="alert">
+                                Your password should be at least 8 characters long.
+                            </div>
+                            <button type="submit" class="btn btn-dark" [disabled]="!signupForm.valid">Register</button>
                         </form>
                         <div class="form-group mt-3">
                             <P class = "Already">

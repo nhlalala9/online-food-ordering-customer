@@ -1,3 +1,7 @@
+.login-input {
+    min-width: 25vw;
+}
+
 .card-registration .select-input.form-control {
     font-size: 1rem;
     line-height: 2.15;
