@@ -1,5 +1,7 @@
 .signup-input {
     min-width: 25vw;
+    height: 3.5vh;
+    margin-bottom: 10px;
 }
 
 .card-registration{
@@ -18,21 +20,23 @@
       top: 13px;
   } 
   .gradient-custom{
-    margin-top: 24vh;
+    margin-top: 25vh;
   }
   button{
     box-sizing: border-box;
-    background: blue;
+    /* background: blue; */
     border: 1px solid #000000;
     border-radius: 10px;
     line-height: 16px;
     text-align: center;
     width: 186px;
-    height: 47px;
+    height: 42px;
     text-align: center;
     color: #FFFFFF;
     margin-left: 17px;
-    
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 14px;
   }
   .fullname{
   padding-left: 25px;
