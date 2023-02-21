@@ -49,14 +49,14 @@ export class RegisterComponent implements OnDestroy {
     
             this.auth.persistUser(resp);
     
-            // this.toast.showSuccess('Successfully created account. Redirecting you to the quizzes.');
+            this.toast.showSuccess('Successfully created account. Redirecting you to the quizzes.');
     
             const attemptedRoute = this.ss.getItem('attemptedRoute');
             this.ss.removeItem('attemptedRoute');
-            this.router.navigateByUrl(attemptedRoute || '/')
+            this.router.navigateByUrl(attemptedRoute || '/customer/login')
           },
           () => {
-            // this.toast.showDanger('There was a problem registering your account.');
+            this.toast.showDanger('There was a problem registering your account.');
           }
         );
       }
