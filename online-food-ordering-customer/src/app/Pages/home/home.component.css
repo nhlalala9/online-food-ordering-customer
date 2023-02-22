@@ -235,6 +235,12 @@ cursor: pointer;
     cursor: pointer;
 }
 
+.label-cart > span:hover{
+    /* background-color: blue; */
+    color: blue;
+
+}
+
 .logo{
     position: fixed;
     background-color: lightgray;
