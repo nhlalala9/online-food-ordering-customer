@@ -48,7 +48,7 @@ export class LoginComponent implements OnDestroy {
 
         const attemptedRoute = this.ss.getItem('attemptedRoute');
         this.ss.removeItem('attemptedRoute');
-        this.router.navigateByUrl(attemptedRoute || '/')
+        this.router.navigateByUrl(attemptedRoute || '/customer/home')
       },
       () => {
         this.toast.showDanger('Login unsuccessful. Check your credentials.');

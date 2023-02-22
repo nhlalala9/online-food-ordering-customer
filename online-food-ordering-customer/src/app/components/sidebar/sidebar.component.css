@@ -13,20 +13,20 @@
     width: 100%;
     text-align: center;
     padding: 10px 5px;
-    color: darkgray;
+    color: black;
 }
 .sidebar-menu > a {
  text-decoration: none;
  font-size: 0.7rem;
  line-height: 1.5;
- color: darkgray;
+ color: black;
 }
 
 .sidebar-menu:hover{
-border-right: 2px solid ;
-color: yellow;
+border-right: 2px solid blue;
+color: blue;
 }
 
 .sidebar-menu:hover > a{
-color: yellow;
+color: blue;
 }
