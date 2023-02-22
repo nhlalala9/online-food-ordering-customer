@@ -1,18 +1,40 @@
 .label-cart{
     position: fixed;
-    top: 15px;
-    right: 10px;
-    z-index: 4px;
+    /* margin-top: 15px; */
+    /* margin-right: 10px; */
+    top: 15;
+    right: 0;
+    z-index: 4;
     cursor: pointer;
 }
 
 .logo{
     position: fixed;
-    /* background-color: black; */
-    color: lightgray;
+    background-color: lightgray;
+    color: black;
     width: 100%;
     text-align: center;
     padding: 15px 420px 15px 60px;
     top: 0;
-    z-index: 2;
+    z-index:2;
+}
+
+#cart {
+    display: none;
+}
+
+#cart:checked ~ .label-cart{
+    color: lightgray;
+}
+
+#cart:checked ~ .dashboard {
+    padding-right: 10px;
+}
+
+/* #cart:checked ~ .dashboard-order {
+    display: none;
+} */
+
+#cart:checked ~ .logo {
+    padding-right: 0;
 }
