@@ -1,3 +1,11 @@
+<input type="checkbox" id="cart">
+<label for="cart" class="label-cart">
+    <span class="fa-solid fa-cart-shopping"></span>
+</label>
+<!-- <i class="fa-regular fa-circle fa-stack-2x"></i> -->
+
+<h3 class="logo">Food</h3>
+
 <div class="dashboard">
     <div class="dashboard-banner">
         <img src="https://images.unsplash.com/photo-1475332363216-323c9b7f1e81?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGludGVybmF0aW9uYWwlMjBmb29kfGVufDB8fDB8fA%3D%3D&w=1000&q=80" alt="">
@@ -13,5 +21,126 @@
         <a href="#" >Specials</a>
         <a href="#" >Specials</a>
     </div>
+
+    <div class="dashboard-content">
+        <!-- <a routerLink="/food">   -->
+        <div class="dashboard-card" [routerLink]="['customer/food']" >
+            <img src="http://imagesolutionsphotography.co.za/wp-content/uploads/2013/04/vegetable-plate-food-photographer.jpg" alt="" class="card-image">
+            <div class="card-detail">
+                <h4>Amazing pizza<span>R 120</span></h4>
+                <p>Lorem ipsum dolor sit</p>
+                <!-- <star-rating [value]="food.star" 
+                [totalstars]="5" 
+                checkedcolor="red" 
+                uncheckedcolor="black" 
+                size="24px" 
+                [readonly]="true">
+            </star-rating> -->
+            <star-rating>5
+            </star-rating>
+                    <p class="card-time"><span class="fas fa-clock" [routerLink]="['customer/food']"></span>15 - 30 mins</p>
+            </div>
+        </div>
+        <!-- </a> -->
+
+        <div class="dashboard-card">
+            <img src="http://imagesolutionsphotography.co.za/wp-content/uploads/2013/04/vegetable-plate-food-photographer.jpg" alt="" class="card-image">
+            <div class="card-detail">
+                <h4>Amazing pizza<span>R 120</span></h4>
+                <p>Lorem ipsum dolor sit</p>
+                <p class="card-time"><span class="fas fa-clock"></span>15 - 30 mins</p>
+            </div>
+        </div>
+
+        <div class="dashboard-card">
+            <img src="http://imagesolutionsphotography.co.za/wp-content/uploads/2013/04/vegetable-plate-food-photographer.jpg" alt="" class="card-image">
+            <div class="card-detail">
+                <h4>Amazing pizza<span>R 120</span></h4>
+                <p>Lorem ipsum dolor sit</p>
+                <p class="card-time"><span class="fas fa-clock"></span>15 - 30 mins</p>
+            </div>
+        </div>
+    
+        <div class="dashboard-card">
+            <img src="http://imagesolutionsphotography.co.za/wp-content/uploads/2013/04/vegetable-plate-food-photographer.jpg" alt="" class="card-image">
+            <div class="card-detail">
+                <h4>Amazing pizza<span>R 120</span></h4>
+                <p>Lorem ipsum dolor sit</p>
+                <p class="card-time"><span class="fas fa-clock"></span>15 - 30 mins</p>
+            </div>
+        </div>
+    
+        <div class="dashboard-card">
+            <img src="http://imagesolutionsphotography.co.za/wp-content/uploads/2013/04/vegetable-plate-food-photographer.jpg" alt="" class="card-image">
+            <div class="card-detail">
+                <h4>Amazing pizza<span>R 120</span></h4>
+                <p>Lorem ipsum dolor sit</p>
+                <p class="card-time"><span class="fas fa-clock"></span>15 - 30 mins</p>
+            </div>
+        </div>
+    
+        <div class="dashboard-card">
+            <img src="http://imagesolutionsphotography.co.za/wp-content/uploads/2013/04/vegetable-plate-food-photographer.jpg" alt="" class="card-image">
+            <div class="card-detail">
+                <h4>Amazing pizza<span>R 120</span></h4>
+                <p>Lorem ipsum dolor sit</p>
+                <p class="card-time"><span class="fas fa-clock"></span>15 - 30 mins</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="dashboard-order">
+<h3>Order Menu</h3>
+<div class="order-address">
+    <p>Address Delivery</p>
+    <h4>221 B Baker street, London</h4>
+</div>
+
+<div class="order-time">
+    <span class="fas fa-clock"></span>
+    30 mins
+    <span class="fas fa-map-marker-alt">
+        2 km
+    </span>
+</div>
+
+<div class="order-wrapper">
+    <div class="order-card">
+        <img src="../../../assets/banner.png " alt="" class="order-image">
+        <div class="order-detail">
+            <p>Lorem ipsum dolor sit amet</p>
+       <i class="fas fa-times"></i>
+       <input type="text" value="1">
+        </div>
+        <h4 class="order-price"> R 35 </h4>
+    </div>
+    <div class="order-card">
+        <img src="../../../assets/banner.png " alt="" class="order-image">
+        <div class="order-detail">
+            <p>Lorem ipsum dolor sit amet </p>
+       <i class="fas fa-times"></i>
+       <input type="text" value="2">
+        </div>
+        <h4 class="order-price"> R 35 </h4>
+    </div>
+</div>
+
+<hr class="divider"> 
+<div class="order-total">
+    <p>Subtotal <span>R345</span></p>
+    <p>Tax <span>R345</span></p>
+    <p>Delivery <span>R345</span></p>
+
+    <!-- <div class="order-promo">
+        <input class="input-promo" type="text" placeholder="Apply Voucher">
+    <button class="button-promo">Find Promo</button>
+    </div> -->
+    <hr class="divider">
+    <p>Total <span>R 123</span></p>
+</div>
+<button class="checkout">
+    Checkout
+</button>
 </div>
 
