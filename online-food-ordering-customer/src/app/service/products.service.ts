@@ -15,7 +15,7 @@ export class ProductsService {
   }
 
   getById(id: any): Observable<any> {
-    const url = `${this.apiUrl}/api/products/${id}??populate=*`;
+    const url = `${this.apiUrl}/api/products/${id}?populate=*`;
     return this.http.get<any>(url);
   }
   createProducts(product: any): Observable<any> {
