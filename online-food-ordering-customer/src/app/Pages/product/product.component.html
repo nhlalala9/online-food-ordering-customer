@@ -4,7 +4,7 @@
 <div class="details">
     <div class="header">
         <span class="name">
-           Pizzza
+         {{product.data.attributes.name}}
         </span>
         <span class="favorite">
             ♡
@@ -21,20 +21,20 @@
     </div>
     <div class="origins">
         <span>
-           
+          {{product.data.attributes.description}}
         </span>
     </div>
     <div class="tag">
         <!-- <app-tag></app-tag> -->
     </div>
     <div class="cook-time">
-        <span >
-            Time to cook about 🕒 <strong>7</strong>
-        </span>
+        <!-- <span >
+          {{product.data.attributes.description}} 🕒 <strong>7</strong>
+        </span> -->
     </div>
     <div class="price">
         <span>
-            R100
+          {{product.data.attributes.price}}
         </span>
     </div>
     <!-- <button (click)="addToCart()" >Add to Cart</button> -->

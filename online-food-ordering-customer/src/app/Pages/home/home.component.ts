@@ -32,6 +32,12 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  item(num: any){
+   
+    localStorage.setItem('id',this. products[num].id);
+    this.router.navigate(['/contact/view'])
+  }
+
 }
 function products(products: any) {
   throw new Error('Function not implemented.');

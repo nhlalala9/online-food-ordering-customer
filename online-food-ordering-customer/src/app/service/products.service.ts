@@ -13,6 +13,11 @@ export class ProductsService {
   getProducts(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/api/products?populate=*`);
   }
+
+  getById(id: any): Observable<any> {
+    const url = `${this.apiUrl}/api/products/${id}??populate=*`;
+    return this.http.get<any>(url);
+  }
   createProducts(product: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/api/products`, product);
   }

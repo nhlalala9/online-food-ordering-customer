@@ -24,7 +24,8 @@
 
     <div class="dashboard-content"  *ngFor="let product of products">
         <!-- <a routerLink="/food">   -->
-        <div class="dashboard-card" [routerLink]="['customer/food']" >
+        <div class="dashboard-card" >
+            <a routerLink="/customer/food/{{product.id}}">
             <img [src]="product.attributes.Picture.data.attributes.url" alt="" class="card-image">
             <div class="card-detail">
                 <h4>{{product.attributes.name}}<span>{{product.attributes.price}}</span>
@@ -41,6 +42,7 @@
             </star-rating>
                     <p class="card-time"><span class="fas fa-clock" [routerLink]="['customer/food']"></span>15 - 30 mins</p>
             </div>
+        </a>
         </div>
         <!-- </a> -->
 
