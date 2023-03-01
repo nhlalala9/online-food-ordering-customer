@@ -11,23 +11,29 @@ body{
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../assets/banner-img.jpeg") center/cover no-repeat;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     color: #fff;
     padding-bottom: 20px;
    padding-left: 40px;
 }
 .card-container{
-    /* display: grid; */
-    /* grid-template-columns: 420px 420px; */
     width: 80%;
-  
 }
 
 .banner h2{
-    padding-bottom: 40px;
+    /* padding-bottom: 40px; */
     margin-bottom: 20px;
+    margin-top: 50px;
 }
+.card-body h3{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
 .card-content{
     background: #fff;
     /* height: 330px; */
@@ -39,6 +45,10 @@ body{
     font-size: 26px;
     font-weight: 500;
 }
+.card-body{
+    width: 90%;
+}
+
 .form-row{
     display: flex;
     width: 90%;
@@ -89,4 +99,36 @@ form input[type = submit]:hover{
     .card-img{
         height: 330px;
     }
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    background: #000;
+}
+
+thead td {
+    font-weight: 700;
+
+}
+
+td {
+    padding: .5rem 1rem;
+    font-size: .9rem;
+    color: white;
+}
+
+
+table {
+   border: 1px solid;
+}
+
+tbody tr {
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+thead tr {
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
 }

@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="form-row">
-                    <input type="text" value="Email" name="email" [(ngModel)]="formData.email">
+                    <input type="text" placeholder="Email" name="email" [(ngModel)]="formData.email">
                     <input type="number" placeholder="How Many Persons?" min="1" name="guests"
                         [(ngModel)]="formData.guests">
                 </div>
@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="message-row">
-                    <input type="text" value="Reservation message" name="message" [(ngModel)]="formData.message">
+                    <input type="text" placeholder="Reservation message" name="message" [(ngModel)]="formData.message">
                 </div>
 
                 <div class="form-row-btn">
@@ -55,4 +55,37 @@
             </form>
         </div>
     </div>
+
+    <div class="card-body mt-5 ">
+      <h3>RESERVATION HISTORY</h3>
+       
+          <table class="table table-dark table-striped">
+            <thead>
+              <tr>
+                <td >Name</td>
+                <td >Phone</td>
+                <td >Email</td>
+                <td>Date</td>
+                <td>Guests</td>
+                <td>Message</td>
+                <td>Status</td>
+              </tr>
+            </thead>
+           <tbody>
+             <tr *ngFor="let booking of bookings">
+              <td>{{booking.attributes.name}}</td>
+              <td>{{booking.attributes.phone}}</td>
+              <td>{{booking.attributes.email}}</td>
+              <td>{{booking.attributes.time}}</td>
+              <td>{{booking.attributes.guests}}</td>
+              <td>{{booking.attributes.message}}</td>
+              <td>{{booking.attributes.status}}</td>
+             </tr>
+           </tbody>
+          </table>
+      
+      </div>
+
+
+   
 </section>

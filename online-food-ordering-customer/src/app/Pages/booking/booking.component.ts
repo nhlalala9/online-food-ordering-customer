@@ -8,10 +8,10 @@ import { BookingsService } from 'src/app/service/bookings.service';
 })
 export class BookingComponent implements OnInit {
 
+  bookings: any;
 
   formData = {
     name: "",
-    // date: "",
     time: "",
     message: "",
     guests: "",
@@ -21,6 +21,10 @@ export class BookingComponent implements OnInit {
   constructor(private bookingServices:BookingsService) { }
 
   ngOnInit(): void {
+    this.bookingServices.getBookings(this.formData.name).subscribe((bookings: any) =>{
+      this.bookings = bookings.data;
+      console.log(bookings.data)
+    })
   }
 
 
