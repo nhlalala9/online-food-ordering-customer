@@ -33,7 +33,7 @@ export class ProductComponent implements OnInit {
 
   updateRating(r:any){
     this.rating=r;
-    console.log(this.rating)
+    console.log(this.rating,"rating")
 
   }
 
