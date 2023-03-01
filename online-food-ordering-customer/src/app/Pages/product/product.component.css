@@ -10,6 +10,11 @@
 min-width: 25rem;
 max-width: 40rem;
 }
+
+.img-fluid{
+    width: 100px;
+    height: 100px;
+}
 img{
     border-radius: 3rem;
     flex: 1 0;
@@ -89,3 +94,45 @@ img{
 }
 
 
+
+
+.rating {
+    gap: 5px;
+}
+
+i{
+    color: gray;
+    cursor: pointer;
+}
+.active{
+    color: gold;
+}
+
+.rating-list {
+    border-top: 1px solid #ddd;
+    padding: 15px 0;
+}
+.d-flex {
+    display: flex;
+}
+.align-items-center {
+    align-items: center;
+}
+.w-50 {
+    width: 50%;
+}
+/**Rating**/
+
+::ng-deep label.star {
+    padding: 0 5px !important;
+    font-size: 20px !important;
+    color: #ddd !important;
+   
+}
+
+label.star::before {
+    content: "\f005" !important;
+}
+label.star:hover {
+    transform: rotate(0deg) scale(1.2) !important;
+}
