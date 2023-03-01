@@ -8,28 +8,29 @@ body{
 }
 .banner{
     min-height: 100vh;
-    /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("banner-img.jpg") center/cover no-repeat; */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../assets/banner-img.jpeg") center/cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #fff;
     padding-bottom: 20px;
+   padding-left: 40px;
 }
 .card-container{
-    display: grid;
-    grid-template-columns: 420px 420px;
+    /* display: grid; */
+    /* grid-template-columns: 420px 420px; */
+    width: 80%;
+  
 }
-.card-img{
-    /* background: url("card-img.jpg") center/cover no-repeat; */
-}
+
 .banner h2{
     padding-bottom: 40px;
     margin-bottom: 20px;
 }
 .card-content{
     background: #fff;
-    height: 330px;
+    /* height: 330px; */
 }
 .card-content h3{
     text-align: center;
@@ -43,6 +44,18 @@ body{
     width: 90%;
     margin: 0 auto;
 }
+.message-row{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+}
+.form-row-btn{
+    display: flex;
+    width: 30%;
+    margin: 0 auto; 
+}
+
+
 form select, form input{
     display: block;
     width: 100%;
@@ -55,12 +68,12 @@ form select, form input{
     border-bottom: 1px solid #eee;
     font-weight: 300;
 }
-form input[type = text], form input[type = number], form input::placeholder, select{
+form input[type = text], form input[type = number],form input[type = date], form input[type = time] form input::placeholder, select{
     color: #9a9a9a;
 }
 form input[type = submit]{
     color: #fff;
-    background: #f2745f;
+    background: blue;
     padding: 12px 0;
     border-radius: 4px;
     cursor: pointer;

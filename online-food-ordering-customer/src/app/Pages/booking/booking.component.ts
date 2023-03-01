@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BookingsService } from 'src/app/service/bookings.service';
 
 @Component({
   selector: 'app-booking',
@@ -7,9 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookingComponent implements OnInit {
 
-  constructor() { }
+
+  formData = {
+    name: "",
+    // date: "",
+    time: "",
+    message: "",
+    guests: "",
+    phone: "",
+    email:""
+  };
+  constructor(private bookingServices:BookingsService) { }
 
   ngOnInit(): void {
+  }
+
+
+  
+  onSubmit() {
+    // Call Strapi service to post form data
+console.log(this.formData)
+    this.bookingServices.postFormData(this.formData).subscribe(response => {
+      console.log(response);
+    });
   }
 
 }
