@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule, HttpParams } from '@angular/common/http';  
-import{RatingModule} from 'ng-starrating'; 
-import { NgxStarRatingModule } from 'ngx-star-rating';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -13,6 +11,7 @@ import { LandingComponent } from './components/landing/landing.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { BookingComponent } from './Pages/booking/booking.component';
 import { ProductComponent } from './Pages/product/product.component';
 import { FormsModule } from '@angular/forms';
 // import {MatToolbarModule} from '@angular/material/toolbar'
@@ -29,6 +28,7 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     NavbarComponent,
     SidebarComponent,
+    BookingComponent,
     ProductComponent
   ],
   imports: [
@@ -36,8 +36,6 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RatingModule,
-    NgxStarRatingModule,
     FormsModule,
   ],
   providers: [],
