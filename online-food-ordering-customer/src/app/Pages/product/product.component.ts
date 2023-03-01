@@ -12,6 +12,8 @@ export class ProductComponent implements OnInit {
   product: any;
   router: any;
 
+
+  
   stars= [1,2,3,4,5];
   rating=0;
 

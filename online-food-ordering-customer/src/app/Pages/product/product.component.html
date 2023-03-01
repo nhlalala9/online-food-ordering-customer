@@ -1,132 +1,179 @@
-<div  class="container"> 
-  <img [src]="product?.data?.attributes?.Picture?.data?.attributes?.url" alt="">
+<div class="container">
+  <img
+    [src]="product?.data?.attributes?.Picture?.data?.attributes?.url"
+    alt=""
+  />
 
-<div class="details">
+  <div class="details">
     <div class="header">
-        <span class="name">
-         {{product?.data?.attributes?.name}}
-        </span>
-        <span class="favorite">
-            ♡
-        </span>
+      <span class="name">
+        {{ product?.data?.attributes?.name }}
+      </span>
+      <span class="favorite"> ♡ </span>
     </div>
-    <div class="star">
-    </div>
+    <div class="star"></div>
     <div class="origins">
-        <span>
-          {{product?.data?.attributes?.description}}
-        </span>
+      <span>
+        {{ product?.data?.attributes?.description }}
+      </span>
     </div>
     <div class="tag">
-        <!-- <app-tag></app-tag> -->
+      <!-- <app-tag></app-tag> -->
     </div>
     <div class="cook-time">
-        <!-- <span >
+      <!-- <span >
           {{product.data.attributes.description}} 🕒 <strong>7</strong>
         </span> -->
     </div>
     <div class="price">
-        <span>
-          {{product?.data?.attributes?.price}}
-        </span>
+      <span>
+        {{ product?.data?.attributes?.price }}
+      </span>
     </div>
     <!-- <button (click)="addToCart()" >Add to Cart</button> -->
-    <button >Add to Cart</button>
-
-</div>
+    <button>Add to Cart</button>
+  </div>
 </div>
 
 <div class="container">
- 
-
   <div class="row d-flex">
-<div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" class="img-fluid rounded-start" alt="...">
+    <div class="card mb-3" style="max-width: 540px">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
+            class="img-fluid rounded-start"
+            alt="..."
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">toka</h5>
+            <i class="fa-sharp fa-solid fa-star"></i>
+            <i class="fa-sharp fa-solid fa-star"></i>
+            <i class="fa-sharp fa-solid fa-star"></i>
+            <p class="card-text mt-2">
+              This is a wider card with supporting text below as a natural
+              lead-in to additional content. This content is a little bit
+              longer.
+            </p>
+            <p class="card-text">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">toka</h5>
-          <i class="fa-sharp fa-solid fa-star"></i>
-                    <i class="fa-sharp fa-solid fa-star"></i>
-                    <i class="fa-sharp fa-solid fa-star"></i>
-          <p class="card-text mt-2">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+
+    <div class="card mb-3" style="max-width: 540px">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
+            class="img-fluid rounded-start"
+            alt="..."
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">toka</h5>
+            <i class="fa-sharp fa-solid fa-star"></i>
+            <i class="fa-sharp fa-solid fa-star"></i>
+            <i class="fa-sharp fa-solid fa-star"></i>
+            <p class="card-text mt-2">
+              This is a wider card with supporting text below as a natural
+              lead-in to additional content. This content is a little bit
+              longer.
+            </p>
+            <p class="card-text">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mb-3" style="max-width: 540px">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
+            class="img-fluid rounded-start"
+            alt="..."
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">toka</h5>
+            <i class="fa-sharp fa-solid fa-star"></i>
+            <i class="fa-sharp fa-solid fa-star"></i>
+            <i class="fa-sharp fa-solid fa-star"></i>
+            <p class="card-text mt-2">
+              This is a wider card with supporting text below as a natural
+              lead-in to additional content. This content is a little bit
+              longer.
+            </p>
+            <p class="card-text">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4" >
-        <img src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" class="img-fluid rounded-start" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">toka</h5>
-          <i class="fa-sharp fa-solid fa-star"></i>
-                    <i class="fa-sharp fa-solid fa-star"></i>
-                    <i class="fa-sharp fa-solid fa-star"></i>
-          <p class="card-text mt-2">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- <div class="toka">
 
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" class="img-fluid rounded-start" alt="...">
+    <div class="star w-50 rating-star">
+      <div class="d-flex justify-content-center mb-4 ratings">
+        <ng-container *ngFor="let i of stars">
+          <i
+            class="fa-sharp fa-solid fa-star"
+            (click)="updateRating(i)"
+            [ngClass]="{ active: i <= rating }"
+          ></i>
+        </ng-container>
       </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">toka</h5>
-          <i class="fa-sharp fa-solid fa-star"></i>
-                    <i class="fa-sharp fa-solid fa-star"></i>
-                    <i class="fa-sharp fa-solid fa-star"></i>
-          <p class="card-text mt-2">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
+
+      <div class="d-flex justify-content-center mb-4 form-floating">
+        <textarea
+          class="form-control"
+          placeholder="Leave a comment here"
+          id="floatingTextarea2"
+          style="height: 100px"
+        ></textarea>
+        <label for="floatingTextarea2">Comments</label>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-success">Share Review</button>
       </div>
     </div>
-  </div>
-
-</div>
-
-
-    <div class="d-flex rating-list align-items-center">
-        <p class="w-50">Overall Ratings</p>
-        <div class="star w-50 rating-star">
-            <!-- <ngx-star-rating [id]="'rating1'"></ngx-star-rating> -->
-            <!-- <i class="fa-sharp fa-solid fa-star"></i> -->
-
-            <div class="ratings">
-              <ng-container *ngFor=" let i of stars">
-                <i class="fa-sharp fa-solid fa-star " (click)="updateRating(i)" [ngClass]="{'active':i<=rating}"></i>
-              </ng-container>
-
-            </div>
-            
-            
-              <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                <label for="floatingTextarea2">Comments</label>
-              </div>
-        </div>
-    </div>
-
-    <div class="container">
-        
-    </div>
-  <!-- <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div> -->
+
+  <div class="container">
+    <h2> React Ratings </h2>
+    <div class="stars">
+      <ng-container *ngFor="let i of stars">
+        <i
+          class="fa-sharp fa-solid fa-star"
+          (click)="updateRating(i)"
+          [ngClass]="{ active: i <= rating }"
+        ></i>
+      </ng-container>
+    </div>
+    <textarea
+          class="form-control"
+          placeholder="Leave a comment here"
+          id="floatingTextarea2"
+          style="height: 100px"
+        ></textarea>
+
+    <button
+      class="button"
+    >
+      Submit
+    </button>
+    
+  </div>
+
 </div>
