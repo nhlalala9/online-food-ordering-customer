@@ -24,7 +24,7 @@
 
 .sidebar-menu > span {
     line-height: 1.5;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .sidebar-menu:hover{
