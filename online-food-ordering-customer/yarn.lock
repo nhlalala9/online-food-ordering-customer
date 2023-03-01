@@ -4385,7 +4385,7 @@ ng-starrating@^1.0.20:
   resolved "https://registry.npmjs.org/ng-starrating/-/ng-starrating-1.0.20.tgz"
   integrity sha512-RQO9B/EVYHvu4oG8ZAR0sr91d1ouuyr4dzQDa4g1Bgi0tr4Ow6VGJKxrqhu2n8MgdLuaCWGvp9dhXWL1qxTw7Q==
 
-ngx-star-rating@*:
+ngx-star-rating@^2.1.0:
   version "2.1.0"
   resolved "https://registry.npmjs.org/ngx-star-rating/-/ngx-star-rating-2.1.0.tgz"
   integrity sha512-U/5aAIByR3kZfWGunTYTfg3TM4D0Jtyb2t0jV70OWyruMczYaPviCi0FxSf1gaoEpziDMf6PWpMH/i/o7SunVQ==

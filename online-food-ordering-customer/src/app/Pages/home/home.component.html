@@ -21,20 +21,27 @@
         <a href="#" >Specials</a>
         <a href="#" >Specials</a>
     </div>
-    <div class="row">
+    <div class="row d-flex justify-content-between">
     <div class="d-flex justify-content-center  dashboard-content"  *ngFor="let product of products">
         <!-- <a routerLink="/food">   -->
-        <div class="dashboard-card" style="width: 18rem;" >
+        <div class="dashboard-card" style="width: 25rem;" >
             <a routerLink="/customer/food/{{product.id}}">
             <img [srcset]="product?.attributes?.Picture?.data?.attributes?.url"
-            src="https://www.jennycancook.com/wp-content/uploads/2014/08/comingsoon.jpg" alt="" class="card-image">
+            src="https://www.jennycancook.com/wp-content/uploads/2014/08/comingsoon.jpg" alt="" class="card-image" style="height:15rem;">
             
             <div class="card-detail">
-                <h4>{{product?.attributes?.name}}<span>{{product?.attributes?.price}}</span>
+                <h4 style="color: black">{{product?.attributes?.name}}<span> R {{product?.attributes?.price}}</span>
                 </h4>
-                <p>{{product?.attributes?.description}}</p>
+                <!-- <p style="height:8rem;">{{product?.attributes?.description}}</p> -->
                 
-                    <p class="card-time"><span class="fas fa-clock" [routerLink]="['customer/food']"></span>15 - 30 mins</p>
+                    <!-- <p class="card-time"><span></span></p> -->
+                    <!-- <i class="lar la-star"></i> -->
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+
+
+
             </div>
         </a>
         </div>
