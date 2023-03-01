@@ -26,11 +26,11 @@
         <!-- <a routerLink="/food">   -->
         <div class="dashboard-card" >
             <a routerLink="/customer/food/{{product.id}}">
-            <img [src]="product.attributes.Picture.data.attributes.url" alt="" class="card-image">
+            <img [src]="product?.attributes?.Picture?.data?.attributes?.url" alt="" class="card-image">
             <div class="card-detail">
-                <h4>{{product.attributes.name}}<span>{{product.attributes.price}}</span>
+                <h4>{{product?.attributes?.name}}<span>{{product?.attributes?.price}}</span>
                 </h4>
-                <p>{{product.attributes.description}}</p>
+                <p>{{product?.attributes?.description}}</p>
                 <!-- <star-rating [value]="food.star" 
                 [totalstars]="5" 
                 checkedcolor="red" 
