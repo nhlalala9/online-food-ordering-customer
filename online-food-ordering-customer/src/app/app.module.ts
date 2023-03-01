@@ -14,6 +14,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BookingComponent } from './Pages/booking/booking.component';
 import { ProductComponent } from './Pages/product/product.component';
 import { FormsModule } from '@angular/forms';
+import { NgxStarRatingModule } from 'ngx-star-rating';
+// import { StarRatingModule } from 'ngx-star-rating';
+
 // import {MatToolbarModule} from '@angular/material/toolbar'
 
 
@@ -37,6 +40,8 @@ import { FormsModule } from '@angular/forms';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    NgxStarRatingModule
+    // StarRatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

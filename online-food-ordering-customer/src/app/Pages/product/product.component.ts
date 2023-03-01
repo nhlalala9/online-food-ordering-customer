@@ -12,6 +12,10 @@ export class ProductComponent implements OnInit {
   product: any;
   router: any;
 
+  stars= [1,2,3,4,5];
+  rating=0;
+
+
   constructor(private productsService: ProductsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -27,6 +31,11 @@ export class ProductComponent implements OnInit {
     );
   }
 
+  updateRating(r:any){
+    this.rating=r;
+    console.log(this.rating)
+
+  }
 
   item(num: any){
    
