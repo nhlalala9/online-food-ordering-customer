@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClient, HttpClientModule, HttpParams } from '@angular/common/http';   
+import { HttpClient, HttpClientModule, HttpParams } from '@angular/common/http';  
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -12,6 +13,12 @@ import { HomeComponent } from './Pages/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BookingComponent } from './Pages/booking/booking.component';
+import { ProductComponent } from './Pages/product/product.component';
+import { FormsModule } from '@angular/forms';
+// import {MatToolbarModule} from '@angular/material/toolbar'
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,13 +29,16 @@ import { BookingComponent } from './Pages/booking/booking.component';
     HomeComponent,
     NavbarComponent,
     SidebarComponent,
-    BookingComponent
+    BookingComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+ 
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

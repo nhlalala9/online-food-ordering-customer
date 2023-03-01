@@ -7,7 +7,7 @@
 <h3 class="logo">Food</h3>
 
 <div class="dashboard">
-    <div class="dashboard-banner">
+    <div class="dashboard-banner" >
         <img src="https://images.unsplash.com/photo-1475332363216-323c9b7f1e81?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGludGVybmF0aW9uYWwlMjBmb29kfGVufDB8fDB8fA%3D%3D&w=1000&q=80" alt="">
         <div class="banner-promo">
             <h1><span>50% OFF</span><br>Tasty Food<br> On Your Hand</h1>
@@ -22,60 +22,31 @@
         <a href="#" >Specials</a>
     </div>
 
-    <div class="dashboard-content">
-        <div class="dashboard-card">
-            <img src="http://imagesolutionsphotography.co.za/wp-content/uploads/2013/04/vegetable-plate-food-photographer.jpg" alt="" class="card-image">
+    <div class="dashboard-content"  *ngFor="let product of products">
+        <!-- <a routerLink="/food">   -->
+        <div class="dashboard-card" >
+            <a routerLink="/customer/food/{{product.id}}">
+            <img [src]="product.attributes.Picture.data.attributes.url" alt="" class="card-image">
             <div class="card-detail">
-                <h4>Amazing pizza<span>R 120</span></h4>
-                <p>Lorem ipsum dolor sit</p>
-                <p class="card-time"><span class="fas fa-clock"></span>15 - 30 mins</p>
+                <h4>{{product.attributes.name}}<span>{{product.attributes.price}}</span>
+                </h4>
+                <p>{{product.attributes.description}}</p>
+                
+                    <p class="card-time"><span class="fas fa-clock" [routerLink]="['customer/food']"></span>15 - 30 mins</p>
             </div>
+        </a>
         </div>
+        <!-- </a> -->
 
-        <div class="dashboard-card">
-            <img src="http://imagesolutionsphotography.co.za/wp-content/uploads/2013/04/vegetable-plate-food-photographer.jpg" alt="" class="card-image">
-            <div class="card-detail">
-                <h4>Amazing pizza<span>R 120</span></h4>
-                <p>Lorem ipsum dolor sit</p>
-                <p class="card-time"><span class="fas fa-clock"></span>15 - 30 mins</p>
-            </div>
-        </div>
+        
 
-        <div class="dashboard-card">
-            <img src="http://imagesolutionsphotography.co.za/wp-content/uploads/2013/04/vegetable-plate-food-photographer.jpg" alt="" class="card-image">
-            <div class="card-detail">
-                <h4>Amazing pizza<span>R 120</span></h4>
-                <p>Lorem ipsum dolor sit</p>
-                <p class="card-time"><span class="fas fa-clock"></span>15 - 30 mins</p>
-            </div>
-        </div>
+        
     
-        <div class="dashboard-card">
-            <img src="http://imagesolutionsphotography.co.za/wp-content/uploads/2013/04/vegetable-plate-food-photographer.jpg" alt="" class="card-image">
-            <div class="card-detail">
-                <h4>Amazing pizza<span>R 120</span></h4>
-                <p>Lorem ipsum dolor sit</p>
-                <p class="card-time"><span class="fas fa-clock"></span>15 - 30 mins</p>
-            </div>
-        </div>
+        
     
-        <div class="dashboard-card">
-            <img src="http://imagesolutionsphotography.co.za/wp-content/uploads/2013/04/vegetable-plate-food-photographer.jpg" alt="" class="card-image">
-            <div class="card-detail">
-                <h4>Amazing pizza<span>R 120</span></h4>
-                <p>Lorem ipsum dolor sit</p>
-                <p class="card-time"><span class="fas fa-clock"></span>15 - 30 mins</p>
-            </div>
-        </div>
+        
     
-        <div class="dashboard-card">
-            <img src="http://imagesolutionsphotography.co.za/wp-content/uploads/2013/04/vegetable-plate-food-photographer.jpg" alt="" class="card-image">
-            <div class="card-detail">
-                <h4>Amazing pizza<span>R 120</span></h4>
-                <p>Lorem ipsum dolor sit</p>
-                <p class="card-time"><span class="fas fa-clock"></span>15 - 30 mins</p>
-            </div>
-        </div>
+        
     </div>
 </div>
 
