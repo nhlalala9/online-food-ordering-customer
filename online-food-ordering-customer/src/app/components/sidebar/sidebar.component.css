@@ -35,3 +35,28 @@ color: blue;
 .sidebar-menu:hover > a{
 color: blue;
 }
+.log{
+    margin-bottom: 100%;
+    margin-top: 800%;
+    display: flex;
+    text-decoration: none;
+}
+
+.log a{
+    padding-left: 1rem;
+    display: block;
+    color: black;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    text-decoration: none;
+
+}
+.log li{
+    width: 50%;
+    margin-bottom: 1.7rem;
+    padding-left: 1rem;
+    text-decoration: none;
+}
+.log li a{
+    text-decoration: none;
+}
