@@ -14,6 +14,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BookingComponent } from './Pages/booking/booking.component';
 import { ProductComponent } from './Pages/product/product.component';
 import { FormsModule } from '@angular/forms';
+import { BookingHistoryComponent } from './Pages/booking-history/booking-history.component';
+
+
 // import {MatToolbarModule} from '@angular/material/toolbar'
 
 
@@ -29,7 +32,9 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     SidebarComponent,
     BookingComponent,
-    ProductComponent
+    ProductComponent,
+    BookingHistoryComponent,
+   
   ],
   imports: [
     BrowserModule,
