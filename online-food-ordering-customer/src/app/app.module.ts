@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule, HttpParams } from '@angular/common/http';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';    
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';    
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -28,7 +28,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgModule
+    // NgModule
   ],
   providers: [],
   bootstrap: [AppComponent]
