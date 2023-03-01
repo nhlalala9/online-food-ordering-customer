@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 50px;
+    width: 65px;
     height: 100%;
     background-color: grey;
     z-index: 1;
@@ -11,15 +11,20 @@
 
 .sidebar-menu{
     width: 100%;
-    text-align: center;
+   display: flex;
     padding: 10px 5px;
     color: black;
+    gap: 3px;
 }
 .sidebar-menu > a {
  text-decoration: none;
- font-size: 0.7rem;
  line-height: 1.5;
  color: black;
+}
+
+.sidebar-menu > span {
+    line-height: 1.5;
+    /* text-align: center; */
 }
 
 .sidebar-menu:hover{
