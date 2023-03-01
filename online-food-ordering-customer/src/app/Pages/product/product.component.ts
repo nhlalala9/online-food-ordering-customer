@@ -10,6 +10,13 @@ import { RatingService } from 'src/app/service/rating.service';
 })
 export class ProductComponent implements OnInit {
 
+  product: any;
+  
+  why='';
+  router: any;
+
+  stars= [1, 2, 3, 4, 5];
+  rating= 0;
   // Date = new Date();
   constructor(private productsService: ProductsService, private route: ActivatedRoute, private ratings: RatingService) { }
 
@@ -28,12 +35,7 @@ export class ProductComponent implements OnInit {
   }
 
 
-  product: any;
-  router: any;
-coment="";
-  stars= [1,2,3,4,5];
-  rating:any;
-  rated :any;
+
 
   onSubmit() {
     // Call Strapi service to post form data
@@ -44,27 +46,21 @@ console.log(this.formData)
   }
 
 
-  updateRating(r:any){
-    // this.rate=r;
-    //  this.rating = r
-    console.log(this.rating,"rating", this.stars)
-    console.log(this.formData.comment);
-    console.log(this.formData.date)
-    console.log(this.formData.name)
-    // console.log(this.formData.rating)
-
-    
-  
-
-  }
-
   formData = {
     name: "Toka",
     date: new Date(),
     comment: "",
-    // rate: this.rating
+    rate: 0
  
-  };
+  }
+  updateRating(r:any){
+    this.rating=r;
+    this.why = r
+    console.log(this.why,"rating")
+    this.formData.rate = this.rating;
+    return this.rating
+  }
+;
  
 
   item(num: any){
