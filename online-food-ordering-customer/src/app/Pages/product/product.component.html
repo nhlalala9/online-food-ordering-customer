@@ -151,6 +151,7 @@
   </div> -->
 
   <div class="container">
+    <form (ngSubmit)="onSubmit()">
     <h2> React Ratings </h2>
     <div class="stars">
       <ng-container *ngFor="let i of stars">
@@ -161,7 +162,8 @@
         ></i>
       </ng-container>
     </div>
-    <textarea
+    <textarea name="comment" [(ngModel)]="formData.comment"
+    
           class="form-control"
           placeholder="Leave a comment here"
           id="floatingTextarea2"
@@ -169,11 +171,12 @@
         ></textarea>
 
     <button
+    type="submit"
       class="button"
-    >
+    click="submit()">
       Submit
     </button>
-    
+    </form>
   </div>
 
 </div>

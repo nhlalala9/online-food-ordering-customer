@@ -15,6 +15,7 @@ import { BookingComponent } from './Pages/booking/booking.component';
 import { ProductComponent } from './Pages/product/product.component';
 import { FormsModule } from '@angular/forms';
 import { NgxStarRatingModule } from 'ngx-star-rating';
+
 // import { StarRatingModule } from 'ngx-star-rating';
 
 // import {MatToolbarModule} from '@angular/material/toolbar'
