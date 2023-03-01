@@ -11,6 +11,7 @@ import { LandingComponent } from './components/landing/landing.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { BookingComponent } from './Pages/booking/booking.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     LandingComponent,
     HomeComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    BookingComponent
   ],
   imports: [
     BrowserModule,
