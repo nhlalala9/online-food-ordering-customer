@@ -42,6 +42,8 @@ import { BookingHistoryComponent } from './Pages/booking-history/booking-history
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    // NgxStarRatingModule
+    // StarRatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
