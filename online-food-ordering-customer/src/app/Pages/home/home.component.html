@@ -8,9 +8,9 @@
 
 <div class="dashboard">
     <div class="dashboard-banner" >
-        <img src="https://images.unsplash.com/photo-1475332363216-323c9b7f1e81?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGludGVybmF0aW9uYWwlMjBmb29kfGVufDB8fDB8fA%3D%3D&w=1000&q=80" alt="">
+        <img src="https://images.firsttable.net/1170x655/public/restaurant/3079/c6ff65b79b/00022.jpg" alt="">
         <div class="banner-promo">
-            <h1><span>50% OFF</span><br>Tasty Food<br> On Your Hand</h1>
+            <h1><span>Enjoy your meals</span><br><span>with us.</span> <br><a href="customer/booking">Book  Your Table Now!</a></h1>
         </div>
     </div>
     <h3 class="dashboard-title">Recommended Food For You</h3>
@@ -32,16 +32,8 @@
             <div class="card-detail">
                 <h4>{{product?.attributes?.name}}<span>{{product?.attributes?.price}}</span>
                 </h4>
-                <p>{{product?.attributes?.description}}</p>
-                <!-- <star-rating [value]="food.star" 
-                [totalstars]="5" 
-                checkedcolor="red" 
-                uncheckedcolor="black" 
-                size="24px" 
-                [readonly]="true">
-            </star-rating> -->
-            <star-rating>5
-            </star-rating>
+                <p>{{product.attributes.description}}</p>
+                
                     <p class="card-time"><span class="fas fa-clock" [routerLink]="['customer/food']"></span>15 - 30 mins</p>
             </div>
         </a>

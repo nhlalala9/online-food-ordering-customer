@@ -21,15 +21,19 @@
 }
 .banner-promo{
     position: absolute;
-    color: lightgray;
+    color: whitesmoke;
     top: 25%;
     left: 10%;
     font-weight: 800;
 }
 .banner-promo >h1 > span{
-    color: blue;
+    color: whitesmoke;
+    text-decoration: underline;
 }
-
+a{
+    text-decoration: none;
+    color: blanchedalmond;
+}
 .dashboard-title{
     padding: 0 1rem;
 
