@@ -2,7 +2,7 @@
     <h2>BOOK YOUR TABLE NOW</h2>
     <div class="card-container">
         <div class="card-content">
-            <h3>Reservation</h3>
+            <!-- <h3>Reservation</h3> -->
             <form (ngSubmit)="onSubmit()">
                 <!-- <div class = "form-row">
                             <select name = "days">
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="form-row">
-                    <input type="text" value="Email" name="email" [(ngModel)]="formData.email">
+                    <input type="text" placeholder="Email" name="email" [(ngModel)]="formData.email">
                     <input type="number" placeholder="How Many Persons?" min="1" name="guests"
                         [(ngModel)]="formData.guests">
                 </div>
@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="message-row">
-                    <input type="text" value="Reservation message" name="message" [(ngModel)]="formData.message">
+                    <input type="text" placeholder="Reservation message" name="message" [(ngModel)]="formData.message">
                 </div>
 
                 <div class="form-row-btn">
@@ -55,4 +55,8 @@
             </form>
         </div>
     </div>
+
+
+
+   
 </section>
