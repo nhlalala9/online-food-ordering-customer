@@ -51,12 +51,7 @@ export class ProductComponent implements OnInit {
 
 
   }
-
-
   
-
-
-
   onSubmit() {
     // Call Strapi service to post form data
 console.log(this.formData)
