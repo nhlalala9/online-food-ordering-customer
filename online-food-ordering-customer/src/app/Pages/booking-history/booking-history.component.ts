@@ -13,7 +13,7 @@ export class BookingHistoryComponent implements OnInit {
   constructor(private bookingServices:BookingsService) { }
 
   ngOnInit(): void {
-    this.bookingServices.getBookings(this.username).subscribe((bookings: any) =>{
+    this.bookingServices.getBookings("Moses").subscribe((bookings: any) =>{
       this.bookings = bookings.data;
       console.log(bookings.data)
     })
