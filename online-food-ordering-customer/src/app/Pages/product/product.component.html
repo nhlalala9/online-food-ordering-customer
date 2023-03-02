@@ -2,6 +2,7 @@
   <img
     [src]="product?.data?.attributes?.Picture?.data?.attributes?.url"
     alt=""
+    class="img"
   />
 
   <div class="details">
@@ -34,93 +35,151 @@
     <button>Add to Cart</button>
   </div>
 </div>
-
-<div class="container">
-  <div class="row d-flex">
-    <div class="card mb-3" style="max-width: 540px">
-      <div class="row g-0">
-        <div class="col-md-4">
+<div *ngFor="let rating of rati"
+role="tabpanel"
+id="react-aria5257160692-4-tabpane-Grid"
+aria-labelledby="react-aria5257160692-4-tab-Grid"
+class="fade tab-pane active show"
+>
+<div class="row">
+  <div class="col-xl-3 col-xxl-4 col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <div
+          class="restro-review d-flex align-items-center border-bottom mb-4 pb-4"
+        >
           <img
-            src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
-            class="img-fluid rounded-start"
-            alt="..."
+          [srcset]="rating?.attributes?.Picture?.data?.attributes?.url"
+          src="https://upload.wikimedia.org/wikipedia/commons/4/48/Outdoors-man-portrait_%28cropped%29.jpg"
+            alt=""
+            class="img1"
           />
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">toka</h5>
-            <i class="fa-sharp fa-solid fa-star"></i>
-            <i class="fa-sharp fa-solid fa-star"></i>
-            <i class="fa-sharp fa-solid fa-star"></i>
-            <p class="card-text mt-2">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
+          <div>
+            <h4 class="font-w500">{{rating.attributes?.name}}</h4>
+            <span>User since 2020</span>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="card mb-3" style="max-width: 540px">
-      <div class="row g-0">
-        <div class="col-md-4">
+        <div class="recent-review d-flex align-items-center">
           <img
-            src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
-            class="img-fluid rounded-start"
-            alt="..."
+          [srcset]="rating?.attributes?.Picture?.data?.attributes?.url"
+          src="https://www.jennycancook.com/wp-content/uploads/2014/08/comingsoon.jpg"
+            alt=""
+            class="img1"
           />
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">toka</h5>
-            <i class="fa-sharp fa-solid fa-star"></i>
-            <i class="fa-sharp fa-solid fa-star"></i>
-            <i class="fa-sharp fa-solid fa-star"></i>
-            <p class="card-text mt-2">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
+          <div>
+            <h4 class="font-w500 mb-0">Fish Burger</h4>
+            <ul class="d-flex mb-2">
+              <li>
+                {{rating.attributes?.rate}} <svg
+                  width="16"
+                  height="15"
+                  viewBox="0 0 16 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 0.500031L9.79611 6.02789H15.6085L10.9062 9.4443L12.7023 14.9722L8 11.5558L3.29772 14.9722L5.09383 9.4443L0.391548 6.02789H6.20389L8 0.500031Z"
+                    fill="#FC8019"
+                  ></path>
+                </svg>
+              </li>
+              <!-- <li>
+                <svg
+                  width="16"
+                  height="15"
+                  viewBox="0 0 16 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 0.500031L9.79611 6.02789H15.6085L10.9062 9.4443L12.7023 14.9722L8 11.5558L3.29772 14.9722L5.09383 9.4443L0.391548 6.02789H6.20389L8 0.500031Z"
+                    fill="#FC8019"
+                  ></path>
+                </svg>
+              </li>
+              <li>
+                <svg
+                  width="16"
+                  height="15"
+                  viewBox="0 0 16 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 0.500031L9.79611 6.02789H15.6085L10.9062 9.4443L12.7023 14.9722L8 11.5558L3.29772 14.9722L5.09383 9.4443L0.391548 6.02789H6.20389L8 0.500031Z"
+                    fill="#FC8019"
+                  ></path>
+                </svg>
+              </li>
+              <li>
+                <svg
+                  width="16"
+                  height="15"
+                  viewBox="0 0 16 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 0.500031L9.79611 6.02789H15.6085L10.9062 9.4443L12.7023 14.9722L8 11.5558L3.29772 14.9722L5.09383 9.4443L0.391548 6.02789H6.20389L8 0.500031Z"
+                    fill="#FC8019"
+                  ></path>
+                </svg>
+              </li>
+              <li>
+                <svg
+                  width="16"
+                  height="15"
+                  viewBox="0 0 16 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 0.500031L9.79611 6.02789H15.6085L10.9062 9.4443L12.7023 14.9722L8 11.5558L3.29772 14.9722L5.09383 9.4443L0.391548 6.02789H6.20389L8 0.500031Z"
+                    fill="#FC8019"
+                  ></path>
+                </svg>
+              </li> -->
+            </ul>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="card mb-3" style="max-width: 540px">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img
-            src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
-            class="img-fluid rounded-start"
-            alt="..."
-          />
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">toka</h5>
-            <i class="fa-sharp fa-solid fa-star"></i>
-            <i class="fa-sharp fa-solid fa-star"></i>
-            <i class="fa-sharp fa-solid fa-star"></i>
-            <p class="card-text mt-2">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
-          </div>
-        </div>
+        <p>
+         {{rating.attributes?.comment}}
+        </p>
+        <div><h6 class="font-w400">{{rating.attributes?.date}}</h6></div>
       </div>
     </div>
   </div>
+</div>
+</div>
+
+<div class="container">
+  <!-- <div class="row d-flex" *ngFor="let rating of rati">
+    <div class="card mb-3" style="max-width: 540px">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img
+          [srcset]="rating?.attributes?.Picture?.data?.attributes?.url"
+          src="https://upload.wikimedia.org/wikipedia/commons/4/48/Outdoors-man-portrait_%28cropped%29.jpg"
+           class="img-fluid rounded-start"
+            alt="..."
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{rating.attributes?.name}}</h5>
+            <i class="fa-sharp fa-solid fa-star"> {{rating.attributes?.rate}}</i>
+           
+            <p class="card-text mt-2">
+              {{rating.attributes?.comment}}
+            </p>
+            <p class="card-text">
+              <small class="text-muted">{{rating.attributes?.date}}</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
 
   <div class="container">
     <form (ngSubmit)="onSubmit()">
@@ -151,4 +210,7 @@
     </form>
   </div>
 
+
+
 </div>
+

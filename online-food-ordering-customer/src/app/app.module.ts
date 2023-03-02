@@ -14,9 +14,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BookingComponent } from './Pages/booking/booking.component';
 import { ProductComponent } from './Pages/product/product.component';
 import { FormsModule } from '@angular/forms';
-// import { NgxStarRatingModule } from 'ngx-star-rating';
+import { BookingHistoryComponent } from './Pages/booking-history/booking-history.component';
+import { DatePipe } from '@angular/common';
 
-// import { StarRatingModule } from 'ngx-star-rating';
 
 // import {MatToolbarModule} from '@angular/material/toolbar'
 
@@ -33,7 +33,9 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     SidebarComponent,
     BookingComponent,
-    ProductComponent
+    ProductComponent,
+    BookingHistoryComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,7 @@ import { FormsModule } from '@angular/forms';
     // NgxStarRatingModule
     // StarRatingModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
