@@ -16,4 +16,6 @@ export class BookingsService {
   getBookings(name:string): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/api/bookings?filters[name][$eq]=Oratile Mabote&populate=*`);
   }
+
+ 
 }

@@ -12,7 +12,7 @@ body{
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../assets/banner-img.jpeg") center/cover no-repeat;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
     color: #fff;
     padding-bottom: 20px;
@@ -46,9 +46,7 @@ body{
     font-size: 26px;
     font-weight: 500;
 }
-.card-body{
-    width: 90%;
-}
+
 
 .form-row{
     display: flex;
