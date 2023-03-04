@@ -76,7 +76,7 @@
 }
 .details button {
   color: white;
-  background-color: red;
+  background-color: blue;
   border: none;
   font-size: 1.2rem;
   padding: 1rem;
@@ -88,13 +88,35 @@
   cursor: pointer;
 }
 
-
+.stars {
+  padding: 0 5px !important;
+  font-size: 50px !important;
+  color: #ddd !important;
+  cursor: pointer;
+}
+stars::before {
+  content: "\f005" !important;
+}
+.stars:hover {
+  transform: rotate(0deg) scale(1.2) !important;
+  color: gold;
+}
 
 /**Rating**/
 
 
-
-
+.tab-content>.active {
+  display: block;
+}
+.row {
+  --bs-gutter-x: 30px;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(var(--bs-gutter-x)/-2);
+  margin-right: calc(var(--bs-gutter-x)/-2);
+  margin-top: calc(var(--bs-gutter-y)*-1);
+}
 
 
 
@@ -129,9 +151,37 @@
   margin-bottom: 1.875rem;
   position: relative;
   transition: all .5s ease-in-out;
-  margin-top: 8rem;
+  /* margin-top: 8rem; */
+  /* margin-left: 2rem; */
+  /* margin-right: 2rem; */
+}
+.m{
   margin-left: 8rem;
   margin-right: 2rem;
+  
+}
+.mr{
+  margin-right: 2rem;
+}
+.stars {
+  display: "flex";
+  flex-direction: "row"
+  
+}
+textarea{
+  margin-top: 2rem;
+  border: "1px solid #a9a9a9";
+  border-radius: 5;
+  padding: 10;
+  margin: "20px 0";
+  min-height: 100;
+  width: 300;
+  margin-bottom: 2rem;
+}
+.container{
+  display: "flex";
+  flex-direction: "column";
+  align-items: "center";
 }
 .card {
   word-wrap: break-word;

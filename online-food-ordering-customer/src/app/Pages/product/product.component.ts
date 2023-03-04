@@ -14,60 +14,84 @@ import { DatePipe } from '@angular/common';
 export class ProductComponent implements OnInit {
 
   product: any;
-  
   why='';
   router: any;
-
   stars= [1, 2, 3, 4, 5];
   rating= 0;
  productList : any ;
   // Date = new Date();
- 
   currentDate = new Date();
  formattedDate = this.datePipe.transform(this.currentDate, 'dd/MM/yyyy');
-
  rati: any[] = []
- 
-  
-  
-  
   // Date = new Date();
+
   constructor(private productsService: ProductsService, private route: ActivatedRoute, private ratings: RatingService,private datePipe: DatePipe,private cartService : CartService) { }
   
 
+  // ngOnInit() {
+  //   const id = this.route.snapshot.paramMap.get('id');
+  //   this.productsService.getById(id).subscribe(
+  //     response => {
+  //       this.product = response.data;
+ 
+  //       console.log(this.product,"ora see")
+    
+  //     },
+  //     error => {
+  //       console.log(error);
+  //     }
+  //   );
+
   ngOnInit() {
-    // console.log(this.formData.date,"date")
-    const id = this.route.snapshot.paramMap.get('id');
-    this.productsService.getById(id).subscribe(
-      response => {
-        this.product = response;
-        console.log(this.productList,"why")
-        // this.productList((a:any) => {
-        //   Object.assign(a,{quantity:1,total:a.price});
-        // })
-        console.log(this.product)
-        console.log(this.productList)
-      },
-      error => {
-        console.log(error);
-      }
-    );
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+      this.productsService.getById(id).subscribe(product => {
+        this.product = product.data;
+        console.log(this.product.id,"hiiii")
+       
+      });
+    });
+
+  
 
     this.ratings.getRating().subscribe((products: any) =>{
       this.rati = products.data;
-      console.log(this.rati)
+      console.log(this.rati,"rating")
     })
-
-
   }
+
+
+//   onSubmit() {
+// console.log(this.formData)
+// const ratingData = {
+//   name: this.formData.name,
+//   date: this.formData.date,
+//   comment: this.formData.comment,
+//   rate: this.formData.rate,
+//   product: this.product.id
   
-  onSubmit() {
-    // Call Strapi service to post form data
-console.log(this.formData)
-    this.ratings.createRating(this.formData).subscribe(response => {
+// };
+// console.log(this.product.id,"id")
+//     this.ratings.createRating(ratingData).subscribe(response => {
+//       console.log(response);
+//     });
+//   }
+onSubmit() {
+  this.productsService.getById(this.product.id).subscribe(product => {
+    console.log(this.product.id,"bbb")
+    const ratingData = {
+      name: this.formData.name,
+      date: this.formData.date,
+      comment: this.formData.comment,
+      rate: this.formData.rate,
+      product: product
+    };
+console.log(this.product,"lets seeee you bitch")
+    this.ratings.createRating(ratingData).subscribe(response => {
       console.log(response);
     });
-  }
+  });
+}
 
   formData = {
     name: "Oratile",
