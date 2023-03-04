@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from 'src/app/service/products.service';
 import { RatingService } from 'src/app/service/rating.service';
 import { CartService } from 'src/app/service/cart.service';
+import { DatePipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-product',
@@ -20,7 +22,18 @@ export class ProductComponent implements OnInit {
   rating= 0;
  productList : any ;
   // Date = new Date();
-  constructor(private productsService: ProductsService, private route: ActivatedRoute, private ratings: RatingService,private cartService : CartService) { }
+ 
+  currentDate = new Date();
+ formattedDate = this.datePipe.transform(this.currentDate, 'dd/MM/yyyy');
+
+ rati: any[] = []
+ 
+  
+  
+  
+  // Date = new Date();
+  constructor(private productsService: ProductsService, private route: ActivatedRoute, private ratings: RatingService,private datePipe: DatePipe,private cartService : CartService) { }
+  
 
   ngOnInit() {
     // console.log(this.formData.date,"date")
@@ -39,23 +52,26 @@ export class ProductComponent implements OnInit {
         console.log(error);
       }
     );
+
+    this.ratings.getRating().subscribe((products: any) =>{
+      this.rati = products.data;
+      console.log(this.rati)
+    })
+
+
   }
-
-
-
-
+  
   onSubmit() {
     // Call Strapi service to post form data
 console.log(this.formData)
-    // this.ratings.createRating(this.formData).subscribe(response => {
-    //   console.log(response);
-    // });
+    this.ratings.createRating(this.formData).subscribe(response => {
+      console.log(response);
+    });
   }
 
-
   formData = {
-    name: "Toka",
-    date: new Date(),
+    name: "Oratile",
+    date: " ",
     comment: "",
     rate: 0
  
@@ -64,11 +80,18 @@ console.log(this.formData)
     this.rating=r;
     this.why = r
     console.log(this.why,"rating")
+    this.currentDate = new Date();
+    this.formattedDate = this.datePipe.transform(this.currentDate, 'dd/MM/yyyy');
+    this.formData.date = this.formattedDate ?? ''
     this.formData.rate = this.rating;
     return this.rating
   }
 ;
  
+
+
+
+
 
   item(num: any){
    

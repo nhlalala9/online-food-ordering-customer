@@ -16,9 +16,12 @@ import { ProductComponent } from './Pages/product/product.component';
 import { FormsModule } from '@angular/forms';
 import { BookingHistoryComponent } from './Pages/booking-history/booking-history.component';
 import { CartComponent } from './Pages/cart/cart.component';
+import { DatePipe } from '@angular/common';
+
 
 
 // import {MatToolbarModule} from '@angular/material/toolbar'
+
 
 
 
@@ -47,7 +50,7 @@ import { CartComponent } from './Pages/cart/cart.component';
     // NgxStarRatingModule
     // StarRatingModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
