@@ -22,15 +22,15 @@
         <a href="#" >Specials</a>
     </div>
     <div class="row d-flex justify-content-between">
-    <div class="d-flex justify-content-center  dashboard-content"  *ngFor="let product of products">
+    <div class="d-flex justify-content-center  dashboard-content"  *ngFor="let item of product">
         <!-- <a routerLink="/food">   -->
         <div class="dashboard-card" style="width: 25rem;" >
-            <a routerLink="/customer/food/{{product.id}}">
-            <img [srcset]="product?.attributes?.Picture?.data?.attributes?.url"
+            <a >
+            <img [srcset]="item?.attributes?.Picture?.data?.attributes?.url"
             src="https://www.jennycancook.com/wp-content/uploads/2014/08/comingsoon.jpg" alt="" class="card-image" style="height:15rem;">
             
             <div class="card-detail">
-                <h4 style="color: black">{{product?.attributes?.name}}<span> R {{product?.attributes?.price}}</span>
+                <h4 style="color: black">{{item?.attributes?.name}}<span> R {{product?.attributes?.price}}</span>
                 </h4>
                 <!-- <p style="height:8rem;">{{product?.attributes?.description}}</p> -->
                 
@@ -39,6 +39,7 @@
                     <i class="fa-sharp fa-solid fa-star"></i>
                     <i class="fa-sharp fa-solid fa-star"></i>
                     <i class="fa-sharp fa-solid fa-star"></i>
+                    <button (click)=addtocart(item)>Add to Cart</button>
 
 
 
@@ -75,30 +76,23 @@
     </span>
 </div>
 
-<div class="order-wrapper">
-    <div class="order-card">
-        <img src="../../../assets/banner.png " alt="" class="order-image">
+<div class="order-wrapper" >
+    <div class="order-card"*ngFor="let item of products; let i = index">
+        <img [srcset]="item?.attributes?.Picture?.data?.attributes?.url"
+        src="https://www.jennycancook.com/wp-content/uploads/2014/08/comingsoon.jpg" alt="" class="order-image">
         <div class="order-detail">
-            <p>Lorem ipsum dolor sit amet</p>
+            <p>{{item?.attributes?.name}}</p>
        <i class="fas fa-times"></i>
-       <input type="text" value="1">
+       <input type="text" value="{{item.quantity}}">
         </div>
-        <h4 class="order-price"> R 35 </h4>
+        <h4 class="order-price">{{item?.attributes?.price}} </h4>
     </div>
-    <div class="order-card">
-        <img src="../../../assets/banner.png " alt="" class="order-image">
-        <div class="order-detail">
-            <p>Lorem ipsum dolor sit amet </p>
-       <i class="fas fa-times"></i>
-       <input type="text" value="2">
-        </div>
-        <h4 class="order-price"> R 35 </h4>
-    </div>
+   
 </div>
 
 <hr class="divider"> 
 <div class="order-total">
-    <p>Subtotal <span>R345</span></p>
+    <p>Subtotal <span>{{grandTotal}}</span></p>
     <p>Tax <span>R345</span></p>
     <p>Delivery <span>R345</span></p>
 

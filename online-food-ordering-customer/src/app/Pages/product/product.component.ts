@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from 'src/app/service/products.service';
 import { RatingService } from 'src/app/service/rating.service';
+import { CartService } from 'src/app/service/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -17,8 +18,9 @@ export class ProductComponent implements OnInit {
 
   stars= [1, 2, 3, 4, 5];
   rating= 0;
+ productList : any ;
   // Date = new Date();
-  constructor(private productsService: ProductsService, private route: ActivatedRoute, private ratings: RatingService) { }
+  constructor(private productsService: ProductsService, private route: ActivatedRoute, private ratings: RatingService,private cartService : CartService) { }
 
   ngOnInit() {
     // console.log(this.formData.date,"date")
@@ -26,7 +28,12 @@ export class ProductComponent implements OnInit {
     this.productsService.getById(id).subscribe(
       response => {
         this.product = response;
+        console.log(this.productList,"why")
+        // this.productList((a:any) => {
+        //   Object.assign(a,{quantity:1,total:a.price});
+        // })
         console.log(this.product)
+        console.log(this.productList)
       },
       error => {
         console.log(error);
@@ -70,5 +77,8 @@ console.log(this.formData)
   }
 
 
-
+  addtocart(product: any){
+    this.cartService.addtoCart(product);
+    console.log(this.product,"cart addded")
+  }
 }
