@@ -20,11 +20,10 @@ public username = localStorage.getItem('s_username');
   stars= [1, 2, 3, 4, 5];
   rating= 0;
  productList : any ;
-  // Date = new Date();
   currentDate = new Date();
  formattedDate = this.datePipe.transform(this.currentDate, 'dd/MM/yyyy');
  rati: any[] = []
-  // Date = new Date();
+ 
 
   constructor(private productsService: ProductsService, private ss: AuthenticationService, private route: ActivatedRoute, private ratings: RatingService,private datePipe: DatePipe,private cartService : CartService) { }
 
@@ -40,12 +39,7 @@ public username = localStorage.getItem('s_username');
 
       });
     });
-    // const username = localStorage.getItem('s_username');
-    // console.log(username,"user")
-
-    // this.product.ratings = {};
     this.ratings.getRating().subscribe((products: any) =>{
-      
       this.rati = products.data;
       console.log(this.rati,"rating")
     })
@@ -110,10 +104,6 @@ onSubmit() {
   }
 ;
  
-
-
-
-
 
   item(num: any){
    

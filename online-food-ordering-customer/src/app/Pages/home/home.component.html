@@ -1,6 +1,6 @@
 <input type="checkbox" id="cart">
 <label for="cart" class="label-cart">
-    <span class="fa-solid fa-cart-shopping">{{products.length}}</span>
+    <span class="fa-solid fa-cart-shopping"><span class="badge badge-info">{{products.length}}</span></span>
 </label>
 <!-- <i class="fa-regular fa-circle fa-stack-2x"></i> -->
 
@@ -161,9 +161,9 @@
                   fill="#FC8019"
                 ></path>
               </svg>
-              <p class="font-w500 mb-0 px-2">5.0</p>
+              <p class="font-w500 mb-0 px-2 ">5.0</p>
             </div> <div>
-              <p class="font-w500 mb-0" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;" >{{item?.attributes?.description}}</p>
+              <p class="font-w600 mb-0" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;color: black;" >{{item?.attributes?.description}}</p>
             </div>
           </div>
         </div>
