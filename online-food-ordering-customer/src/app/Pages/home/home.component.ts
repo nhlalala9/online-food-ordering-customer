@@ -17,6 +17,10 @@ export class HomeComponent implements OnInit {
   public grandTotal!: number;
   public products: any = [];
   cartData: any[] = [];
+  getCartDetails: any[] = [];
+  total: number = 0;
+  cartNumber: number = 0;
+  
 
   constructor(
     private http: HttpClient,
@@ -27,17 +31,14 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.ProductsService.getProducts().subscribe((product: any) => {
       this.product = product.data;
-      // this.productList.forEach((a: any) => {
-      //   Object.assign(a, { quantity: 1, total: a.price });
-      // });
       console.log(product.data, "all products");
     });
-
-    this.cartService.productList.subscribe((products) => {
-      this.products = products;
-      console.log(this.products, 'why now');
-      this.grandTotal = this.cartService.getTotalPrice();
-    });
+    // this.cartService.productList.subscribe((products) => {
+    //   this.products = products;
+    //   console.log(this.products, 'why now');
+    //   this.grandTotal = this.cartService.getTotalPrice();
+    // });
+    this.loadCart();
   }
 
   deleteProducts() {
@@ -49,11 +50,7 @@ export class HomeComponent implements OnInit {
         });
     }
   }
-  // addtocart(product: any){
-  //   this.cartService.addtoCart(product);
-  //   console.table(this.product)
-  //   console.log(product.id)
-  // }
+
   itemsCart: any= [];
   addtocart(category: any) {
     console.log(category); // log the category object
@@ -85,9 +82,7 @@ export class HomeComponent implements OnInit {
         }
       }
       if (index == -1) {
-        // this.itemsCart.push(category);
        this.cartData.push(category);
-        // this.itemsCart.push({...category, quantity:  category.attributes.quantity});
         localStorage.setItem('localCart', JSON.stringify([...this.itemsCart, category]));
       } else {
         localStorage.setItem('localCart', JSON.stringify(this.itemsCart));
@@ -96,16 +91,10 @@ export class HomeComponent implements OnInit {
     this.cartNumberFunc();
   }
   
-  cartNumber:number = 0;
-  // cartNumberFunc(){
-  //   const cartData = localStorage.getItem('localCart');
-  //   this.cartNumber = cartData ? JSON.parse(cartData).length : 0;
-  //   this.cartService.addtoCart(this.product);
-  // }
-  
+  cartNumber1: number = 0;
   cartNumberFunc() {
     const cartData = localStorage.getItem('localCart');
-    this.cartNumber = cartData ? JSON.parse(cartData).reduce((total: any, item: any) => total + item.quantity, 0) : 0;
+    this.cartNumber1 = cartData ? JSON.parse(cartData).reduce((total: any, item: any) => total + item.quantity, 0) : 0;
     this.cartService.addtoCart(this.product);
   }
 
@@ -113,6 +102,116 @@ export class HomeComponent implements OnInit {
     localStorage.setItem('id', this.product[num].id);
     this.router.navigate(['/contact/view']);
   }
+
+
+
+
+///cart here 
+
+loadCart(): void {
+  const cartData = localStorage.getItem('localCart');
+  console.log(cartData,"me");
+
+if (cartData) {
+  this.getCartDetails = JSON.parse(cartData);
+  console.log(this.getCartDetails,"why");
+  this.total = this.getCartDetails.reduce((acc, val) => acc + (val.attributes?.price * val.attributes?.quantity), 0);
+  console.log(this.total)
+} else {
+  this.getCartDetails = [];
+  this.total = 0;
+}
+this.cartNumberFunc1();
+}
+
+cartNumberFunc1(): void {
+const cartData = localStorage.getItem('localCart');
+if (cartData) {
+  this.cartNumber = JSON.parse(cartData).length;
+} else {
+  this.cartNumber = 0;
+}
+this.cartService.addtoCart(this.cartNumber);
+}
+
+incQnt(prodId: number, qnt: number): void {
+for (let i = 0; i < this.getCartDetails.length; i++) {
+  if (this.getCartDetails[i].prodId === prodId) {
+    if (qnt < 5) {
+      this.getCartDetails[i].attributes.quantity = qnt + 1;
+      localStorage.setItem('localCart', JSON.stringify(this.getCartDetails));
+      this.loadCart();
+    }
+    break;
+  }
+}
+}
+
+decQnt(prodId: number, qnt: number): void {
+for (let i = 0; i < this.getCartDetails.length; i++) {
+  if (this.getCartDetails[i].prodId === prodId) {
+    if (qnt > 1) {
+      this.getCartDetails[i].attributes.quantity = qnt - 1;
+      localStorage.setItem('localCart', JSON.stringify(this.getCartDetails));
+      this.loadCart();
+    }
+    break;
+  }
+}
+}
+
+removeall(): void {
+localStorage.removeItem('localCart');
+this.getCartDetails = [];
+this.total = 0;
+this.cartNumber = 0;
+this.cartService.addtoCart(this.cartNumber);
+}
+
+singleDelete(getCartDetail: number): void {
+if (localStorage.getItem('localCart')) {
+  const localCart = localStorage.getItem('localCart');
+  if(localCart !== null) {
+    this.getCartDetails = JSON.parse(localCart);
+    for (let i = 0; i < this.getCartDetails.length; i++) {
+      if (this.getCartDetails[i].prodId === getCartDetail) {
+        this.getCartDetails.splice(i, 1);
+        localStorage.setItem('localCart', JSON.stringify(this.getCartDetails));
+        this.loadCart();
+        break;
+      }
+    }
+  }
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 function products(products: any) {
   throw new Error('Function not implemented.');

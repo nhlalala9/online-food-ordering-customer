@@ -230,7 +230,7 @@ cursor: pointer;
     font-weight: 600;
 }
 
-.label-cart{
+.label-cart a{
     position: fixed;
     margin-top: 15px;
     margin-right: 10px;
@@ -241,7 +241,7 @@ cursor: pointer;
     color: blue;
 }
 
-.label-cart > span:hover{
+.label-cart > a > span:hover{
     /* background-color: blue; */
     color: blue;
 
