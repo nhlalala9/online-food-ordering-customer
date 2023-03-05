@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { BookingHistoryComponent } from './Pages/booking-history/booking-history.component';
 import { CartComponent } from './Pages/cart/cart.component';
 import { DatePipe } from '@angular/common';
+import { CheckoutComponent } from './Pages/checkout/checkout.component';
 
 
 
@@ -39,6 +40,7 @@ import { DatePipe } from '@angular/common';
     ProductComponent,
     BookingHistoryComponent,
     CartComponent,
+    CheckoutComponent,
    
   ],
   imports: [
