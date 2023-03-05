@@ -8,8 +8,8 @@ import { CartService } from 'src/app/service/cart.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-qty:number=1;
-  public products : any = [];
+// qty:number=1;
+  // public products : any = [];
   public grandTotal !: number;
   constructor(private cartService : CartService) { }
   getCartDetails: any[] = [];
@@ -18,11 +18,12 @@ qty:number=1;
   
   ngOnInit(): void {
     this.loadCart();
+    console.log(this.getCartDetails,"show")
   }
   
   loadCart(): void {
     const cartData = localStorage.getItem('localCart');
-    console.table(cartData);
+    console.log(cartData,"me");
     
     if (cartData) {
       this.getCartDetails = JSON.parse(cartData);
@@ -47,8 +48,8 @@ qty:number=1;
   incQnt(prodId: number, qnt: number): void {
     for (let i = 0; i < this.getCartDetails.length; i++) {
       if (this.getCartDetails[i].prodId === prodId) {
-        if (this.qty < 5) {
-          this.getCartDetails[i].qty = this.qty + 1;
+        if (qnt < 5) {
+          this.getCartDetails[i].attributes.quantity = qnt + 1;
           localStorage.setItem('localCart', JSON.stringify(this.getCartDetails));
           this.loadCart();
         }
@@ -60,8 +61,8 @@ qty:number=1;
   decQnt(prodId: number, qnt: number): void {
     for (let i = 0; i < this.getCartDetails.length; i++) {
       if (this.getCartDetails[i].prodId === prodId) {
-        if (this.qty > 1) {
-          this.getCartDetails[i].qty = this.qty - 1;
+        if (qnt > 1) {
+          this.getCartDetails[i].attributes.quantity = qnt - 1;
           localStorage.setItem('localCart', JSON.stringify(this.getCartDetails));
           this.loadCart();
         }

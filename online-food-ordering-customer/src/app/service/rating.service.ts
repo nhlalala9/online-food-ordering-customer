@@ -15,10 +15,7 @@ export class RatingService {
   getRating(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/api/ratings?populate=*`);
   }
-  // getRating(productId: string): Observable<any[]> {
-  //   return this.http.get<any[]>(`${this.apiUrl}/api/ratings?populate=*`, { params: { product: productId } });
-  // }
-  
+
   
 
   getRatingById(id: any): Observable<any> {
