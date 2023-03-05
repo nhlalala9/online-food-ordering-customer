@@ -5,7 +5,7 @@ const appUrl = "http://localhost:1337/api"
 export const environment = {
   production: false,
   appUrl: `${appUrl}`,
-  apiUrl:'http://localhost:1337'
+  // apiUrl:'http://localhost:1337'
 };
 
 

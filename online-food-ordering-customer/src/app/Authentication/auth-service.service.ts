@@ -1,8 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import jwt_decode from 'jwt-decode';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -12,21 +13,33 @@ export class AuthServiceService {
   private apiUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
+
   login(email: string, password: string): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/auth/local`, { identifier: email, password: password })
       .pipe(
-        tap(response => {
-          // Save the token to local storage
-          localStorage.setItem('token', response.jwt);
-        })
+        catchError(this.handleError)
       );
   }
-
-
+  
+  register(username: string, email: string, password: string): Observable<any> {
+    const body = { username, email, password };
+    return this.http.post<any>(`${this.apiUrl}/auth/local/register`, body, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }).pipe(
+      catchError(this.handleError)
+    );
+  }
+  
+  private handleError(error: HttpErrorResponse): Observable<any> {
+    return throwError(error.error.message || 'Server error');
+  }
+  
   logout() {
-    // Remove the token from local storage
     localStorage.removeItem('token');
   }
+
   getToken() {
     return localStorage.getItem('token');
   }
@@ -46,10 +59,4 @@ export class AuthServiceService {
   isLoggedIn() {
     return this.getToken() !== null;
   }
-
-
 }
-function tap(arg0: (response: any) => void): import("rxjs").OperatorFunction<any, any> {
-  throw new Error('Function not implemented.');
-}
-
