@@ -10,7 +10,7 @@ import { CartService } from 'src/app/service/cart.service';
 export class CartComponent implements OnInit {
 // qty:number=1;
   // public products : any = [];
-  public grandTotal !: number;
+  public grandTotal: number = 0;
   constructor(private cartService : CartService) { }
   getCartDetails: any[] = [];
   total: number = 0;
@@ -24,10 +24,14 @@ export class CartComponent implements OnInit {
   loadCart(): void {
     const cartData = localStorage.getItem('localCart');
     console.log(cartData,"me");
+
+    
     
     if (cartData) {
       this.getCartDetails = JSON.parse(cartData);
-      this.total = this.getCartDetails.reduce((acc, val) => acc + (val.amt * val.qnt), 0);
+      console.log(this.getCartDetails,"why");
+      this.total = this.getCartDetails.reduce((acc, val) => acc + (val.attributes?.price * val.attributes?.quantity), 0);
+      console.log(this.total)
     } else {
       this.getCartDetails = [];
       this.total = 0;
