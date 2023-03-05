@@ -1,4 +1,4 @@
-<ng-container >
+<!-- <ng-container >
     <div class="container">
         <div class="card-table">
             <div class="cart-product">
@@ -24,12 +24,13 @@
                             <th style="width: 12%;">{{ item?.attributes?.price}}</th>
                             <td style="width: 12%;">
                                 <div class="content">
+                               <button type="button"class="btn"(click)="decQnt(item.prodId,item?.attributes?.quantity)">
+                                   <i class="fa fa-minus"></i>
+                                </button> 
+                                <span>{{item?.attributes?.quantity}}</span>
+                                
                                 <button type="button"class="btn"(click)="incQnt(item.prodId,item?.attributes?.quantity)">
                                     <i class="fa fa-plus"></i>
-                                </button>
-                                <span>{{item?.attributes?.quantity}}</span>
-                                <button type="button"class="btn"(click)="decQnt(item.prodId,item?.attributes?.quantity)">
-                                   <i class="fa fa-minus"></i>
                                 </button>
                             </div>
                         </td>
@@ -40,7 +41,7 @@
                         </tr>
                         <tr>
                             <td colspan="4"></td>
-                            <!-- <td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td> -->
+                           
                             <td><button routerLink="/products" class="btn btn-primary">Shop More</button></td>
                             <td><button class="btn btn-success">Checkout</button></td>
                             <td><strong>Grand Total : R {{total}}</strong></td>
@@ -50,19 +51,296 @@
             </div>
         </div>
     </div>
-</ng-container>
-
-
-<!-- <ng-container *ngIf="products.length ==0">
-    <div class="container">
-        <div class="card">
-            <h5 class="card-title">My Cart</h5>
-        </div>
-        <div class="center">
-            <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
-            <h4>Your cart is empty!</h4>
-            <h6>Add item to it now</h6>
-            <button routerLink="/products" class="btn btn-primary">Shop Now</button>
-        </div>
-    </div>
 </ng-container> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-xl-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-xl-8">
+              <div class="basci-bx mb-3">
+                <div class="basci-title"><h4>Your basic information</h4></div>
+                <div class="row">
+                  <div class="col-xl-6">
+                    <form>
+                      <div class="mb-3">
+                        <input
+                          type="Text"
+                          class="form-control"
+                          placeholder="First Name"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-xl-6">
+                    <form>
+                      <div class="mb-3">
+                        <input
+                          type="Text"
+                          class="form-control"
+                          placeholder="Phone Number"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-xl-12">
+                    <div class="mb-3">
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder="Email Address"
+                      />
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+              <div class="Billing-bx mb-3">
+                <div class="billing-title"><h4>Billing address</h4></div>
+                <div class="row">
+                  <div class="col-xl-12">
+                    <div class="mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter your Address"
+                      />
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="payment-bx mb-3">
+                <div class="payment-title">
+                  <h4>Your payment information</h4>
+                </div>
+                <div class="row">
+                  <div class="col-xl-12">
+                    <div class="mb-3">
+                      <input
+                        type="number"
+                        class="form-control"
+                        placeholder="Enter a card no."
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xl-4">
+                    <div
+                      class="custom-react-select mb-xl-0 mb-3 css-b62m3t-container"
+                    >
+                      <span
+                        id="react-select-41-live-region"
+                        class="css-7pg0cj-a11yText"
+                      ></span
+                      ><span
+                        aria-live="polite"
+                        aria-atomic="false"
+                        aria-relevant="additions text"
+                        class="css-7pg0cj-a11yText"
+                      ></span>
+                      <div class="css-13cymwt-control">
+                        <div class="css-hlgwow">
+                          <div class="css-1dimb5e-singleValue">Month</div>
+                          <input
+                            id="react-select-41-input"
+                            tabindex="0"
+                            inputmode="none"
+                            aria-autocomplete="list"
+                            aria-expanded="false"
+                            aria-haspopup="true"
+                            role="combobox"
+                            aria-readonly="true"
+                            class="css-1hac4vs-dummyInput"
+                            value=""
+                          />
+                        </div>
+                        <div class="css-1wy0on6">
+                          <span class="css-1u9des2-indicatorSeparator"></span>
+                          <div
+                            class="css-1xc3v61-indicatorContainer"
+                            aria-hidden="true"
+                          >
+                            <svg
+                              height="20"
+                              width="20"
+                              viewBox="0 0 20 20"
+                              aria-hidden="true"
+                              focusable="false"
+                              class="css-8mmkcg"
+                            >
+                              <path
+                                d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                              ></path>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-4">
+                    <div
+                      class="custom-react-select mb-xl-0 mb-3 css-b62m3t-container"
+                    >
+                      <span
+                        id="react-select-42-live-region"
+                        class="css-7pg0cj-a11yText"
+                      ></span
+                      ><span
+                        aria-live="polite"
+                        aria-atomic="false"
+                        aria-relevant="additions text"
+                        class="css-7pg0cj-a11yText"
+                      ></span>
+                      <div class="css-13cymwt-control">
+                        <div class="css-hlgwow">
+                          <div class="css-1dimb5e-singleValue">1997</div>
+                          <input
+                            id="react-select-42-input"
+                            tabindex="0"
+                            inputmode="none"
+                            aria-autocomplete="list"
+                            aria-expanded="false"
+                            aria-haspopup="true"
+                            role="combobox"
+                            aria-readonly="true"
+                            class="css-1hac4vs-dummyInput"
+                            value=""
+                          />
+                        </div>
+                        <div class="css-1wy0on6">
+                          <span class="css-1u9des2-indicatorSeparator"></span>
+                          <div
+                            class="css-1xc3v61-indicatorContainer"
+                            aria-hidden="true"
+                          >
+                            <svg
+                              height="20"
+                              width="20"
+                              viewBox="0 0 20 20"
+                              aria-hidden="true"
+                              focusable="false"
+                              class="css-8mmkcg"
+                            >
+                              <path
+                                d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                              ></path>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-4">
+                    <div class="input-group mb-3">
+                      <input
+                        type="number"
+                        class="form-control"
+                        placeholder="cvv"
+                      /><span class="input-group-text" id="basic-addon2"
+                        ><i class="fa-solid fa-credit-card"></i
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 toka">
+              <div class="row">
+                <div class="col-xl-12">
+                  <div class="card dlab-bg dlab-position">
+                    <div class="card-header border-0 pb-0">
+                      <h4 class="cate-title">Your Cart</h4>
+                    </div>
+            
+                    <div class="bb-border">
+                      <p class="font-w500 text-primary fs-15 mb-2">Your Address</p>
+                      <div class="d-flex align-items-center justify-content-between mb-2">
+                        <h4 class="mb-0">
+                          <i class="fa-solid fa-street-view"></i> Elm Street, 23
+                        </h4>
+                        <a
+                          class="btn btn-outline-primary btn-sm change"
+                          href="/react/demo/dashboard-dark"
+                          >Change</a
+                        >
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor
+                        incididunt.
+                      </p>
+                      <div class="d-flex">
+                        <button type="button" class="btn btn-primary">Add Details</button
+                        ><button type="button" class="btn btn-primary ms-2">
+                          Add Note
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="order-check d-flex align-items-center my-3"
+                      *ngFor="let item of getCartDetails; let i = index"
+                    >
+                      <div class="dlab-media">
+                        <img
+                          src="{{ item?.attributes?.Picture?.data?.attributes?.url }}"
+                          alt=""
+                        />
+                      </div>
+                      <div class="dlab-info">
+                        <div class="d-flex align-items-center justify-content-between">
+                          <h4 class="dlab-title">
+                            <a href="/react/demo/dashboard-dark">
+                              {{ item?.attributes?.name }}</a
+                            >
+                          </h4>
+                          <h4 class="text-primary ms-2">
+                            R
+                            {{
+                              item?.attributes?.quantity * item?.attributes?.price | number
+                            }}
+                          </h4>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                          <span
+                            >R {{ item?.attributes?.price }} x
+                            {{ item?.attributes?.quantity }}</span
+                          >
+                          <div class="quntity">
+                            <button
+                              (click)="decQnt(item.prodId, item?.attributes?.quantity)"
+                            >
+                              <i class="fa fa-minus"></i></button
+                            ><input
+                              data-value="true"
+                              type="text"
+                              value="{{ item?.attributes?.quantity }}"
+                            /><button
+                              (click)="incQnt(item.prodId, item?.attributes?.quantity)"
+                            >
+                              <i class="fa fa-plus"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="my-2 text-primary" style="opacity: 0.9" />
+                    <div class="card-footer pt-0 border-0">
+                      <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h4 class="font-w500">Total</h4>
+                        <h3 class="font-w500 text-primary">R {{ total }}</h3>
+                      </div>
+                      <a class="btn btn-primary btn-block" href="/react/demo/checkout"
+                        >Checkout</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
