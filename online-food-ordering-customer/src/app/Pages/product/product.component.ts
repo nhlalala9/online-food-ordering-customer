@@ -26,21 +26,9 @@ export class ProductComponent implements OnInit {
   // Date = new Date();
 
   constructor(private productsService: ProductsService, private route: ActivatedRoute, private ratings: RatingService,private datePipe: DatePipe,private cartService : CartService) { }
-  
 
-  // ngOnInit() {
-  //   const id = this.route.snapshot.paramMap.get('id');
-  //   this.productsService.getById(id).subscribe(
-  //     response => {
-  //       this.product = response.data;
- 
-  //       console.log(this.product,"ora see")
-    
-  //     },
-  //     error => {
-  //       console.log(error);
-  //     }
-  //   );
+
+
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -48,12 +36,12 @@ export class ProductComponent implements OnInit {
       this.productsService.getById(id).subscribe(product => {
         this.product = product.data;
         console.log(this.product.id,"hiiii")
-       
+
       });
     });
 
-  
 
+    // this.product.ratings = {};
     this.ratings.getRating().subscribe((products: any) =>{
       this.rati = products.data;
       console.log(this.rati,"rating")
@@ -61,37 +49,60 @@ export class ProductComponent implements OnInit {
   }
 
 
-//   onSubmit() {
-// console.log(this.formData)
-// const ratingData = {
-//   name: this.formData.name,
-//   date: this.formData.date,
-//   comment: this.formData.comment,
-//   rate: this.formData.rate,
-//   product: this.product.id
-  
-// };
-// console.log(this.product.id,"id")
+
+// onSubmit() {
+//   this.productsService.getById(this.product.id).subscribe(one => {
+//     console.log(this.product.id,"bbb")
+//     const ratingData = {
+//       name: this.formData.name,
+//       date: this.formData.date,
+//       comment: this.formData.comment,
+//       rate: this.formData.rate,
+//       product: this.product.id
+//     };
+// console.log(one.id,"lets seeee you bitch")
 //     this.ratings.createRating(ratingData).subscribe(response => {
 //       console.log(response);
+//       this.product.ratings.data.push(response.data);
+//       console.log(response.data,"why")
 //     });
-//   }
+//   });
+// }
 onSubmit() {
-  this.productsService.getById(this.product.id).subscribe(product => {
-    console.log(this.product.id,"bbb")
-    const ratingData = {
-      name: this.formData.name,
-      date: this.formData.date,
-      comment: this.formData.comment,
-      rate: this.formData.rate,
-      product: product
-    };
-console.log(this.product,"lets seeee you bitch")
-    this.ratings.createRating(ratingData).subscribe(response => {
-      console.log(response);
-    });
-  });
+  this.productsService.getById(this.product.id).subscribe(
+    (one: any) => {
+      console.log(this.product.id, "bbb");
+      const ratingData = {
+        name: this.formData.name,
+        date: new Date(),
+        comment: this.formData.comment,
+        rate: this.formData.rate,
+        product: this.product.id,
+      };
+      console.log(one.id, "lets seeee you bitch");
+
+      this.ratings.createRating(ratingData).subscribe(
+        (response: any) => {
+          console.log(response);
+          if (this.product.ratings && this.product.ratings.data && Array.isArray(this.product.ratings.data)) {
+            this.product.ratings.data.push(response.data.id);
+          } else {
+            this.product.ratings = {
+              data: [response.data],
+            };
+          }
+        },
+        (error: any) => {
+          console.error(error);
+        }
+      );
+    },
+    (error: any) => {
+      console.error(error);
+    }
+  );
 }
+
 
   formData = {
     name: "Oratile",

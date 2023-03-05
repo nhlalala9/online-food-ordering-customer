@@ -59,13 +59,13 @@
             </div>
             <div class="recent-review d-flex align-items-center">
               <img
-              [srcset]="rating?.attributes?.Picture?.data?.attributes?.url"
+              [srcset]="product?.attributes?.Picture?.data?.attributes?.url"
               src="https://www.jennycancook.com/wp-content/uploads/2014/08/comingsoon.jpg"
                 alt=""
                 class="img1"
               />
               <div>
-                <h4 class="font-w500 mb-0">Fish Burger</h4>
+                <h4 class="font-w500 mb-0">{{ rating?.attributes?.product?.data?.attributes?.name }}</h4>
                 <ul class="d-flex mb-2">
                   <li>
                     {{rating.attributes?.rate}} <svg
