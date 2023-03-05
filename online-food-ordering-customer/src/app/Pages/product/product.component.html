@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container m">
   <img
-    [src]="product?.data?.attributes?.Picture?.data?.attributes?.url"
+    [src]="product?.attributes?.Picture?.data?.attributes?.url"
     alt=""
     class="img"
   />
@@ -8,14 +8,14 @@
   <div class="details">
     <div class="header">
       <span class="name">
-        {{ product?.data?.attributes?.name }}
+        {{ product?.attributes?.name }}
       </span>
       <span class="favorite"> ♡ </span>
     </div>
     <div class="star"></div>
     <div class="origins">
       <span>
-        {{ product?.data?.attributes?.description }}
+        {{ product?.attributes?.description }}
       </span>
     </div>
     <div class="tag">
@@ -28,129 +28,110 @@
     </div>
     <div class="price">
       <span>
-        {{ product?.data?.attributes?.price }}
+        {{ product?.attributes?.price }}
       </span>
     </div>
     <!-- <button (click)="addToCart()" >Add to Cart</button> -->
-    <button>Add to Cart</button>
+    <button (click)=addtocart(product)>Add to Cart</button>
   </div>
 </div>
-<div *ngFor="let rating of rati"
-role="tabpanel"
-id="react-aria5257160692-4-tabpane-Grid"
-aria-labelledby="react-aria5257160692-4-tab-Grid"
-class="fade tab-pane active show"
->
+
+
 <div class="row">
-  <div class="col-xl-3 col-xxl-4 col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <div
-          class="restro-review d-flex align-items-center border-bottom mb-4 pb-4"
-        >
-          <img
-          [srcset]="rating?.attributes?.Picture?.data?.attributes?.url"
-          src="https://upload.wikimedia.org/wikipedia/commons/4/48/Outdoors-man-portrait_%28cropped%29.jpg"
-            alt=""
-            class="img1"
-          />
-          <div>
-            <h4 class="font-w500">{{rating.attributes?.name}}</h4>
-            <span>User since 2020</span>
+  <div class="col">
+    <div class="row row m">
+      <div class="col-3 col-xxl-3 col-sm-3 ml-4"*ngFor="let rating of rati">
+        <div class="card">
+          <div class="card-body">
+            <div
+              class="restro-review d-flex align-items-center border-bottom mb-4 pb-4"
+            >
+              <img
+              [srcset]="rating?.attributes?.Picture?.data?.attributes?.url"
+              src="https://upload.wikimedia.org/wikipedia/commons/4/48/Outdoors-man-portrait_%28cropped%29.jpg"
+                alt=""
+                class="img1"
+              />
+              <div>
+                <h4 class="font-w500">{{rating.attributes?.name}}</h4>
+                <span>{{rating.attributes?.date}}</span>
+              </div>
+            </div>
+            <div class="recent-review d-flex align-items-center">
+              <img
+              [srcset]="product?.attributes?.Picture?.data?.attributes?.url"
+              src="https://www.jennycancook.com/wp-content/uploads/2014/08/comingsoon.jpg"
+                alt=""
+                class="img1"
+              />
+              <div>
+                <h4 class="font-w500 mb-0">{{ rating?.attributes?.product?.data?.attributes?.name }}</h4>
+                <ul class="d-flex mb-2">
+                  <li>
+                    {{rating.attributes?.rate}} <svg
+                      width="16"
+                      height="15"
+                      viewBox="0 0 16 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 0.500031L9.79611 6.02789H15.6085L10.9062 9.4443L12.7023 14.9722L8 11.5558L3.29772 14.9722L5.09383 9.4443L0.391548 6.02789H6.20389L8 0.500031Z"
+                        fill="#FC8019"
+                      ></path>
+                    </svg>
+                  </li>
+                  
+                </ul>
+              </div>
+            </div>
+            <p>
+             {{rating.attributes?.comment}}
+            </p>
+            <!-- <div><h6 class="font-w400">{{rating.attributes?.date}}</h6></div> -->
           </div>
         </div>
-        <div class="recent-review d-flex align-items-center">
-          <img
-          [srcset]="rating?.attributes?.Picture?.data?.attributes?.url"
-          src="https://www.jennycancook.com/wp-content/uploads/2014/08/comingsoon.jpg"
-            alt=""
-            class="img1"
-          />
-          <div>
-            <h4 class="font-w500 mb-0">Fish Burger</h4>
-            <ul class="d-flex mb-2">
-              <li>
-                {{rating.attributes?.rate}} <svg
-                  width="16"
-                  height="15"
-                  viewBox="0 0 16 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 0.500031L9.79611 6.02789H15.6085L10.9062 9.4443L12.7023 14.9722L8 11.5558L3.29772 14.9722L5.09383 9.4443L0.391548 6.02789H6.20389L8 0.500031Z"
-                    fill="#FC8019"
-                  ></path>
-                </svg>
-              </li>
-              <!-- <li>
-                <svg
-                  width="16"
-                  height="15"
-                  viewBox="0 0 16 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 0.500031L9.79611 6.02789H15.6085L10.9062 9.4443L12.7023 14.9722L8 11.5558L3.29772 14.9722L5.09383 9.4443L0.391548 6.02789H6.20389L8 0.500031Z"
-                    fill="#FC8019"
-                  ></path>
-                </svg>
-              </li>
-              <li>
-                <svg
-                  width="16"
-                  height="15"
-                  viewBox="0 0 16 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 0.500031L9.79611 6.02789H15.6085L10.9062 9.4443L12.7023 14.9722L8 11.5558L3.29772 14.9722L5.09383 9.4443L0.391548 6.02789H6.20389L8 0.500031Z"
-                    fill="#FC8019"
-                  ></path>
-                </svg>
-              </li>
-              <li>
-                <svg
-                  width="16"
-                  height="15"
-                  viewBox="0 0 16 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 0.500031L9.79611 6.02789H15.6085L10.9062 9.4443L12.7023 14.9722L8 11.5558L3.29772 14.9722L5.09383 9.4443L0.391548 6.02789H6.20389L8 0.500031Z"
-                    fill="#FC8019"
-                  ></path>
-                </svg>
-              </li>
-              <li>
-                <svg
-                  width="16"
-                  height="15"
-                  viewBox="0 0 16 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 0.500031L9.79611 6.02789H15.6085L10.9062 9.4443L12.7023 14.9722L8 11.5558L3.29772 14.9722L5.09383 9.4443L0.391548 6.02789H6.20389L8 0.500031Z"
-                    fill="#FC8019"
-                  ></path>
-                </svg>
-              </li> -->
-            </ul>
-          </div>
-        </div>
-        <p>
-         {{rating.attributes?.comment}}
-        </p>
-        <div><h6 class="font-w400">{{rating.attributes?.date}}</h6></div>
+      </div>
+      <div class="col col-lg-2">
+        
       </div>
     </div>
   </div>
+  
+  <div class="col col-lg-2 mr">
+    <div class="styles.container">
+      <form (ngSubmit)="onSubmit()">
+      <!-- <h2> React Ratings </h2> -->
+      <div class="stars">
+        <ng-container *ngFor="let i of stars">
+          <i
+            class="fa-sharp fa-solid fa-star"
+            (click)="updateRating(i)"
+            [ngClass]="{ active: i <= rating }"
+          ></i>
+        </ng-container>
+      </div>
+      <textarea name="comment" [(ngModel)]="formData.comment"
+      
+            class="form-control"
+            placeholder="Leave a comment here"
+            id="floatingTextarea2"
+            style="height: 100px"
+          ></textarea>
+    
+      <button
+      type="submit"
+        class="button"
+      click="submit()">
+        Submit
+      </button>
+      </form>
+    </div>
+    </div>
 </div>
-</div>
+
+
+
 
 <div class="container">
   <!-- <div class="row d-flex" *ngFor="let rating of rati">
@@ -181,34 +162,7 @@ class="fade tab-pane active show"
     </div>
   </div> -->
 
-  <div class="container">
-    <form (ngSubmit)="onSubmit()">
-    <h2> React Ratings </h2>
-    <div class="stars">
-      <ng-container *ngFor="let i of stars">
-        <i
-          class="fa-sharp fa-solid fa-star"
-          (click)="updateRating(i)"
-          [ngClass]="{ active: i <= rating }"
-        ></i>
-      </ng-container>
-    </div>
-    <textarea name="comment" [(ngModel)]="formData.comment"
-    
-          class="form-control"
-          placeholder="Leave a comment here"
-          id="floatingTextarea2"
-          style="height: 100px"
-        ></textarea>
-
-    <button
-    type="submit"
-      class="button"
-    click="submit()">
-      Submit
-    </button>
-    </form>
-  </div>
+ 
 
 
 

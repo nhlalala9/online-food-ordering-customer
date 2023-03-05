@@ -1,6 +1,6 @@
 <input type="checkbox" id="cart">
 <label for="cart" class="label-cart">
-    <span class="fa-solid fa-cart-shopping"></span>
+    <span class="fa-solid fa-cart-shopping">{{products.length}}</span>
 </label>
 <!-- <i class="fa-regular fa-circle fa-stack-2x"></i> -->
 
@@ -21,32 +21,82 @@
         <a href="#" >Specials</a>
         <a href="#" >Specials</a>
     </div>
-    <div class="row d-flex justify-content-between">
-    <div class="d-flex justify-content-center  dashboard-content"  *ngFor="let product of products">
-        <!-- <a routerLink="/food">   -->
+
+  <div class="row">
+    <div class="col-xl-4 col-xxl-4 col-sm-6" *ngFor="let item of product">
+      <div class="card dishe-bx b-hover style-1">
+        <i class="fa-solid fa-heart ms-auto c-heart c-pointer"></i>
+       <a href="customer/food/{{item.id}}">
+        <div class="card-body pb-0 pt-3">
+          <div class="text-center mb-2">
+            <img [srcset]="item?.attributes?.Picture?.data?.attributes?.url"
+            src="https://www.jennycancook.com/wp-content/uploads/2014/08/comingsoon.jpg"
+              alt=""
+            />
+          </div>
+          <div class="border-bottom pb-3">
+            <h4 class="font-w500 mb-1">{{item?.attributes?.name}}</h4>
+            <div class="d-flex align-items-center">
+              <svg
+                width="16"
+                height="15"
+                viewBox="0 0 16 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 0.500031L9.79611 6.02789H15.6085L10.9062 9.4443L12.7023 14.9722L8 11.5558L3.29772 14.9722L5.09383 9.4443L0.391548 6.02789H6.20389L8 0.500031Z"
+                  fill="#FC8019"
+                ></path>
+              </svg>
+              <p class="font-w500 mb-0 px-2">5.0</p>
+            </div> <div>
+              <p class="font-w500 mb-0" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;" >{{item?.attributes?.description}}</p>
+            </div>
+          </div>
+        </div>
+    </a>
+        <div class="card-footer border-0 pt-2">
+          <div class="common d-flex align-items-center justify-content-between">
+            <div>
+              <!-- <a href="/react/demo/favorite-menu">
+                <h4>Mushroom Burger</h4>
+              </a> -->
+              <h3 class="mb-0 text-primary">R {{item?.attributes?.price}}</h3>
+            </div>
+            <div (click)=addtocart(item) class="plus c-pointer">
+              <div class="sub-bx"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+    <!-- <div class="row d-flex justify-content-between">
+    <div class="d-flex justify-content-center  dashboard-content"  *ngFor="let item of product">
+        <a routerLink="/food">  
         <div class="dashboard-card" style="width: 25rem;" >
-            <a routerLink="/customer/food/{{product.id}}">
-            <img [srcset]="product?.attributes?.Picture?.data?.attributes?.url"
+            <a >
+            <img [srcset]="item?.attributes?.Picture?.data?.attributes?.url"
             src="https://www.jennycancook.com/wp-content/uploads/2014/08/comingsoon.jpg" alt="" class="card-image" style="height:15rem;">
             
             <div class="card-detail">
-                <h4 style="color: black">{{product?.attributes?.name}}<span> R {{product?.attributes?.price}}</span>
+                <h4 style="color: black">{{item?.attributes?.name}}<span> R {{product?.attributes?.price}}</span>
                 </h4>
-                <!-- <p style="height:8rem;">{{product?.attributes?.description}}</p> -->
-                
-                    <!-- <p class="card-time"><span></span></p> -->
-                    <!-- <i class="lar la-star"></i> -->
+               
                     <i class="fa-sharp fa-solid fa-star"></i>
                     <i class="fa-sharp fa-solid fa-star"></i>
                     <i class="fa-sharp fa-solid fa-star"></i>
+                    <button (click)=addtocart(item)>Add to Cart</button>
 
 
 
             </div>
         </a>
-        </div>
+        </div> </a>
     </div>
-        <!-- </a> -->
+       
+        
 
         
 
@@ -57,7 +107,7 @@
         
     
         
-    </div>
+    </div> -->
 </div>
 
 <div class="dashboard-order">
@@ -75,30 +125,23 @@
     </span>
 </div>
 
-<div class="order-wrapper">
-    <div class="order-card">
-        <img src="../../../assets/banner.png " alt="" class="order-image">
+<div class="order-wrapper" >
+    <div class="order-card"*ngFor="let item of products; let i = index">
+        <img [srcset]="item?.attributes?.Picture?.data?.attributes?.url"
+        src="https://www.jennycancook.com/wp-content/uploads/2014/08/comingsoon.jpg" alt="" class="order-image">
         <div class="order-detail">
-            <p>Lorem ipsum dolor sit amet</p>
+            <p>{{item?.attributes?.name}}</p>
        <i class="fas fa-times"></i>
-       <input type="text" value="1">
+       <input type="text" value="{{item.quantity}}">
         </div>
-        <h4 class="order-price"> R 35 </h4>
+        <h4 class="order-price">{{item?.attributes?.price}} </h4>
     </div>
-    <div class="order-card">
-        <img src="../../../assets/banner.png " alt="" class="order-image">
-        <div class="order-detail">
-            <p>Lorem ipsum dolor sit amet </p>
-       <i class="fas fa-times"></i>
-       <input type="text" value="2">
-        </div>
-        <h4 class="order-price"> R 35 </h4>
-    </div>
+   
 </div>
 
 <hr class="divider"> 
 <div class="order-total">
-    <p>Subtotal <span>R345</span></p>
+    <p>Subtotal <span>{{grandTotal}}</span></p>
     <p>Tax <span>R345</span></p>
     <p>Delivery <span>R345</span></p>
 

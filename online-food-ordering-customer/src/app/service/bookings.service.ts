@@ -8,7 +8,9 @@ import { Observable } from 'rxjs';
 })
 export class BookingsService {
   apiUrl = 'http://localhost:1337';
-  username="Oratile Mabote "
+  // username="Oratile Mabote "
+  public username = localStorage.getItem('s_username');
+  
   constructor(private http: HttpClient) { }
 
   postFormData(formData: any): Observable<any> {
