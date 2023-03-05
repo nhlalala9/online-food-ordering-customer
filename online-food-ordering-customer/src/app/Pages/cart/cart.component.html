@@ -24,16 +24,16 @@
                             <th style="width: 12%;">{{ item?.attributes?.price}}</th>
                             <td style="width: 12%;">
                                 <div class="content">
-                                <button type="button"class="btn"(click)="incQnt(item.prodId,item.qnt)">
+                                <button type="button"class="btn"(click)="incQnt(item.prodId,item?.attributes?.quantity)">
                                     <i class="fa fa-plus"></i>
                                 </button>
-                                <span>{{qty}}</span>
-                                <button type="button"class="btn"(click)="decQnt(item.prodId,item.qnt)">
+                                <span>{{item?.attributes?.quantity}}</span>
+                                <button type="button"class="btn"(click)="decQnt(item.prodId,item?.attributes?.quantity)">
                                    <i class="fa fa-minus"></i>
                                 </button>
                             </div>
                         </td>
-                            <td style="width: 12%;">{{2 * item?.attributes?.price | number}}</td>
+                            <td style="width: 12%;">{{item?.attributes?.quantity * item?.attributes?.price | number}}</td>
                             <td>
                                 <button (click)="singleDelete(item.prodId)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                             </td>
