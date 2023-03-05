@@ -15,10 +15,13 @@ import { BookingComponent } from './Pages/booking/booking.component';
 import { ProductComponent } from './Pages/product/product.component';
 import { FormsModule } from '@angular/forms';
 import { BookingHistoryComponent } from './Pages/booking-history/booking-history.component';
+import { CartComponent } from './Pages/cart/cart.component';
 import { DatePipe } from '@angular/common';
 
 
+
 // import {MatToolbarModule} from '@angular/material/toolbar'
+
 
 
 
@@ -35,6 +38,7 @@ import { DatePipe } from '@angular/common';
     BookingComponent,
     ProductComponent,
     BookingHistoryComponent,
+    CartComponent,
    
   ],
   imports: [

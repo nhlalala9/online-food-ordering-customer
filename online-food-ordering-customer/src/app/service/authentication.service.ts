@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
     import { environment } from 'src/environments/environment';
     import { User } from '../models/user';
     import { StorageService } from './storage.service';
+    import jwtDecode from 'jwt-decode';
     
     interface AuthResponse {
       jwt: string;
@@ -44,12 +45,22 @@ import { HttpClient } from '@angular/common/http';
         this.loginTracker.next(true);
       }
     
-      getPersistedUser(): User {
-        return {
-          id: this.ss.getItem('userId') || '',
-          username: this.ss.getItem('username') || '',
-          email: this.ss.getItem('userEmail') || ''
-        };
+      // getPersistedUser(): User {
+      //   return {
+      //     id: this.ss.getItem('userId') || '',
+      //     username: this.ss.getItem('username') || '',
+      //     email: this.ss.getItem('userEmail') || ''
+      //   };
+      // }
+      getPersistedUser(): User | null{
+        const token = this.getPersistedToken();
+        if (!token) {
+          return null; // return null if token doesn't exist
+        }
+      
+        const decodedToken = jwtDecode<{ user: User }>(token); console.log(decodedToken, "token")
+        return decodedToken.user;
+       
       }
     
       getPersistedToken(): string {

@@ -13,21 +13,26 @@ export class RatingService {
 
 
   getRating(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/api/ratings`);
+    return this.http.get<any[]>(`${this.apiUrl}/api/ratings?populate=*`);
   }
+  // getRating(productId: string): Observable<any[]> {
+  //   return this.http.get<any[]>(`${this.apiUrl}/api/ratings?populate=*`, { params: { product: productId } });
+  // }
+  
+  
 
   getRatingById(id: any): Observable<any> {
     const url = `${this.apiUrl}/api/products/${id}?populate=*`;
     return this.http.get<any>(url);
   }
-  createRating(product: any): Observable<any> {
+  createRating(rating: any): Observable<any> {
     let data = {data:{
-      comment: product.comment,
-      date: product.data,
-      name: product.name,
-      rate: product.rate
+      comment: rating.comment,
+      date: rating.date,
+      name: rating.name,
+      rate: rating.rate,
+      product: rating.product
     }}
     return this.http.post<any>(`${this.apiUrl}/api/ratings`, data);
   }
-
 }
