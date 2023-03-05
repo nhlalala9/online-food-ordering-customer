@@ -4,6 +4,7 @@ import { ProductsService } from 'src/app/service/products.service';
 import { RatingService } from 'src/app/service/rating.service';
 import { CartService } from 'src/app/service/cart.service';
 import { DatePipe } from '@angular/common';
+import { AuthenticationService } from 'src/app/service/authentication.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-
+public username = localStorage.getItem('s_username');
   product: any;
   why='';
   router: any;
@@ -25,7 +26,7 @@ export class ProductComponent implements OnInit {
  rati: any[] = []
   // Date = new Date();
 
-  constructor(private productsService: ProductsService, private route: ActivatedRoute, private ratings: RatingService,private datePipe: DatePipe,private cartService : CartService) { }
+  constructor(private productsService: ProductsService, private ss: AuthenticationService, private route: ActivatedRoute, private ratings: RatingService,private datePipe: DatePipe,private cartService : CartService) { }
 
 
 
@@ -39,10 +40,12 @@ export class ProductComponent implements OnInit {
 
       });
     });
-
+    // const username = localStorage.getItem('s_username');
+    // console.log(username,"user")
 
     // this.product.ratings = {};
     this.ratings.getRating().subscribe((products: any) =>{
+      
       this.rati = products.data;
       console.log(this.rati,"rating")
     })
@@ -50,24 +53,6 @@ export class ProductComponent implements OnInit {
 
 
 
-// onSubmit() {
-//   this.productsService.getById(this.product.id).subscribe(one => {
-//     console.log(this.product.id,"bbb")
-//     const ratingData = {
-//       name: this.formData.name,
-//       date: this.formData.date,
-//       comment: this.formData.comment,
-//       rate: this.formData.rate,
-//       product: this.product.id
-//     };
-// console.log(one.id,"lets seeee you bitch")
-//     this.ratings.createRating(ratingData).subscribe(response => {
-//       console.log(response);
-//       this.product.ratings.data.push(response.data);
-//       console.log(response.data,"why")
-//     });
-//   });
-// }
 onSubmit() {
   this.productsService.getById(this.product.id).subscribe(
     (one: any) => {
@@ -84,8 +69,8 @@ onSubmit() {
       this.ratings.createRating(ratingData).subscribe(
         (response: any) => {
           console.log(response);
-          if (this.product.ratings && this.product.ratings.data && Array.isArray(this.product.ratings.data)) {
-            this.product.ratings.data.push(response.data.id);
+          if (this.product.ratings && this.product.ratings.data) {
+            this.product.ratings.data.push(response.data);
           } else {
             this.product.ratings = {
               data: [response.data],
@@ -105,7 +90,7 @@ onSubmit() {
 
 
   formData = {
-    name: "Oratile",
+    name: this.username,
     date: " ",
     comment: "",
     rate: 0
@@ -119,6 +104,8 @@ onSubmit() {
     this.formattedDate = this.datePipe.transform(this.currentDate, 'dd/MM/yyyy');
     this.formData.date = this.formattedDate ?? ''
     this.formData.rate = this.rating;
+    this.formData.name = this.username
+    console.log(this.username,"user")
     return this.rating
   }
 ;

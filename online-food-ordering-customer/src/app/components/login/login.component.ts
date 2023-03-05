@@ -24,8 +24,8 @@ export class LoginComponent implements OnDestroy {
 
 
 
-  email= '';
-  password= '';
+  // email= '';
+  // password= '';
 
   private loginSub: Subscription | undefined;
   constructor(
