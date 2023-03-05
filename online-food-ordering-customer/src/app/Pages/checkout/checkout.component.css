@@ -1,0 +1,126 @@
+
+.form-control {
+    background: #fff;
+    border-color: #b3b3b3;
+    border-radius: 0.5rem;
+    color: #6e6e6e;
+    font-size: 1rem;
+    height: 3rem;
+    line-height: 1.4;
+    padding: 0.375rem 1rem;
+}
+
+.card {
+    /* background-color: initial; */
+    /* border: 0 solid transparent; */
+    border: 1px solid rgba(0,0,0,.3);
+    border-radius: 0.5rem;
+    box-shadow: none;
+    height: calc(100% - 30px);
+    margin-bottom: 1.875rem;
+    position: relative;
+    transition: all .5s ease-in-out;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center ;
+    /* background-color: whitesmoke; */
+}
+
+.card {
+    word-wrap: break-word;
+    /* background-clip: initial; */
+    /* background-color: #fff; */
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+.card-header:first-child {
+    border-radius: calc(0.75rem - 1px) calc(0.75rem - 1px) 0 0;
+}
+
+.card-header {
+    align-items: center;
+    background: transparent;
+    border-color: #dbdbdb;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 1.875rem 1.25rem;
+    position: relative;
+}
+.py-3 {
+    padding-bottom: 1rem!important;
+    padding-top: 1rem!important;
+}
+.card-header {
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    margin-bottom: 0;
+    padding: 0.5rem 1rem;
+}
+
+.badge-primary {
+    background-color: #fc8019;
+    background-color: var(--primary);
+}
+
+.badge {
+    border: 0.0625rem solid transparent;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    line-height: 1.5;
+    padding: 0.25rem 0.625rem;
+}
+.c-pointer {
+    cursor: pointer;
+}
+.me-2 {
+    margin-right: 0.5rem!important;
+}
+.badge {
+    border-radius: 0.75rem;
+    color: #fff;
+    display: inline-block;
+    font-size: .75em;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0.35em 0.65em;
+    text-align: center;
+    vertical-align: initial;
+    white-space: nowrap;
+
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.btn-primary {
+    color: white;
+}
+
+button {
+    cursor: pointer;
+}
+[type=button], [type=reset], [type=submit], button {
+    -webkit-appearance: button;
+}
+button, select {
+    text-transform: none;
+}
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+}
+button {
+    border-radius: 10px;
+}
+

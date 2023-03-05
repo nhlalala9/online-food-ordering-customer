@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 // import { Console } from 'console';
 import { CartService } from 'src/app/service/cart.service';
-
+import { HttpClient } from '@angular/common/http';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -11,7 +12,22 @@ export class CartComponent implements OnInit {
 // qty:number=1;
   // public products : any = [];
   public grandTotal: number = 0;
-  constructor(private cartService : CartService) { }
+ 
+  
+  constructor(private cartService : CartService,private fb: FormBuilder,private http: HttpClient) { }
+
+
+  public checkoutForm: FormGroup = this.fb.group({
+    name: ['', Validators.required],
+    phoneNumber: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    address: ['', Validators.required]
+  });
+
+  public cartDetails !: any[];
+
+
+
   getCartDetails: any[] = [];
   total: number = 0;
   cartNumber: number = 0;
@@ -19,8 +35,41 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.loadCart();
     console.log(this.getCartDetails,"show")
+
+    
   }
   
+  onSubmit(): void {
+    const order = {
+      name: this.checkoutForm.value.name,
+      phoneNumber: this.checkoutForm.value.phoneNumber,
+      email: this.checkoutForm.value.email,
+      address: this.checkoutForm.value.address,
+      cartDetails: this.getCartDetails
+    };
+    console.log(order,"order")
+
+    // this.http.post('http://your-api-endpoint.com/order', order).subscribe(response => {
+    //   // Do something with the response if needed
+    //   console.log(response);
+    // });
+
+    // Clear the form and cart after submission
+    // this.checkoutForm.reset();
+    // localStorage.removeItem('localCart');
+    // this.cartService.addtoCart(0);
+  }
+
+
+
+
+
+
+
+
+
+
+
   loadCart(): void {
     const cartData = localStorage.getItem('localCart');
     console.log(cartData,"me");
@@ -101,26 +150,5 @@ export class CartComponent implements OnInit {
   }
 
   
-  // ngOnInit(): void {
-  //   this.cartService.productList.subscribe((products) => {
-  //     this.products = products;
-  //     console.log(this.products,"why now");
-  //     this.grandTotal = this.cartService.getTotalPrice();
-  //   })
-  // }
-
-//   getCartDetails:any=[];
-//   CartDetails(){
-// if(localStorage.getItem('localCart')){
-// this.getCartDetails = JSON.parse(localStorage.getItem('localCart'));
-//   }
-// }
-
-//   removeItem(item: any){
-//     this.cartService.removeCartItem(item);
-//   }
-//   emptycart(){
-//     this.cartService.removeAllCart();
-//   }
 
 }
