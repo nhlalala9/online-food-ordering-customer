@@ -9,11 +9,12 @@ import { BookingsService } from 'src/app/service/bookings.service';
 export class BookingHistoryComponent implements OnInit {
   bookings: any;
   username:any;
+  
 
   constructor(private bookingServices:BookingsService) { }
 
   ngOnInit(): void {
-    this.bookingServices.getBookings("Moses").subscribe((bookings: any) =>{
+    this.bookingServices.getBookings(this.username).subscribe((bookings: any) =>{
       this.bookings = bookings.data;
       console.log(bookings.data)
     })
