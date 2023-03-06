@@ -7,9 +7,9 @@
                     <div class="card-header border-0 pb-0">
                       <h4 class="cate-title">Your Cart</h4>
                     </div>
-            
+<!--             
                     <div class="bb-border">
-                      <p class="font-w500 text-primary fs-15 mb-2">Your Address</p>
+                      <p class="font-w500 text-primary fs-15 mb-2 fw-bold"> Address</p>
                       <div class="d-flex align-items-center justify-content-between mb-2">
                         <h4 class="mb-0">
                           <i class="fa-solid fa-street-view"></i> Elm Street, 23
@@ -30,7 +30,7 @@
                           Add Note
                         </button>
                       </div>
-                    </div>
+                    </div> -->
                     <div
                       class="order-check d-flex align-items-center my-3"
                       *ngFor="let item of getCartDetails; let i = index"
@@ -80,15 +80,19 @@
                     </div>
                     <hr class="my-2 text-primary" style="opacity: 0.9" />
                     <div class="card-footer pt-0 border-0">
-                      <div class="d-flex align-items-center justify-content-between mb-3">
+                      <div class="d-flex align-items-center justify-content-between mb-3 mt-3">
                         <h4 class="font-w500">Total</h4>
                         <h3 class="font-w500 text-primary">R {{ total }}</h3>
                       </div>
-                      <a class="btn btn-primary btn-block"  (click)=" onSubmit()"
-                        >Submit Order</a
+                      <div class="try">                      <a class="btn btn-primary btn-block"  (click)=" onSubmit()"
+                        >Checkout</a
                       >
                     </div>
+
+                    </div>
+                  
                   </div>
+                  
                 </div>
               </div>
             </div>
