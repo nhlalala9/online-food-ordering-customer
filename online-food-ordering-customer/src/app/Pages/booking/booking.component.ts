@@ -7,11 +7,12 @@ import { BookingsService } from 'src/app/service/bookings.service';
   styleUrls: ['./booking.component.css']
 })
 export class BookingComponent implements OnInit {
-
+public username = localStorage.getItem('s_username');
+public email = localStorage.getItem('s_userEmail');
+  bookings: any;
 
   formData = {
-    name: "",
-    // date: "",
+    name: " ",
     time: "",
     message: "",
     guests: "",
@@ -21,6 +22,15 @@ export class BookingComponent implements OnInit {
   constructor(private bookingServices:BookingsService) { }
 
   ngOnInit(): void {
+
+    this.formData.name = this.username ? this.username : '';
+    this.formData.email = this.email ? this.email : '';
+
+
+    this.bookingServices.getBookings(this.formData.name).subscribe((bookings: any) =>{
+      this.bookings = bookings.data;
+      console.log(bookings.data)
+    })
   }
 
 

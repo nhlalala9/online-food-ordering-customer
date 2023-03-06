@@ -14,10 +14,15 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BookingComponent } from './Pages/booking/booking.component';
 import { ProductComponent } from './Pages/product/product.component';
 import { FormsModule } from '@angular/forms';
-import { NgxStarRatingModule } from 'ngx-star-rating';
-// import { StarRatingModule } from 'ngx-star-rating';
+import { BookingHistoryComponent } from './Pages/booking-history/booking-history.component';
+import { CartComponent } from './Pages/cart/cart.component';
+import { DatePipe } from '@angular/common';
+import { CheckoutComponent } from './Pages/checkout/checkout.component';
+
+
 
 // import {MatToolbarModule} from '@angular/material/toolbar'
+
 
 
 
@@ -32,7 +37,11 @@ import { NgxStarRatingModule } from 'ngx-star-rating';
     NavbarComponent,
     SidebarComponent,
     BookingComponent,
-    ProductComponent
+    ProductComponent,
+    BookingHistoryComponent,
+    CartComponent,
+    CheckoutComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -40,10 +49,10 @@ import { NgxStarRatingModule } from 'ngx-star-rating';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    NgxStarRatingModule
+    // NgxStarRatingModule
     // StarRatingModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

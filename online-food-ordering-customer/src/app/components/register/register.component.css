@@ -1,4 +1,4 @@
-.signup-input {
+/* .signup-input {
     min-width: 25vw;
     height: 3.5vh;
     margin-bottom: 10px;
@@ -24,7 +24,6 @@
   }
   button{
     box-sizing: border-box;
-    /* background: blue; */
     border: 1px solid #000000;
     border-radius: 10px;
     line-height: 16px;
@@ -96,4 +95,186 @@
   .Already {
     margin-left: 20px;
 
-  }
+  } */
+
+
+
+
+  .authincation {
+    background: rgba(252,128,25,.1);
+    background: var(--rgba-primary-1);
+    display: flex;
+    min-height: 100vh;
+}
+.p-meddle {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.container {
+  margin-top: 2.5rem;
+  max-width: 100%;
+  padding-left: 1.938rem;
+  padding-right: 1.938rem;
+}
+/* @media (min-width: 768px){
+.container, .container-md, .container-sm {
+  max-width: 720px;
+}} */
+/* @media (min-width: 576px){
+.container, .container-sm {
+  max-width: 540px;
+}} */
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-left: var(--bs-gutter-x,15px);
+  padding-right: 15px;
+  padding-right: var(--bs-gutter-x,15px);
+  width: 100%;
+}
+/* @media (min-width: 768px){
+.col-md-6 {
+    flex: 0 0 auto;
+    width: 50%;
+}} */
+.authincation-content {
+  background: #fff;
+  border-radius: 0.3125rem;
+  box-shadow: 0 0 2.1875rem 0 hsl(215deg 9% 64% / 15%);
+}
+
+.auth-form {
+  padding: 3.125rem;
+}
+
+.btn-link.active, .btn-link:focus, .btn-link:hover, a, a.active, a:focus, a:hover {
+  text-decoration: none;
+}
+a {
+  color: #3d4152;
+}
+a {
+  color: #fc8019;
+  text-decoration: underline;
+}
+.auth-form img {
+  width: 13.75rem;
+}
+
+img, svg {
+  vertical-align: middle;
+}
+* {
+  outline: none;
+  padding: 0;
+}
+*, :after, :before {
+  box-sizing: border-box;
+}
+/* user agent stylesheet
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+} */
+
+.form-control {
+  background: #fff;
+  border-color: #b3b3b3;
+  border-radius: 0.5rem;
+  color: #6e6e6e;
+  font-size: 1rem;
+  height: 3rem;
+  line-height: 1.4;
+  padding: 0.375rem 1rem;
+}
+.form-control {
+  -webkit-appearance: none;
+  appearance: none;
+  background-clip: padding-box;
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 0.75rem;
+  color: #777;
+  display: block;
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 0.375rem 0.75rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  width: 100%;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+* {
+  outline: none;
+  padding: 0;
+}
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+.auth-form .btn {
+  font-weight: 700;
+  height: 3.125rem;
+}
+
+.btn.btn-danger, .btn.btn-info, .btn.btn-primary, .btn.btn-secondary, .btn.btn-success, .btn.btn-warning {
+  color: #fff;
+}
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+  cursor: pointer;
+}
+.btn-block {
+  display: block;
+  width: 100%;
+}
+/* .btn-primary {
+  background-color: #fc8019;
+  background-color: var(--primary);
+  border-color: #fc8019;
+  border-color: var(--primary);
+} */
+.btn {
+  border-radius: 0.5rem;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 0.7875rem 1.319rem;
+}
+.btn-primary {
+  color: #000;
+}
+
+[type=button], [type=reset], [type=submit], button {
+  -webkit-appearance: button;
+}
+button {
+  cursor: pointer;
+}
+button, select {
+  text-transform: none;
+}
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+button {
+  border-radius: 0;
+}
+.btn-link.active, .btn-link:focus, .btn-link:hover, a, a.active, a:focus, a:hover {
+  text-decoration: none;
+}
