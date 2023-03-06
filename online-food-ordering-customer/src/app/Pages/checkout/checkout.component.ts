@@ -81,6 +81,7 @@ export class CheckoutComponent implements OnInit {
     this.checkoutService.checkout(order).subscribe(response => {
   
       console.log(response,"works");
+      alert("Succesfull placed your order");
     });
 
     // Clear the form and cart after submission
