@@ -1,0 +1,92 @@
+<div class="col toka">
+              <div class="row">
+                <div class="col-xl-12">
+                  <div class="card dlab-bg dlab-position">
+                    <div class="card-header border-0 pb-0">
+                      <h4 class="cate-title">Your Cart</h4>
+                    </div>
+            
+                    <div class="bb-border">
+                      <p class="font-w500 text-primary fs-15 mb-2">Your Address</p>
+                      <div class="d-flex align-items-center justify-content-between mb-2">
+                        <h4 class="mb-0">
+                          <i class="fa-solid fa-street-view"></i> Elm Street, 23
+                        </h4>
+                        <a
+                          class="btn btn-outline-primary btn-sm change"
+                          href="/react/demo/dashboard-dark"
+                          >Change</a
+                        >
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor
+                        incididunt.
+                      </p>
+                      <div class="d-flex">
+                        <button type="button" class="btn btn-primary">Add Details</button
+                        ><button type="button" class="btn btn-primary ms-2">
+                          Add Note
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="order-check d-flex align-items-center my-3"
+                      *ngFor="let item of getCartDetails; let i = index"
+                    >
+                      <div class="dlab-media">
+                        <img
+                          src="{{ item?.attributes?.Picture?.data?.attributes?.url }}"
+                          alt=""
+                        />
+                      </div>
+                      <div class="dlab-info">
+                        <div class="d-flex align-items-center justify-content-between">
+                          <h4 class="dlab-title">
+                            <a href="/react/demo/dashboard-dark">
+                              {{ item?.attributes?.name }}</a
+                            >
+                          </h4>
+                          <h4 class="text-primary ms-2">
+                            R
+                            {{
+                              item?.attributes?.quantity * item?.attributes?.price | number
+                            }}
+                          </h4>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                          <span
+                            >R {{ item?.attributes?.price }} x
+                            {{ item?.attributes?.quantity }}</span
+                          >
+                          <div class="quntity">
+                            <button
+                              (click)="decQnt(item.prodId, item?.attributes?.quantity)"
+                            >
+                              <i class="fa fa-minus"></i></button
+                            ><input
+                              data-value="true"
+                              type="text"
+                              value="{{ item?.attributes?.quantity }}"
+                            /><button
+                              (click)="incQnt(item.prodId, item?.attributes?.quantity)"
+                            >
+                              <i class="fa fa-plus"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="my-2 text-primary" style="opacity: 0.9" />
+                    <div class="card-footer pt-0 border-0">
+                      <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h4 class="font-w500">Total</h4>
+                        <h3 class="font-w500 text-primary">R {{ total }}</h3>
+                      </div>
+                      <a class="btn btn-primary btn-block" (click)=" onSubmit()"
+                        >Checkout</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>

@@ -8,6 +8,8 @@ import { HomeComponent } from './Pages/home/home.component';
 import { BookingComponent } from './Pages/booking/booking.component';
 import { BookingHistoryComponent } from './Pages/booking-history/booking-history.component';
 import { ProductComponent } from './Pages/product/product.component';
+import { CartComponent } from './Pages/cart/cart.component';
+import { CheckoutComponent } from './Pages/checkout/checkout.component';
 
 
 const routes: Routes = [
@@ -16,6 +18,8 @@ const routes: Routes = [
   { path: 'customer/booking', component: BookingComponent },
   { path: 'customer/booking/history', component: BookingHistoryComponent },
   { path: 'customer/login', component: LoginComponent },
+  { path: 'customer/cart', component: CartComponent },
+  { path: 'customer/checkout', component: CheckoutComponent },
   {
     path: 'customer/register',
     component: RegisterComponent,
