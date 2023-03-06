@@ -10,7 +10,7 @@ import { BookingHistoryComponent } from './Pages/booking-history/booking-history
 import { ProductComponent } from './Pages/product/product.component';
 import { CartComponent } from './Pages/cart/cart.component';
 import { CheckoutComponent } from './Pages/checkout/checkout.component';
-
+import { OrderComponent } from './Pages/order/order.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -19,14 +19,10 @@ const routes: Routes = [
   { path: 'customer/booking/history', component: BookingHistoryComponent },
   { path: 'customer/login', component: LoginComponent },
   { path: 'customer/cart', component: CartComponent },
+  { path: 'customer/order', component: OrderComponent },
   { path: 'customer/checkout', component: CheckoutComponent },
-  {
-    path: 'customer/register',
-    component: RegisterComponent,
-  },
-
-
-  {path: 'customer/food/:id',component: ProductComponent},
+  { path: 'customer/register', component: RegisterComponent },
+  { path: 'customer/food/:id', component: ProductComponent },
 ];
 
 @NgModule({

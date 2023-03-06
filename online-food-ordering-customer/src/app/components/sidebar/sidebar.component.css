@@ -1,37 +1,217 @@
-.sidebar{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 80px;
-    height: 100%;
-    background-color: grey;
-    z-index: 1;
-    padding-top: 70px;
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10%;
+  height: 100%;
+  background-color: lightgrey;
+  z-index: 1;
+  padding-top: 70px;
+  padding-left: 10px;
 }
 
-.sidebar-menu{
-    width: 100%;
-   display: flex;
-    padding: 10px 5px;
-    color: black;
-    gap: 3px;
+.sidebar-menu {
+  width: 100%;
+  display: flex;
+  padding: 10px 5px;
+  color: black;
+  gap: 3px;
 }
 .sidebar-menu > a {
- text-decoration: none;
- line-height: 1.5;
- color: black;
+  text-decoration: none;
+  line-height: 1.5;
+  color: black;
 }
 
 .sidebar-menu > span {
-    line-height: 1.5;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.sidebar-menu:hover {
+  border-right: 2px solid blue;
+  color: blue;
+}
+
+.sidebar-menu:hover > a {
+  color: blue;
+}
+
+/* 
+[data-sidebar-position=fixed][data-layout=vertical] .dlabnav {
+    position: fixed;
+}
+
+@media (min-width: 64rem){
+[data-header-position=fixed][data-sidebar-position=fixed] .dlabnav {
+    position: fixed;
+}
+}
+[data-layout=vertical] .dlabnav {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+[data-header-position=fixed] .dlabnav {
+    margin-top: 0;
+}
+.border-right {
+    border-right: 1px solid #b3b3b3;
+}
+.dlabnav {
+    background-color: #fff;
+    background-color: var(--sidebar-bg);
+    box-shadow: 0 0.9375rem 1.875rem 0 rgb(0 0 0 / 2%);
+    height: calc(100% - 5rem);
+    padding-bottom: 0;
+    padding-top: 0;
+    position: absolute;
+    position: relative;
+    top: 5.5rem;
+    transition: all .2s ease;
+    width: 18.75rem;
+    width: var(--space-right);
+    z-index: 6;
+}
+[data-sidebar-position=fixed][data-layout=vertical] .dlabnav .dlabnav-scroll {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.dlabnav .dlabnav-scroll {
+    height: 100%;
+    position: relative;
+}
+.ps {
+    -ms-overflow-style: none;
+    overflow: hidden!important;
+    overflow-anchor: none;
+    touch-action: auto;
+    -ms-touch-action: auto;
+}
+.dlabnav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.metismenu {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.9375rem;
+}
+
+.metismenu li, .metismenu ul {
+    position: relative;
+}
+
+.metismenu>li {
+    display: flex;
+    flex-direction: column;
+}
+.menu-title {
+    margin: 20px 0 20px 20px;
+}
+li {
+    list-style: none;
+}
+
+.metismenu li, .metismenu ul {
+    position: relative;
+}
+
+.metismenu>li {
+    display: flex;
+    flex-direction: column;
+}
+li {
+    list-style: none;
+}
+[data-sidebar-style=full][data-layout=vertical] .dlabnav .metismenu>li>a {
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    margin: 5px 0;
+    padding: 0.825rem 1.5rem;
+    transition: all .5s;
+}
+
+.metismenu .has-arrow {
+    position: relative;
+}
+.metismenu>li>a {
+    color: #777;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.metismenu a {
+    color: #777;
+    display: block;
+    outline-width: 0;
+    padding: 0.625rem 1.875rem;
+    position: relative;
+    text-decoration: none;
+}
+.btn-link.active, .btn-link:focus, .btn-link:hover, a, a.active, a:focus, a:hover {
+    text-decoration: none;
+}
+a {
+    color: #3d4152;
+}
+
+.metismenu>li>a i {
+    color: #96a0af;
+}
+
+.metismenu>li a>i {
+    border-radius: 0.125rem;
+    display: inline-block;
+    font-size: 1.3rem;
+    height: auto;
+    line-height: 1;
+    margin-right: 1.25rem;
+    position: relative;
     text-align: center;
+    top: 0;
+    vertical-align: middle;
+    width: auto;
 }
 
-.sidebar-menu:hover{
-border-right: 2px solid blue;
-color: blue;
+.collapse:not(.show) {
+    display: none;
 }
 
-.sidebar-menu:hover > a{
-color: blue;
+.metismenu ul {
+    padding: 0.5rem 0;
+    transition: all .2s ease-in-out;
+    z-index: 1;
 }
+.metismenu li, .metismenu ul {
+    position: relative;
+}
+.dlabnav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ol ol, ol ul, ul ol, ul ul {
+    margin-bottom: 0;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+dl, ol, ul {
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+ol, ul {
+    padding-left: 2rem;
+}
+
+.metismenu li, .metismenu ul {
+    position: relative;
+}
+
+li {
+    list-style: none;
+} */

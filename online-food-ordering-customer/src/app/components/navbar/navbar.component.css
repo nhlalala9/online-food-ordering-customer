@@ -1,7 +1,7 @@
-.label-cart{
+/* .label-cart{
     position: fixed;
-    /* margin-top: 15px; */
-    /* margin-right: 10px; */
+    margin-top: 15px;
+    margin-right: 10px;
     top: 15;
     right: 0;
     z-index: 4;
@@ -50,10 +50,32 @@
     padding-right: 10px;
 }
 
-/* #cart:checked ~ .dashboard-order {
+#cart:checked ~ .dashboard-order {
     display: none;
-} */
+}
 
 #cart:checked ~ .logo {
     padding-right: 0;
+} */
+
+.logo{
+    position: fixed;
+    background-color: lightgray;
+    color: black;
+    width: 100%;
+    text-align: center;
+    padding: 15px 420px 15px 60px;
+    top: 0;
+    z-index:2;
+}
+
+.label-cart a{
+    position: fixed;
+    margin-top: 15px;
+    margin-right: 10px;
+    top: 0;
+    right: 0;
+    z-index: 4;
+    cursor: pointer;
+    color: blue;
 }
