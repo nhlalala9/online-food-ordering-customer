@@ -406,6 +406,10 @@ label {
     line-height: 1.5;
     padding: 0.7875rem 1.319rem;
 }
+
+.toka{
+    margin-top: 15rem;
+}
 .bg-login .sign-in-your .facebook, .bg-login .sign-in-your .google, .bg-login .sign-in-your .likedin {
     color: #3b579d;
     font-size: 1rem;
