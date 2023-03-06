@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/service/cart.service';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -14,7 +16,7 @@ export class CartComponent implements OnInit {
   public grandTotal: number = 0;
  
   
-  constructor(private cartService : CartService,private fb: FormBuilder,private http: HttpClient) { }
+  constructor(private cartService : CartService,private fb: FormBuilder,private http: HttpClient, private router: Router,) { }
 
 
   public checkoutForm: FormGroup = this.fb.group({
@@ -40,14 +42,14 @@ export class CartComponent implements OnInit {
   }
   
   onSubmit(): void {
-    const order = {
-      name: this.checkoutForm.value.name,
-      phoneNumber: this.checkoutForm.value.phoneNumber,
-      email: this.checkoutForm.value.email,
-      address: this.checkoutForm.value.address,
-      cartDetails: this.getCartDetails
-    };
-    console.log(order,"order")
+    // const order = {
+    //   name: this.checkoutForm.value.name,
+    //   phoneNumber: this.checkoutForm.value.phoneNumber,
+    //   email: this.checkoutForm.value.email,
+    //   address: this.checkoutForm.value.address,
+    //   cartDetails: this.getCartDetails
+    // };
+    // console.log(order,"order")
 
     // this.http.post('http://your-api-endpoint.com/order', order).subscribe(response => {
     //   // Do something with the response if needed
@@ -58,6 +60,7 @@ export class CartComponent implements OnInit {
     // this.checkoutForm.reset();
     // localStorage.removeItem('localCart');
     // this.cartService.addtoCart(0);
+    this.router.navigateByUrl('/customer/checkout')
   }
 
 
