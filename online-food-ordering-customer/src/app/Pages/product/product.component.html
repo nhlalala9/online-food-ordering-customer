@@ -20,22 +20,16 @@
         {{ product?.attributes?.description }}
       </span>
     </div>
-    <div class="tag">
-     
-    </div>
-    <div class="cook-time">
-      
-    </div>
+    <div class="tag"></div>
+    <div class="cook-time"></div>
     <div class="price">
       <span>
         {{ product?.attributes?.price }}
       </span>
     </div>
-    <!-- <button (click)="addToCart()" >Add to Cart</button> -->
-    <button (click)=addtocart(product)>Add to Cart</button>
+    <button (click)="addtocart(product)">Add to Cart</button>
   </div>
 </div>
-
 
 <div class="row">
   <div class="col">
@@ -47,23 +41,25 @@
               class="restro-review d-flex align-items-center border-bottom mb-4 pb-4"
             >
               <img
-              [srcset]="rating?.attributes?.Picture?.data?.attributes?.url"
-              src="https://imgs.search.brave.com/vFVAD6WtlbsGS2luLnc3bOuXf3D4VHNh-mzLLaFV4gE/rs:fit:1200:1024:1/g:ce/aHR0cDovL3d3dy5u/ZXdkZXNpZ25maWxl/LmNvbS9wb3N0cGlj/LzIwMDkvMTEvdXNl/ci1pY29uXzI5MTcw/MC5qcGc"
+                [srcset]="rating?.attributes?.Picture?.data?.attributes?.url"
+                src="https://imgs.search.brave.com/vFVAD6WtlbsGS2luLnc3bOuXf3D4VHNh-mzLLaFV4gE/rs:fit:1200:1024:1/g:ce/aHR0cDovL3d3dy5u/ZXdkZXNpZ25maWxl/LmNvbS9wb3N0cGlj/LzIwMDkvMTEvdXNl/ci1pY29uXzI5MTcw/MC5qcGc"
                 alt=""
                 class="img1"
               />
               <div>
-                <h4 class="font-w500">{{rating.attributes?.name}}</h4>
-                <span>{{rating.attributes?.date}}</span>
+                <h4 class="font-w500">{{ rating.attributes?.name }}</h4>
+                <span>{{ rating.attributes?.date }}</span>
               </div>
             </div>
             <div class="recent-review d-flex align-items-center">
-            
               <div>
-                <h4 class="font-w500 mb-0">{{ rating?.attributes?.product?.data?.attributes?.name }}</h4>
+                <h4 class="font-w500 mb-0">
+                  {{ rating?.attributes?.product?.data?.attributes?.name }}
+                </h4>
                 <ul class="d-flex mb-2">
                   <li>
-                    {{rating.attributes?.rate}} <svg
+                    {{ rating.attributes?.rate }}
+                    <svg
                       width="16"
                       height="15"
                       viewBox="0 0 16 15"
@@ -76,57 +72,44 @@
                       ></path>
                     </svg>
                   </li>
-                  
                 </ul>
               </div>
             </div>
             <p>
-             {{rating.attributes?.comment}}
+              {{ rating.attributes?.comment }}
             </p>
-            <!-- <div><h6 class="font-w400">{{rating.attributes?.date}}</h6></div> -->
           </div>
         </div>
-      
       </div>
-      <div class="col col-lg-2">
-        
-      </div>
+      <div class="col col-lg-2"></div>
     </div>
   </div>
-  
+
   <div class="col col-lg-2 mr">
     <div class="styles.container">
       <form (ngSubmit)="onSubmit()">
-      <!-- <h2> React Ratings </h2> -->
-      <div class="stars">
-        <ng-container *ngFor="let i of stars">
-          <i
-            class="fa-sharp fa-solid fa-star"
-            (click)="updateRating(i)"
-            [ngClass]="{ active: i <= rating }"
-          ></i>
-        </ng-container>
-      </div>
-      <textarea name="comment" [(ngModel)]="formData.comment"
-      
-            class="form-control"
-            placeholder="Leave a comment here"
-            id="floatingTextarea2"
-            style="height: 100px"
-          ></textarea>
-    
-      <button
-      type="submit"
-        class="button toka"
-      click="submit()">
-        Submit
-      </button>
+        <div class="stars">
+          <ng-container *ngFor="let i of stars">
+            <i
+              class="fa-sharp fa-solid fa-star"
+              (click)="updateRating(i)"
+              [ngClass]="{ active: i <= rating }"
+            ></i>
+          </ng-container>
+        </div>
+        <textarea
+          name="comment"
+          [(ngModel)]="formData.comment"
+          class="form-control"
+          placeholder="Leave a comment here"
+          id="floatingTextarea2"
+          style="height: 100px"
+        ></textarea>
+
+        <button type="submit" class="button toka" click="submit()">
+          Submit
+        </button>
       </form>
     </div>
-    </div>
+  </div>
 </div>
-
-
-
-
-

@@ -1,85 +1,71 @@
-<!-- <section class=" gradient-custom">
-    <div class="container ">
-        <div class="row justify-content-center align-items-center ">
-            <div class="col-12 col-lg-9 col-xl-7">
-                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
-                    <div class="card-body p-4 p-md-5">
-                        <div class="text-center">
-  
-                            <h1 class="text-center text-dark mt-2 mb-3">WELCOME!</h1>
-                           
-  
-                        </div>
-                      
-                        <form class="d-flex flex-column align-items-center mt-3" [formGroup]="loginForm" (ngSubmit)="onSubmit()" (ngSubmit)="login()">
-                            <div class="form-group d-flex flex-column ">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control login-input" formControlName="email">
-                            </div>
-                            <div class="form-group d-flex flex-column  mb-3">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control login-input" formControlName="password">
-                            </div>
-                            <button type="submit" class="btn btn-dark" [disabled]="!loginForm.valid">Login</button>
-                        </form>
-                        <div class="form-group ">
-                            <p>Don't have account? <a routerLink='/customer/register'class="reg" >Register</a></p>
-                        </div>
+<div class="vh-100">
+  <div class="container toka">
+    <div class="row align-items-center justify-contain-center bg-login">
+      <div class="col-xl-12 mt-5">
+        <div class="card border-0">
+          <div class="card-body login-bx">
+            <div class="row mt-5">
+              <div class="col-xl-8 col-md-6 text-center">
+                <img
+                  src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?cs=srgb&dl=pexels-ash-376464.jpg&fm=jpg"
+                  class="food-img"
+                  alt=""
+                />
+              </div>
+              <div class="col-xl-4 col-md-6 pe-0 mt-5">
+                <div class="sign-in-your mt-3">
+                  <div class="text-center mb-3">
+                    <img src="" class="mb-3" alt="" />
+                    <h4 class="fs-20 font-w800 text-black">
+                      Sign Into Your Account
+                    </h4>
+                    <span class="dlab-sign-up">Sign In</span>
+                  </div>
+                  <form [formGroup]="loginForm" (ngSubmit)="login()">
+                    <div class="mb-3 mt-5">
+                      <label class="mb-1">
+                        <strong>Email Address</strong>
+                      </label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        formControlName="email"
+                      />
                     </div>
-                </div>
-            </div>
-        </div>
-       
-  
-    </div>
-  </section>  -->
-
-  <div class="vh-100">
-    <div class="container toka">
-        <div class="row  align-items-center justify-contain-center bg-login">
-            <div class="col-xl-12 mt-5">
-                <div class="card border-0">
-                <div class="card-body login-bx">
-                    <div class="row mt-5">
-                        <div class="col-xl-8 col-md-6  text-center">
-                            <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?cs=srgb&dl=pexels-ash-376464.jpg&fm=jpg" class="food-img" alt="">
+                    <div class="mb-3">
+                      <label class="mb-1">
+                        <strong>Password</strong>
+                      </label>
+                      <input
+                        type="password"
+                        class="form-control"
+                        formControlName="password"
+                      />
+                    </div>
+                    <div class="row d-flex justify-content-between mt-4 mb-2">
+                      <div class="mb-3">
+                        <div class="form-check custom-checkbox ms-1">
+                          <label
+                            class="form-check-label"
+                            for="basic_checkbox_1"
+                          ></label>
                         </div>
-                        <div class="col-xl-4 col-md-6 pe-0 mt-5">
-                        <div class="sign-in-your mt-3">
-                            <div class="text-center mb-3">
-                                <img src="" class="mb-3" alt="">
-                                <h4 class="fs-20 font-w800 text-black">Sign Into Your Account</h4>
-                                <span class="dlab-sign-up">Sign In</span>
-                            </div>
-                            <form [formGroup]="loginForm"  (ngSubmit)="login()">
-                                <div class="mb-3 mt-5">
-                                    <label class="mb-1">
-                                        <strong>Email Address</strong>
-                                    </label>
-                                    <input type="email" class="form-control" formControlName="email">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="mb-1">
-                                        <strong>Password</strong>
-                                    </label>
-                                    <input type="password" class="form-control" formControlName="password">
-                                </div>
-                                <div class="row d-flex justify-content-between mt-4 mb-2">
-                                    <div class="mb-3">
-                                        <div class="form-check custom-checkbox ms-1">
-                                           
-                                            <label class="form-check-label" for="basic_checkbox_1"></label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-primary btn-block" [disabled]="!loginForm.valid">Sign In</button>
-                                </div>
-                            </form>
-                            <!-- <div class="text-center my-3">
+                      </div>
+                    </div>
+                    <div class="text-center">
+                      <button
+                        type="submit"
+                        class="btn btn-primary btn-block"
+                        [disabled]="!loginForm.valid"
+                      >
+                        Sign In
+                      </button>
+                    </div>
+                  </form>
+                  <!-- <div class="text-center my-3">
                                 <span class="dlab-sign-up style-1">Continue With</span>
                             </div> -->
-                            <!-- <div class="mb-3 dlab-signup-icon">
+                  <!-- <div class="mb-3 dlab-signup-icon">
                                 <button class="btn btn-outline-light me-1">
                                     <i class="fa-brands fa-facebook me-2 facebook"></i>Facebook
                                 </button>
@@ -90,15 +76,20 @@
                                     <i class="fa-brands fa-linkedin me-2 likedin"></i>linkedin
                                 </button>
                             </div> -->
-                            <div class="text-center">
-                                <span>Don't have an account <a class="text-primary" routerLink='/customer/register'> Sign up</a></span>
-                            </div>
-                        </div>
-                    </div>
+                  <div class="text-center">
+                    <span
+                      >Don't have an account
+                      <a class="text-primary" routerLink="/customer/register">
+                        Sign up</a
+                      ></span
+                    >
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-</div>
+  </div>
 </div>

@@ -87,7 +87,9 @@
   opacity: 0.9;
   cursor: pointer;
 }
-.toka{margin-left: 8rem;}
+.toka {
+  margin-left: 8rem;
+}
 
 .stars {
   padding: 0 5px !important;
@@ -105,8 +107,7 @@ stars::before {
 
 /**Rating**/
 
-
-.tab-content>.active {
+.tab-content > .active {
   display: block;
 }
 .row {
@@ -114,14 +115,12 @@ stars::before {
   --bs-gutter-y: 0;
   display: flex;
   flex-wrap: wrap;
-  margin-left: calc(var(--bs-gutter-x)/-2);
-  margin-right: calc(var(--bs-gutter-x)/-2);
-  margin-top: calc(var(--bs-gutter-y)*-1);
+  margin-left: calc(var(--bs-gutter-x) / -2);
+  margin-right: calc(var(--bs-gutter-x) / -2);
+  margin-top: calc(var(--bs-gutter-y) * -1);
 }
 
-
-
-.tab-content>.tab-pane {
+.tab-content > .tab-pane {
   display: none;
 }
 .fade:not(.show) {
@@ -129,13 +128,11 @@ stars::before {
 }
 
 .fade {
-  transition: opacity .15s linear;
+  transition: opacity 0.15s linear;
 }
-.tab-content>.active {
+.tab-content > .active {
   display: block;
 }
-
-
 
 .cate-title {
   font-size: 1.25rem;
@@ -145,31 +142,29 @@ stars::before {
 .card {
   background-color: initial;
   border: 0 solid transparent;
-  border: 1px solid rgba(0,0,0,.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 0.5rem;
   box-shadow: none;
   height: calc(100% - 30px);
   margin-bottom: 1.875rem;
   position: relative;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   /* margin-top: 8rem; */
   /* margin-left: 2rem; */
   /* margin-right: 2rem; */
 }
-.m{
+.m {
   margin-left: 15rem;
   margin-right: 2rem;
-  
 }
-.mr{
+.mr {
   margin-right: 2rem;
 }
 .stars {
   display: "flex";
-  flex-direction: "row"
-  
+  flex-direction: "row";
 }
-textarea{
+textarea {
   margin-top: 2rem;
   border: "1px solid #a9a9a9";
   border-radius: 5;
@@ -179,7 +174,7 @@ textarea{
   width: 300;
   margin-bottom: 2rem;
 }
-.container{
+.container {
   display: "flex";
   flex-direction: "column";
   align-items: "center";
@@ -188,7 +183,7 @@ textarea{
   word-wrap: break-word;
   background-clip: initial;
   background-color: #fff;
-  border: 1px solid rgba(0,0,0,.125);
+  border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.75rem;
   display: flex;
   flex-direction: column;
@@ -207,14 +202,15 @@ textarea{
   margin-right: 1rem;
   width: 3.5rem;
 }
-.orders-img .img1, .restro-review .img1 {
+.orders-img .img1,
+.restro-review .img1 {
   border-radius: 0.5rem;
   object-fit: cover;
 }
-.img1, svg {
+.img1,
+svg {
   vertical-align: middle;
 }
-
 
 .recent-review .img1 {
   height: 2.625rem;

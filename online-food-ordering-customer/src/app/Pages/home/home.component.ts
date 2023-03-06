@@ -35,11 +35,6 @@ export class HomeComponent implements OnInit {
       this.product = product.data;
       console.log(product.data, "all products");
     });
-    // this.cartService.productList.subscribe((products) => {
-    //   this.products = products;
-    //   console.log(this.products, 'why now');
-    //   this.grandTotal = this.cartService.getTotalPrice();
-    // });
     this.loadCart();
   }
 

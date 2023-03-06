@@ -13,17 +13,17 @@
                   <div class="col-xl-6">
                     <div class="mb-3">
                       <input
-                      formControlName="name"
+                        formControlName="name"
                         type="Text"
                         class="form-control"
-                        placeholder={{username}}
+                        placeholder="{{ username }}"
                       />
                     </div>
                   </div>
                   <div class="col-xl-6">
                     <div class="mb-3">
                       <input
-                      formControlName="phoneNumber"
+                        formControlName="phoneNumber"
                         type="Text"
                         class="form-control"
                         placeholder="Phone Number"
@@ -33,10 +33,10 @@
                   <div class="col-xl-12">
                     <div class="mb-3">
                       <input
-                      formControlName="email"
+                        formControlName="email"
                         type="email"
                         class="form-control"
-                        placeholder={{email}}
+                        placeholder="{{ email }}"
                       />
                     </div>
                   </div>
@@ -48,8 +48,7 @@
                     <div class="col-xl-12">
                       <div class="mb-3">
                         <input
-                      
-                        formControlName="address"
+                          formControlName="address"
                           type="text"
                           class="form-control"
                           placeholder="Enter your Address"
@@ -201,60 +200,34 @@
                 </div>
                 <div class="card-body pt-3">
                   <div class="checkout-right">
-                    <!-- <span class="checkout-title">ADD A TIP FOR YOUR RIDER</span>
-                    <p>
-                      The entire amount will be transfered to the rider.valid
-                      only if you pay online
-                    </p> -->
-                    <!-- <div class="">
-                      <span class="badge badge-primary me-2 c-pointer"
-                        ><i class="fa-solid fa-dollar-sign"></i>+5</span
-                      ><span class="badge badge-primary me-2 c-pointer"
-                        ><i class="fa-solid fa-dollar-sign"></i>+5</span
-                      ><span class="badge badge-primary me-2 c-pointer"
-                        ><i class="fa-solid fa-dollar-sign"></i>+5</span
-                      >
-                    </div> -->
                     <div class="bill-details mt-4 border-bottom">
                       <h6>Bill Details</h6>
                       <div
                         class="d-flex align-items-center justify-content-between mb-3"
                       >
-                        <span>item Total</span
-                        ><span>R {{total}}</span>
+                        <span>item Total</span><span>R {{ total }}</span>
                       </div>
                       <div
                         class="d-flex align-items-center justify-content-between mb-3"
                       >
-                        <span>Deliver Fee</span
-                        >
-                        <span class="text-primary"
-                          >
-                          <del class="me-3 del-color"
-                            ></del
-                          >FREE</span
+                        <span>Deliver Fee</span>
+                        <span class="text-primary">
+                          <del class="me-3 del-color"></del>FREE</span
                         >
                       </div>
                     </div>
-                    <!-- <div
-                      class="d-flex align-items-center justify-content-between mt-3 border-bottom"
-                    >
-                      <span class="mb-3"
-                        >item Discount
-                        <i class="fa-solid fa-circle-exclamation"></i></span
-                      ><span class="text-primary mb-3"
-                        >-<i class="fa-solid fa-dollar-sign"></i>79.99</span
-                      >
-                    </div> -->
                     <div
                       class="d-flex align-items-center justify-content-between my-3"
                     >
                       <span class="mb-3">To pay</span
-                      ><span class="text-primary mb-3"
-                        >R {{total}}</span
-                      >
+                      ><span class="text-primary mb-3">R {{ total }}</span>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block" id="b3"  (click)=" onSubmit()">
+                    <button
+                      type="submit"
+                      class="btn btn-primary btn-block"
+                      id="b3"
+                      (click)="onSubmit()"
+                    >
                       PLACE ORDER
                     </button>
                   </div>
