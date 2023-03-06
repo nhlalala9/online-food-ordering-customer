@@ -45,13 +45,6 @@ import { HttpClient } from '@angular/common/http';
         this.loginTracker.next(true);
       }
     
-      // getPersistedUser(): User {
-      //   return {
-      //     id: this.ss.getItem('userId') || '',
-      //     username: this.ss.getItem('username') || '',
-      //     email: this.ss.getItem('userEmail') || ''
-      //   };
-      // }
       getPersistedUser(): User | null{
         const token = this.getPersistedToken();
         if (!token) {
