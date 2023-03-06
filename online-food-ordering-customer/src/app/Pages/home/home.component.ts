@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/service/products.service';
 import { CartService } from 'src/app/service/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { CartService } from 'src/app/service/cart.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  router: any;
+
   product: any;
   me: any;
   public productList: any;
@@ -25,7 +26,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private ProductsService: ProductsService,
-    private cartService: CartService
+    private cartService: CartService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -105,7 +107,9 @@ export class HomeComponent implements OnInit {
 
 
 
-
+checkout(){
+  this.router.navigateByUrl('/customer/checkout')
+}
 ///cart here 
 
 loadCart(): void {
