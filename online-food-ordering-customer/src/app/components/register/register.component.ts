@@ -34,32 +34,34 @@ export class RegisterComponent implements OnDestroy {
     }
   }
 
-  get password() { return this.signupForm.get('password'); }
-    
-      signup() {
-        const user = this.signupForm.value;
-    
-        this.registrationSub = this.auth.register(
-          user.username,
-          user.email,
-          user.password
-        ).subscribe(
-          resp => {
-            this.signupForm.reset();
-    
-            this.auth.persistUser(resp);
-    
-            this.toast.showSuccess('Successfully created account.');
-    
-            const attemptedRoute = this.ss.getItem('attemptedRoute');
-            this.ss.removeItem('attemptedRoute');
-            this.router.navigateByUrl(attemptedRoute || '')
-          },
-          () => {
-            this.toast.showDanger('There was a problem registering your account.');
-          }
-        );
-      }
+  get password() {
+    return this.signupForm.get('password');
+  }
+
+  signup() {
+    const user = this.signupForm.value;
+
+    this.registrationSub = this.auth
+      .register(user.username, user.email, user.password)
+      .subscribe(
+        (resp) => {
+          this.signupForm.reset();
+
+          this.auth.persistUser(resp);
+
+          this.toast.showSuccess('Successfully created account.');
+
+          const attemptedRoute = this.ss.getItem('attemptedRoute');
+          this.ss.removeItem('attemptedRoute');
+          this.router.navigateByUrl(attemptedRoute || '');
+        },
+        () => {
+          this.toast.showDanger(
+            'There was a problem registering your account.'
+          );
+        }
+      );
+  }
 
   ngOnInit(): void {}
 }

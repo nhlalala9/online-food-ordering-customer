@@ -1,133 +1,135 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-body{
-    font-family: 'Poppins', sans-serif;
-}
-
-.banner{
-    min-height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../assets/banner-img.jpeg") center/cover no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    padding-bottom: 20px;
-   padding-left: 40px;
-}
-.card-container{
-    width: 80%;
+body {
+  font-family: "Poppins", sans-serif;
 }
 
-.banner h2{
-    /* padding-bottom: 40px; */
-    margin-bottom: 20px;
-    margin-top: 50px;
+.banner {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../../assets/banner-img.jpeg") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding-bottom: 20px;
+  padding-left: 40px;
 }
-.card-body h3{
-    margin-top: 50px;
-    margin-bottom: 20px;
-    display: flex;
-    /* align-items: center; */
-    justify-content: center;
-}
-
-.card-content{
-    background: #fff;
-    /* height: 330px; */
-}
-.card-content h3{
-    text-align: center;
-    color: #000;
-    padding: 25px 0 10px 0;
-    font-size: 26px;
-    font-weight: 500;
+.card-container {
+  width: 80%;
 }
 
-
-.form-row{
-    display: flex;
-    width: 90%;
-    margin: 0 auto;
+.banner h2 {
+  /* padding-bottom: 40px; */
+  margin-bottom: 20px;
+  margin-top: 50px;
 }
-.message-row{
-    display: flex;
-    width: 90%;
-    margin: 0 auto;
-}
-.form-row-btn{
-    display: flex;
-    width: 30%;
-    margin: 0 auto; 
+.card-body h3 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
 }
 
+.card-content {
+  background: #fff;
+  /* height: 330px; */
+}
+.card-content h3 {
+  text-align: center;
+  color: #000;
+  padding: 25px 0 10px 0;
+  font-size: 26px;
+  font-weight: 500;
+}
 
-form select, form input{
-    display: block;
-    width: 100%;
-    margin: 15px 12px;
-    padding: 5px;
-    font-size: 15px;
-    font-family: 'Poppins', sans-serif;
-    outline: none;
-    border: none;
-    border-bottom: 1px solid #eee;
-    font-weight: 300;
+.form-row {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
 }
-form input[type = text], form input[type = number],form input[type = date], form input[type = time] form input::placeholder, select{
-    color: #9a9a9a;
+.message-row {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
 }
-form input[type = submit]{
-    color: #fff;
-    background: blue;
-    padding: 12px 0;
-    border-radius: 4px;
-    cursor: pointer;
+.form-row-btn {
+  display: flex;
+  width: 30%;
+  margin: 0 auto;
 }
-form input[type = submit]:hover{
-    opacity: 0.9;
+
+form select,
+form input {
+  display: block;
+  width: 100%;
+  margin: 15px 12px;
+  padding: 5px;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #eee;
+  font-weight: 300;
 }
-@media(max-width: 992px){
-    .card-container{
-        grid-template-columns: 100%;
-        width: 100vw;
-    }
-    .card-img{
-        height: 330px;
-    }
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form input[type="time"] form input::placeholder,
+select {
+  color: #9a9a9a;
+}
+form input[type="submit"] {
+  color: #fff;
+  background: blue;
+  padding: 12px 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+form input[type="submit"]:hover {
+  opacity: 0.9;
+}
+@media (max-width: 992px) {
+  .card-container {
+    grid-template-columns: 100%;
+    width: 100vw;
+  }
+  .card-img {
+    height: 330px;
+  }
 }
 
 .table-responsive {
-    width: 100%;
-    overflow-x: auto;
-    background: #000;
+  width: 100%;
+  overflow-x: auto;
+  background: #000;
 }
 
 thead td {
-    font-weight: 700;
-
+  font-weight: 700;
 }
 
 td {
-    padding: .5rem 1rem;
-    font-size: .9rem;
-    color: white;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: white;
 }
 
-
 table {
-   border: 1px solid;
+  border: 1px solid;
 }
 
 tbody tr {
-    border-top: 1px solid #f0f0f0;
-    border-bottom: 1px solid #f0f0f0;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 thead tr {
-    border-top: 1px solid #f0f0f0;
-    border-bottom: 1px solid #f0f0f0;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
 }
