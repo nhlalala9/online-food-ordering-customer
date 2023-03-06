@@ -40,6 +40,7 @@ export class CartComponent implements OnInit {
   }
   
   onSubmit(): void {
+    localStorage.setItem('total', JSON.stringify(this.total));
     const order = {
       name: this.checkoutForm.value.name,
       phoneNumber: this.checkoutForm.value.phoneNumber,
@@ -80,6 +81,8 @@ export class CartComponent implements OnInit {
       this.getCartDetails = JSON.parse(cartData);
       console.log(this.getCartDetails,"why");
       this.total = this.getCartDetails.reduce((acc, val) => acc + (val.attributes?.price * val.attributes?.quantity), 0);
+      console.log(this.total,"total")
+      localStorage.setItem('total', JSON.stringify(this.total));
       console.log(this.total)
     } else {
       this.getCartDetails = [];

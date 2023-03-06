@@ -1,9 +1,13 @@
 .dashboard{
     height: 100%;
     width: 100%;
-    padding-right: 360px;
+    padding-right: 450px;
     padding-left: 100px;
+    margin-left: 5%;
+   
 }
+
+
 .dashboard-banner{
     width: 100%;
     height: 300px;
@@ -198,11 +202,7 @@ a{
     margin: 5px 0 10px 0;
 }
 
-.input-promo{
-    height: 100%;
-    background-color: transparent;
-    border: none;
-}
+
 
 .button-promo {
     float: right;
@@ -290,7 +290,7 @@ cursor: pointer;
 }
 
 
-.card {
+/* .card {
     background-color: initial;
     border: 0 solid transparent;
     border: 1px solid rgba(0,0,0,.3);
@@ -300,7 +300,7 @@ cursor: pointer;
     margin-bottom: 1.875rem;
     position: relative;
     transition: all .5s ease-in-out;
-}
+} */
 
 .card {
     word-wrap: break-word;
@@ -311,6 +311,8 @@ cursor: pointer;
     display: flex;
     flex-direction: column;
     min-width: 0;
+    position: relative;
+    margin-bottom: 1.875rem;
 }
 
 .card.dishe-bx.style-1 .c-heart {
