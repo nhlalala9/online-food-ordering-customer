@@ -42,14 +42,15 @@ export class CartComponent implements OnInit {
   }
   
   onSubmit(): void {
-    // const order = {
-    //   name: this.checkoutForm.value.name,
-    //   phoneNumber: this.checkoutForm.value.phoneNumber,
-    //   email: this.checkoutForm.value.email,
-    //   address: this.checkoutForm.value.address,
-    //   cartDetails: this.getCartDetails
-    // };
-    // console.log(order,"order")
+    localStorage.setItem('total', JSON.stringify(this.total));
+    const order = {
+      name: this.checkoutForm.value.name,
+      phoneNumber: this.checkoutForm.value.phoneNumber,
+      email: this.checkoutForm.value.email,
+      address: this.checkoutForm.value.address,
+      cartDetails: this.getCartDetails
+    };
+    console.log(order,"order")
 
     // this.http.post('http://your-api-endpoint.com/order', order).subscribe(response => {
     //   // Do something with the response if needed
@@ -83,6 +84,8 @@ export class CartComponent implements OnInit {
       this.getCartDetails = JSON.parse(cartData);
       console.log(this.getCartDetails,"why");
       this.total = this.getCartDetails.reduce((acc, val) => acc + (val.attributes?.price * val.attributes?.quantity), 0);
+      console.log(this.total,"total")
+      localStorage.setItem('total', JSON.stringify(this.total));
       console.log(this.total)
     } else {
       this.getCartDetails = [];

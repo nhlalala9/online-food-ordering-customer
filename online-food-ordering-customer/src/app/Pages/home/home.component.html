@@ -1,10 +1,5 @@
-<input type="checkbox" id="cart">
-<label for="cart" class="label-cart">
-    <a href="customer/cart"><span class="fa-solid fa-cart-shopping"><span class="badge badge-info">{{getCartDetails.length}}</span></span>
-    </a></label>
-<!-- <i class="fa-regular fa-circle fa-stack-2x"></i> -->
-
-<h3 class="logo">Food</h3>
+<app-navbar></app-navbar>
+<app-sidebar></app-sidebar>
 
 <div class="dashboard">
     <div class="dashboard-banner" >
@@ -173,9 +168,7 @@
         <div class="card-footer border-0 pt-2">
           <div class="common d-flex align-items-center justify-content-between">
             <div>
-              <!-- <a href="/react/demo/favorite-menu">
-                <h4>Mushroom Burger</h4>
-              </a> -->
+            
               <h3 class="mb-0 text-primary">R {{item?.attributes?.price}}</h3>
             </div>
             <div (click)=addtocart(item) class="plus c-pointer">
@@ -186,42 +179,6 @@
       </div>
     </div>
   </div> 
-    <!-- <div class="row d-flex justify-content-between">
-    <div class="d-flex justify-content-center  dashboard-content"  *ngFor="let item of product">
-        <a routerLink="/food">  
-        <div class="dashboard-card" style="width: 25rem;" >
-            <a >
-            <img [srcset]="item?.attributes?.Picture?.data?.attributes?.url"
-            src="https://www.jennycancook.com/wp-content/uploads/2014/08/comingsoon.jpg" alt="" class="card-image" style="height:15rem;">
-            
-            <div class="card-detail">
-                <h4 style="color: black">{{item?.attributes?.name}}<span> R {{product?.attributes?.price}}</span>
-                </h4>
-               
-                    <i class="fa-sharp fa-solid fa-star"></i>
-                    <i class="fa-sharp fa-solid fa-star"></i>
-                    <i class="fa-sharp fa-solid fa-star"></i>
-                    <button (click)=addtocart(item)>Add to Cart</button>
-
-
-
-            </div>
-        </a>
-        </div> </a>
-    </div>
-       
-        
-
-        
-
-        
-    
-        
-    
-        
-    
-        
-    </div> -->
 </div>
 
 <div class="dashboard-order">

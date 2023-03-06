@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ToastComponent } from './components/toast/toast.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule,Validators } from '@angular/forms';
 import { LandingComponent } from './components/landing/landing.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';

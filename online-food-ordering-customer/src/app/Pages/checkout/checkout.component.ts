@@ -26,6 +26,7 @@ export class CheckoutComponent implements OnInit {
  
   public username = localStorage.getItem('s_username');
   public email = localStorage.getItem('s_userEmail');
+  public grandtotal = localStorage.getItem('total');
   ngOnInit(): void {
     this.loadCart();
     console.log(this.getCartDetails,"show")
@@ -60,22 +61,25 @@ export class CheckoutComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.currentDate= new Date();
     this.formattedDate = this.datePipe.transform(this.currentDate, 'dd/MM/yyyy');
     this.checkoutForm.patchValue({
       date: this.formattedDate ?? ''
     });
     const order = {
       name: this.username,
-      // date: this.formattedDate,
+      date: new Date(),
       phoneNumber: this.checkoutForm.value.phoneNumber,
       email: this.email,
       address: this.checkoutForm.value.address,
-      cartDetails: this.getCartDetails
+      cartDetails: this.getCartDetails,
+      total:this.grandtotal
     };
     console.log(order,"order")
+    console.log(order.date, "check date")
 
     this.checkoutService.checkout(order).subscribe(response => {
-      // Do something with the response if needed
+  
       console.log(response,"works");
     });
 
