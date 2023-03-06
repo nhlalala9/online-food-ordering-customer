@@ -9,9 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-// qty:number=1;
-  // public products : any = [];
-  public grandTotal: number = 0;
+
  
   
   constructor(private cartService : CartService,private fb: FormBuilder,private http: HttpClient) { }
@@ -62,14 +60,6 @@ export class CartComponent implements OnInit {
 
 
 
-
-
-
-
-
-
-
-
   loadCart(): void {
     const cartData = localStorage.getItem('localCart');
     console.log(cartData,"me");
@@ -80,6 +70,7 @@ export class CartComponent implements OnInit {
       this.getCartDetails = JSON.parse(cartData);
       console.log(this.getCartDetails,"why");
       this.total = this.getCartDetails.reduce((acc, val) => acc + (val.attributes?.price * val.attributes?.quantity), 0);
+      localStorage.setItem('total', JSON.stringify(this.total));
       console.log(this.total)
     } else {
       this.getCartDetails = [];

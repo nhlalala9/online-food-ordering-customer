@@ -16,7 +16,8 @@ export class CheckoutComponent implements OnInit {
     phoneNumber:"",
     email:"",
     address: " ",
-    date: ""
+    date: "",
+    total: 0
   });
   getCartDetails: any[] = [];
   total: number = 0;
@@ -26,6 +27,8 @@ export class CheckoutComponent implements OnInit {
  
   public username = localStorage.getItem('s_username');
   public email = localStorage.getItem('s_userEmail');
+  public Granttotal = Number(localStorage.getItem('total'));
+
   ngOnInit(): void {
     this.loadCart();
     console.log(this.getCartDetails,"show")
@@ -68,6 +71,7 @@ export class CheckoutComponent implements OnInit {
       name: this.username,
       // date: this.formattedDate,
       phoneNumber: this.checkoutForm.value.phoneNumber,
+      total: this.Granttotal,
       email: this.email,
       address: this.checkoutForm.value.address,
       cartDetails: this.getCartDetails

@@ -18,7 +18,8 @@ export class CheckoutService {
       address: order.address,
       phoneNumber: order.phoneNumber,
       email: order.email,
-      cartDetails: order.cartDetails
+      cartDetails: order.cartDetails,
+      total: order.total
     }}
     return this.http.post<any>(`${this.apiUrl}/api/orders` , data);
   }
