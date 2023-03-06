@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/service/products.service';
 import { CartService } from 'src/app/service/cart.service';
-import { AuthenticationService } from 'src/app/service/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +10,8 @@ import { AuthenticationService } from 'src/app/service/authentication.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  router: any;
+  [x: string]: any;
+
   product: any;
   me: any;
   public productList: any;
@@ -27,7 +28,7 @@ export class HomeComponent implements OnInit {
     private http: HttpClient,
     private ProductsService: ProductsService,
     private cartService: CartService,
-    private auth: AuthenticationService
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -107,11 +108,13 @@ export class HomeComponent implements OnInit {
 
 
 
-
+checkout(){
+  this.router.navigateByUrl('/customer/checkout')
+}
 ///cart here 
 
 logOut(){
-  this.auth.logout()
+  this['auth'].logout()
 }
 
 loadCart(): void {

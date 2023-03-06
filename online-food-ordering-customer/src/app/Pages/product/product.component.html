@@ -1,3 +1,5 @@
+<app-navbar></app-navbar>
+<app-sidebar></app-sidebar>
 <div class="container m">
   <img
     [src]="product?.attributes?.Picture?.data?.attributes?.url"
@@ -56,12 +58,7 @@
               </div>
             </div>
             <div class="recent-review d-flex align-items-center">
-              <!-- <img
-              [srcset]="product?.attributes?.Picture?.data?.attributes?.url"
-              src="https://www.jennycancook.com/wp-content/uploads/2014/08/comingsoon.jpg"
-                alt=""
-                class="img1"
-              /> -->
+            
               <div>
                 <h4 class="font-w500 mb-0">{{ rating?.attributes?.product?.data?.attributes?.name }}</h4>
                 <ul class="d-flex mb-2">
@@ -89,93 +86,7 @@
             <!-- <div><h6 class="font-w400">{{rating.attributes?.date}}</h6></div> -->
           </div>
         </div>
-        <div class="recent-review d-flex align-items-center">
-          <img
-          [srcset]="rating?.attributes?.Picture?.data?.attributes?.url"
-          src="https://www.jennycancook.com/wp-content/uploads/2014/08/comingsoon.jpg"
-            alt=""
-            class="img1"
-          />
-          <div>
-            <h4 class="font-w500 mb-0">{{ product?.data?.attributes?.name }}</h4>
-            <ul class="d-flex mb-2">
-              <li>
-                {{rating.attributes?.rate}} <svg
-                  width="16"
-                  height="15"
-                  viewBox="0 0 16 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 0.500031L9.79611 6.02789H15.6085L10.9062 9.4443L12.7023 14.9722L8 11.5558L3.29772 14.9722L5.09383 9.4443L0.391548 6.02789H6.20389L8 0.500031Z"
-                    fill="#FC8019"
-                  ></path>
-                </svg>
-              </li>
-              <!-- <li>
-                <svg
-                  width="16"
-                  height="15"
-                  viewBox="0 0 16 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 0.500031L9.79611 6.02789H15.6085L10.9062 9.4443L12.7023 14.9722L8 11.5558L3.29772 14.9722L5.09383 9.4443L0.391548 6.02789H6.20389L8 0.500031Z"
-                    fill="#FC8019"
-                  ></path>
-                </svg>
-              </li>
-              <li>
-                <svg
-                  width="16"
-                  height="15"
-                  viewBox="0 0 16 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 0.500031L9.79611 6.02789H15.6085L10.9062 9.4443L12.7023 14.9722L8 11.5558L3.29772 14.9722L5.09383 9.4443L0.391548 6.02789H6.20389L8 0.500031Z"
-                    fill="#FC8019"
-                  ></path>
-                </svg>
-              </li>
-              <li>
-                <svg
-                  width="16"
-                  height="15"
-                  viewBox="0 0 16 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 0.500031L9.79611 6.02789H15.6085L10.9062 9.4443L12.7023 14.9722L8 11.5558L3.29772 14.9722L5.09383 9.4443L0.391548 6.02789H6.20389L8 0.500031Z"
-                    fill="#FC8019"
-                  ></path>
-                </svg>
-              </li>
-              <li>
-                <svg
-                  width="16"
-                  height="15"
-                  viewBox="0 0 16 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 0.500031L9.79611 6.02789H15.6085L10.9062 9.4443L12.7023 14.9722L8 11.5558L3.29772 14.9722L5.09383 9.4443L0.391548 6.02789H6.20389L8 0.500031Z"
-                    fill="#FC8019"
-                  ></path>
-                </svg>
-              </li> -->
-            </ul>
-          </div>
-        </div>
-        <p>
-         {{rating.attributes?.comment}}
-        </p>
-        <div><h6 class="font-w400">{{rating.attributes?.date}}</h6></div>
+      
       </div>
       <div class="col col-lg-2">
         
