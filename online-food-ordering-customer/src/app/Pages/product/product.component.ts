@@ -23,8 +23,8 @@ public username = localStorage.getItem('s_username');
   currentDate = new Date();
  formattedDate = this.datePipe.transform(this.currentDate, 'dd/MM/yyyy');
  rati: any[] = []
- 
-
+ me:any
+now:any[] =[]
   constructor(private productsService: ProductsService, private ss: AuthenticationService, private route: ActivatedRoute, private ratings: RatingService,private datePipe: DatePipe,private cartService : CartService) { }
 
 
@@ -35,16 +35,31 @@ public username = localStorage.getItem('s_username');
       const id = params.get('id');
       this.productsService.getById(id).subscribe(product => {
         this.product = product.data;
-        console.log(this.product.id,"hiiii")
-
+        console.log(this.product,"hiiii")
+        const matchedRatings = this.check(); 
+        this.now = matchedRatings// call the check function
+        console.log(matchedRatings, "toka");
       });
     });
     this.ratings.getRating().subscribe((products: any) =>{
       this.rati = products.data;
-      console.log(this.rati,"rating")
+      console.log(this.rati, "too")
     })
   }
 
+
+  check() {
+    const matchedProducts = [];
+    const productName = this.product.attributes.name;
+    console.log(productName)
+    for (const rating of this.rati) {
+      if (rating.attributes.product.data.attributes.name === productName) {
+        matchedProducts.push(rating);
+        console.log(rating)
+      }
+    }
+    return matchedProducts;
+  }
 
 
 onSubmit() {
