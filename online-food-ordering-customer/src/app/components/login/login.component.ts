@@ -5,9 +5,7 @@ import { Subscription } from 'rxjs';
 import { AuthenticationService } from '../../service/authentication.service';
 import { StorageService } from '../../service/storage.service';
 import { ToastService } from '../../service/toast.service';
-// import { AuthServiceService } from 'src/app/Authentication/auth-service.service';
 import { Observable } from 'rxjs';
-
 
 @Component({
   selector: 'app-login',
@@ -21,20 +19,14 @@ export class LoginComponent implements OnDestroy {
   });
 
 
-
-
-
-  // email= '';
-  // password= '';
-
   private loginSub: Subscription | undefined;
   constructor(
     private fb: FormBuilder,
     private auth: AuthenticationService,
     private router: Router,
     private toast: ToastService,
-    private ss: StorageService,
-    // private authService: AuthServiceService
+    private ss: StorageService
+
   ) {}
 
   ngOnDestroy(): void {
@@ -42,9 +34,6 @@ export class LoginComponent implements OnDestroy {
       this.loginSub.unsubscribe();
     }
   }
-
-  
-
 
   login() {
     const credentials = this.loginForm.value;
@@ -71,21 +60,4 @@ export class LoginComponent implements OnDestroy {
   }
   
   ngOnInit(): void {}
-
-
-//   onSubmit(): void {
-//     this.authService.login(this.email, this.password).subscribe(
-//       response => {
-//         const userRole = this.authService.getUserRole();
-//         if (userRole === 'customer') {
-//           this.router.navigateByUrl('/customer');
-//         } else {
-//           this.router.navigateByUrl('/admin');
-//         }
-//       },
-//       error => {
-//         console.error(error);
-//       }
-//     );
-//   }
- }
+}

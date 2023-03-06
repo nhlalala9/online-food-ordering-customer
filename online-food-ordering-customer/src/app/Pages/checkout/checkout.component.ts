@@ -84,9 +84,9 @@ export class CheckoutComponent implements OnInit {
     });
 
     // Clear the form and cart after submission
-    // this.checkoutForm.reset();
-    // localStorage.removeItem('localCart');
-    // this.cartService.addtoCart(0);
+    this.checkoutForm.reset();
+    localStorage.removeItem('localCart');
+    this.cartService.addtoCart(0);
   }
 
 }

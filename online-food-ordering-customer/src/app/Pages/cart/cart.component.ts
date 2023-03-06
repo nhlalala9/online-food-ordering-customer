@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/service/cart.service';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -14,7 +16,7 @@ export class CartComponent implements OnInit {
   public grandTotal: number = 0;
  
   
-  constructor(private cartService : CartService,private fb: FormBuilder,private http: HttpClient) { }
+  constructor(private cartService : CartService,private fb: FormBuilder,private http: HttpClient, private router: Router,) { }
 
 
   public checkoutForm: FormGroup = this.fb.group({
@@ -59,6 +61,7 @@ export class CartComponent implements OnInit {
     // this.checkoutForm.reset();
     // localStorage.removeItem('localCart');
     // this.cartService.addtoCart(0);
+    this.router.navigateByUrl('/customer/checkout')
   }
 
 
