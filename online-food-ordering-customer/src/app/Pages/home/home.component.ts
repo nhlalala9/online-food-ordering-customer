@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/service/products.service';
 import { CartService } from 'src/app/service/cart.service';
+import { AuthenticationService } from 'src/app/service/authentication.service';
 
 @Component({
   selector: 'app-home',
@@ -25,7 +26,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private ProductsService: ProductsService,
-    private cartService: CartService
+    private cartService: CartService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit(): void {
@@ -107,6 +109,10 @@ export class HomeComponent implements OnInit {
 
 
 ///cart here 
+
+logOut(){
+  this.auth.logout()
+}
 
 loadCart(): void {
   const cartData = localStorage.getItem('localCart');
