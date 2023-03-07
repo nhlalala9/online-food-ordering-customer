@@ -12,6 +12,9 @@ export class OrderComponent implements OnInit {
   order: any;
   cartDetails: any;
   bookings: any;
+  complete:any[] = [];
+  Delivering:any[] = [];
+  approved:any[] = []
   public username = localStorage.getItem('s_username');
 
   constructor(private orderService: OrdersService) {}
@@ -24,10 +27,23 @@ export class OrderComponent implements OnInit {
     });
   }
 
+  tab: string = 'order';
+
+  setTab(tab: string){
+    this.tab = tab;
+  }
+
   ngOnInit(): void {
-    this.orderService.getOrders().subscribe((order: any) => {
-      this.orders = order.data;
+    this.orderService.getOrders().subscribe((booking: any) => {
+      this.orders = booking.data;
+      this.orders = booking.data.filter((order: any) => order.attributes.status === "Pending");
+      this.approved = booking.data.filter((order: any) => order.attributes.status === "Approved");
+    this.complete = booking.data.filter((order: any) => order.attributes.status === "Completed");
+    this.Delivering = booking.data.filter((order: any) => order.attributes.status === "Delivering");
       console.log(this.orders, 'all orders');
+      console.log(this.approved,"approved");
+      console.log(this.complete,"complete");
+      console.log(this.Delivering,"on going");
       const matchedRatings = this.check();
       this.now = matchedRatings;
       console.log(matchedRatings, 'toka');
