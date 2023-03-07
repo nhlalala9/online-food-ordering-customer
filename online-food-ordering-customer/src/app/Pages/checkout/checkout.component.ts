@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CartService } from 'src/app/service/cart.service';
 import { CheckoutService } from 'src/app/service/checkout.service';
 import { DatePipe } from '@angular/common';
+
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -112,8 +113,8 @@ export class CheckoutComponent implements OnInit {
     if (!window.document.getElementById('stripe-script')) {
       const script = window.document.createElement('script');
       script.id = 'stripe-script';
-      script.type = 'text/javascript';
-      script.src = 'https://checkout.stripe.com/checkout.js';
+      script.type = 'text/typescript';
+      script.src = 'https://checkout.stripe.com/checkout.component.html';
       script.onload = () => {
         this.paymentHandler = (<any>window).StripeCheckout.configure({
           key: 'pk_test_51H7bbSE2RcKvfXD4DZhu',
