@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  [x: string]: any;
 
   product: any;
   me: any;
@@ -126,6 +127,10 @@ checkout(){
   this.router.navigateByUrl('/customer/checkout')
 }
 ///cart here 
+
+logOut(){
+  this['auth'].logout()
+}
 
 loadCart(): void {
   const cartData = localStorage.getItem('localCart');
