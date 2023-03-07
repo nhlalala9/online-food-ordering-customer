@@ -79,3 +79,83 @@
     cursor: pointer;
     color: blue;
 }
+
+
+nav {
+    background-color: #333;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin-left: 50%;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  li {
+    margin-right: 20px;
+  }
+  
+  li.notification-icon {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .notification-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+  }
+  .coin{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10rem;
+  }
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  button{
+   background-color: blue;
+   color: #fff;
+  }
+  
+  .modal h3 {
+    color: white;
+    font-size: 44px;
+  }
+  
+  .modal ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+  .modal li {
+    width: 30rem;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: white;
+    color: #333;
+    border-radius: 5px;
+  }
+  

@@ -5,8 +5,48 @@
 <h3 class="logo">Food</h3> -->
 <!-- <h3 class="logo">Food</h3> -->
 
-<input type="checkbox" id="cart">
+<!-- <input type="checkbox" id="cart">
 <label for="cart" class="label-cart">
     <a href="customer/cart"><span class="fa-solid fa-cart-shopping"><span class="badge badge-info">{{getCartDetails.length}}</span></span>
     </a></label>
-<h3 class="logo">Food</h3> 
+<h3 class="logo">Food</h3>  -->
+
+<nav>
+  <ul>
+    <li>
+      <a routerLink="/">Home</a>
+    </li>
+    <li>
+      <a routerLink="/about">About</a>
+    </li>
+    <li class="notification-icon" (click)="openNotificationModal()">
+      <i class="fa fa-bell"></i>
+      <span class="notification-count">{{ final.length }}</span>
+    </li>
+  </ul>
+</nav>
+
+<div
+  
+  class="modal"
+  [hidden]="!showNotificationModal"
+  (click)="closeNotificationModal()"
+>
+  <!-- <h3>Notifications</h3> -->
+  <div class="d-flex flex-column mb-3">
+    <ul *ngFor="let item of orders">
+    <li *ngIf="item?.attributes?.camel === null">
+      {{ item?.attributes?.notification }}
+      <button
+        class="d-flex justify-content-end mt-3"
+        (click)="closeNotificationModal()"
+        (click)="approveItem(item)"
+      >
+        close
+      </button>
+    </li>
+  </ul>
+  </div>
+ 
+</div>
+<!-- (click)="approveItem(order)" -->
