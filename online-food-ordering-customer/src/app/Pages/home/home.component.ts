@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   getCartDetails: any[] = [];
   total: number = 0;
   cartNumber: number = 0;
-  
+  isItemApproved: boolean = false;
 
   constructor(
     private http: HttpClient,
@@ -36,12 +36,27 @@ export class HomeComponent implements OnInit {
       this.product = product.data;
       console.log(product.data, "all products");
     });
-    // this.cartService.productList.subscribe((products) => {
-    //   this.products = products;
-    //   console.log(this.products, 'why now');
-    //   this.grandTotal = this.cartService.getTotalPrice();
-    // });
     this.loadCart();
+  }
+
+
+
+  approveItem(booking: any) {
+    const id = booking.id;
+    const status = 'True';
+    const index = this.product.findIndex((r: any) => r.id === booking.id);
+    console.log(index);
+   
+    this.ProductsService.updateItemStatus(id, status).subscribe(
+      (res) => {
+        console.log(res, 'see console');
+        window.location.reload();
+        this.isItemApproved = true;
+      },
+      (err) => {
+        console.error(err);
+      }
+    );
   }
 
   deleteProducts() {

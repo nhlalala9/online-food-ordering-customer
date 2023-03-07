@@ -18,6 +18,7 @@ import { BookingHistoryComponent } from './Pages/booking-history/booking-history
 import { CartComponent } from './Pages/cart/cart.component';
 import { DatePipe } from '@angular/common';
 import { CheckoutComponent } from './Pages/checkout/checkout.component';
+import { OrderComponent } from './Pages/order/order.component';
 
 
 
@@ -41,6 +42,7 @@ import { CheckoutComponent } from './Pages/checkout/checkout.component';
     BookingHistoryComponent,
     CartComponent,
     CheckoutComponent,
+    OrderComponent,
    
   ],
   imports: [

@@ -19,9 +19,12 @@ export class LoginComponent implements OnDestroy {
     password: ['', [Validators.required,Validators.minLength(6), Validators.maxLength(40)]],
   });
 
+<<<<<<< HEAD
   // submitted = false; 
   // errorMessage: String = " "
 
+=======
+>>>>>>> d6a8f2896504b2a72a03e30647b0659be0d714e8
   private loginSub: Subscription | undefined;
   constructor(
     private fb: FormBuilder,
@@ -29,7 +32,6 @@ export class LoginComponent implements OnDestroy {
     private router: Router,
     private toast: ToastService,
     private ss: StorageService
-
   ) {}
 
   ngOnDestroy(): void {
@@ -41,26 +43,25 @@ export class LoginComponent implements OnDestroy {
   login() {
     const credentials = this.loginForm.value;
 
-    this.loginSub = this.auth.login(
-      credentials.email,
-      credentials.password
-    ).subscribe(
-      resp => {
-        this.loginForm.reset();
+    this.loginSub = this.auth
+      .login(credentials.email, credentials.password)
+      .subscribe(
+        (resp) => {
+          this.loginForm.reset();
 
-        this.auth.persistUser(resp);
+          this.auth.persistUser(resp);
 
-        this.toast.showSuccess('Successfully logged in.');
+          this.toast.showSuccess('Successfully logged in.');
 
-        const attemptedRoute = this.ss.getItem('attemptedRoute');
-        this.ss.removeItem('attemptedRoute');
-        this.router.navigateByUrl(attemptedRoute || '/customer/home')
-      },
-      () => {
-        this.toast.showDanger('Login unsuccessful. Check your credentials.');
-      }
-    );
+          const attemptedRoute = this.ss.getItem('attemptedRoute');
+          this.ss.removeItem('attemptedRoute');
+          this.router.navigateByUrl(attemptedRoute || '/customer/home');
+        },
+        () => {
+          this.toast.showDanger('Login unsuccessful. Check your credentials.');
+        }
+      );
   }
-  
+
   ngOnInit(): void {}
 }

@@ -1,40 +1,40 @@
-.sidebar{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 10%;
-    height: 100%;
-    background-color: lightgrey;
-    z-index: 1;
-    padding-top: 70px;
-    padding-left: 10px;
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10%;
+  height: 100%;
+  background-color: lightgrey;
+  z-index: 1;
+  padding-top: 70px;
+  padding-left: 10px;
 }
 
-.sidebar-menu{
-    width: 100%;
-   display: flex;
-    padding: 10px 5px;
-    color: black;
-    gap: 3px;
+.sidebar-menu {
+  width: 100%;
+  display: flex;
+  padding: 10px 5px;
+  color: black;
+  gap: 3px;
 }
 .sidebar-menu > a {
- text-decoration: none;
- line-height: 1.5;
- color: black;
+  text-decoration: none;
+  line-height: 1.5;
+  color: black;
 }
 
 .sidebar-menu > span {
-    line-height: 1.5;
-    text-align: center;
+  line-height: 1.5;
+  text-align: center;
 }
 
-.sidebar-menu:hover{
-border-right: 2px solid blue;
-color: blue;
+.sidebar-menu:hover {
+  border-right: 2px solid blue;
+  color: blue;
 }
 
-.sidebar-menu:hover > a{
-color: blue;
+.sidebar-menu:hover > a {
+  color: blue;
 }
 
 .log{

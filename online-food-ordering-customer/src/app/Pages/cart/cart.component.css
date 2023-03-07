@@ -1,259 +1,261 @@
-@media (min-width: 1200px){
-.col-xl-4 {
+@media (min-width: 1200px) {
+  .col-xl-4 {
     flex: 0 0 auto;
     width: 33.33333%;
-}}
+  }
+}
 
-@media (min-width: 1200px){
-.col-xl-12 {
+@media (min-width: 1200px) {
+  .col-xl-12 {
     flex: 0 0 auto;
     width: 100%;
-}}
-.toka{
-    margin-left: 20%;
-    margin-right: 10%;
-    margin-top: 5%;
-   
+  }
+}
+.toka {
+  margin-left: 20%;
+  margin-right: 10%;
+  margin-top: 5%;
 }
 
 .card.dlab-position {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 7.5rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 7.5rem;
 }
 .card.dlab-bg {
-    background-color: rgba(252,128,25,.1);
-    background-color: whitesmoke;
-    border-color: black;
-    border-color: black;
+  background-color: rgba(252, 128, 25, 0.1);
+  background-color: whitesmoke;
+  border-color: black;
+  border-color: black;
 }
 .card {
-    background-color: initial;
-    border: 0 solid transparent;
-    border: 1px solid rgba(0,0,0,.3);
-    border-radius: 0.5rem;
-    box-shadow: none;
-    height: calc(100% - 30px);
-    margin-bottom: 1.875rem;
-    position: relative;
-    transition: all .5s ease-in-out;
+  background-color: initial;
+  border: 0 solid transparent;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  box-shadow: none;
+  height: calc(100% - 30px);
+  margin-bottom: 1.875rem;
+  position: relative;
+  transition: all 0.5s ease-in-out;
 }
 .card {
-    word-wrap: break-word;
-    background-clip: initial;
-    background-color: #fff;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: 0.75rem;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-
-}
-
-
-.card-body {
-    padding: 1.875rem;
+  word-wrap: break-word;
+  background-clip: initial;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
 .card-body {
-    flex: 1 1 auto;
-    padding: 1rem;
+  padding: 1.875rem;
 }
 
+.card-body {
+  flex: 1 1 auto;
+  padding: 1rem;
+}
 
 .card-footer:last-child {
-    border-radius: 0 0 calc(0.75rem - 1px) calc(0.75rem - 1px);
+  border-radius: 0 0 calc(0.75rem - 1px) calc(0.75rem - 1px);
 }
 .card-footer {
-    background: transparent;
-    border-color: #dbdbdb;
-    padding: 1.25rem 1.875rem;
+  background: transparent;
+  border-color: #dbdbdb;
+  padding: 1.25rem 1.875rem;
 }
 
 .card {
-    word-wrap: break-word;
-    background-clip: initial;
-    background-color: whitesmoke;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: 0.75rem;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
+  word-wrap: break-word;
+  background-clip: initial;
+  background-color: whitesmoke;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
 .bb-border {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    position: relative;
-    margin-left: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  position: relative;
+  margin-left: 1rem;
 }
 
-
-img, svg {
-    vertical-align: middle;
+img,
+svg {
+  vertical-align: middle;
 }
 .change {
-    border-radius: 0.25rem;
-    font-weight: 500;
-    padding: 0.25rem 0.875rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  padding: 0.25rem 0.875rem;
 }
 
 .btn {
-    border-radius: 0.5rem;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.5;
-    padding: 0.7875rem 1.319rem;
+  border-radius: 0.5rem;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 0.7875rem 1.319rem;
 }
 
 .btn {
-    background-color: initial;
-    border: 1px solid transparent;
-    border-radius: 0.75rem;
-    color: red;
-    cursor: pointer;
-    display: inline-block;
-    font-size: .875rem;
-    font-weight: 400;
-    padding: 0.375rem 0.75rem;
-    text-align: center;
-    text-decoration: none;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    -webkit-user-select: none;
-    user-select: none;
-    vertical-align: middle;
+  background-color: initial;
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  color: red;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding: 0.375rem 0.75rem;
+  text-align: center;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -webkit-user-select: none;
+  user-select: none;
+  vertical-align: middle;
 }
 
 a {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
-
-
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-button, select {
-    text-transform: none;
+button,
+select {
+  text-transform: none;
 }
 
-button, input, optgroup, select, textarea {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    margin: 0;
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
 }
 button {
-    border-radius: 0;
+  border-radius: 0;
 }
 
 .btn-primary {
-    background-color: blue;
-    background-color: blue;
-    border-color: white;
-    border-color: white;
+  background-color: blue;
+  background-color: blue;
+  border-color: white;
+  border-color: white;
 }
 
 .btn-primary {
-    color: white;
+  color: white;
 }
 .order-check {
-    border-radius: 0.5rem;
-    padding: 8px;
+  border-radius: 0.5rem;
+  padding: 8px;
 }
 .order-check .dlab-media {
-    background-color: #fff;
-    border: 1px solid black;
-    border: 1px solid black;
-    border-radius: 8px;
-    height: 70px;
-    margin-right: 15px;
-    min-width: 70px;
-    overflow: hidden;
-    width: 70px;
-}.order-check .dlab-media img {
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
+  background-color: #fff;
+  border: 1px solid black;
+  border: 1px solid black;
+  border-radius: 8px;
+  height: 70px;
+  margin-right: 15px;
+  min-width: 70px;
+  overflow: hidden;
+  width: 70px;
+}
+.order-check .dlab-media img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 
-
 .order-check .dlab-info {
-    flex: 1 1;
-    min-width: 180px;
-}.order-check .dlab-info .dlab-title {
-    color: #3d4152;
-    flex: 1 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 100%;
+  flex: 1 1;
+  min-width: 180px;
+}
+.order-check .dlab-info .dlab-title {
+  color: #3d4152;
+  flex: 1 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .quntity {
-    background-color: #fff;
-    border: 1px solid black;
-    border: 1px solid black;
-    border-radius: 0.5rem;
-    font-size: 14px;
-    font-weight: 400;
-    overflow: hidden;
+  background-color: #fff;
+  border: 1px solid black;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  font-size: 14px;
+  font-weight: 400;
+  overflow: hidden;
 }
 .quntity button:first-child {
-    border-right: 1px solid black;
-    border-right: 1px solid black;
+  border-right: 1px solid black;
+  border-right: 1px solid black;
 }
 
 .quntity button {
-    background: transparent;
-    border: black;
-    border-color: black;
-    color: black;
-    color:black;
-    height: 28px;
-    width: 30px;
+  background: transparent;
+  border: black;
+  border-color: black;
+  color: black;
+  color: black;
+  height: 28px;
+  width: 30px;
 }
 .quntity input {
-    background: transparent;
-    border: none;
-    text-align: center;
-    width: 20px;
-}.quntity button:last-child {
-    border-left: 1px solid black;
-    border-left: 1px solid black;
+  background: transparent;
+  border: none;
+  text-align: center;
+  width: 20px;
 }
-
+.quntity button:last-child {
+  border-left: 1px solid black;
+  border-left: 1px solid black;
+}
 
 .card-footer:last-child {
-    border-radius: 0 0 calc(0.75rem - 1px) calc(0.75rem - 1px);
+  border-radius: 0 0 calc(0.75rem - 1px) calc(0.75rem - 1px);
 }
 
 .card-footer {
-    background: transparent;
-    border-color: #dbdbdb;
-    padding: 1.25rem 1.875rem;
+  background: transparent;
+  border-color: #dbdbdb;
+  padding: 1.25rem 1.875rem;
 }
 
 .card-footer {
-    background-color: rgba(0,0,0,.03);
-    border-top: 1px solid rgba(0,0,0,.125);
-    padding: 0.5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 0.5rem 1rem;
 }
 
 .btn-block {
-    display: block;
-    width: 30%;
-    height: 3rem;
- display: flex;
- justify-content: center;
- align-items: center;
+  display: block;
+  width: 30%;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.try{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
+.try {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }
-
