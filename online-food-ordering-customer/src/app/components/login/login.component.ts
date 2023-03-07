@@ -19,12 +19,6 @@ export class LoginComponent implements OnDestroy {
     password: ['', [Validators.required,Validators.minLength(6), Validators.maxLength(40)]],
   });
 
-<<<<<<< HEAD
-  // submitted = false; 
-  // errorMessage: String = " "
-
-=======
->>>>>>> d6a8f2896504b2a72a03e30647b0659be0d714e8
   private loginSub: Subscription | undefined;
   constructor(
     private fb: FormBuilder,
