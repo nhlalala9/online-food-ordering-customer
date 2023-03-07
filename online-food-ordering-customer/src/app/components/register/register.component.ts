@@ -6,6 +6,7 @@ import { AuthenticationService } from '../../service/authentication.service';
 import { StorageService } from '../../service/storage.service';
 import { ToastService } from '../../service/toast.service';
 
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',

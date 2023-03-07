@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  [x: string]: any;
 
   product: any;
   me: any;
@@ -23,6 +24,7 @@ export class HomeComponent implements OnInit {
   cartNumber: number = 0;
   searchTerm: string = '';
   filteredProducts: any[] = [];
+  isItemApproved: boolean = false;
 
   constructor(
     private http: HttpClient,
@@ -48,6 +50,27 @@ export class HomeComponent implements OnInit {
       product.attributes.name.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
   }
+
+
+
+  approveItem(booking: any) {
+    const id = booking.id;
+    const status = 'True';
+    const index = this.product.findIndex((r: any) => r.id === booking.id);
+    console.log(index);
+   
+    this.ProductsService.updateItemStatus(id, status).subscribe(
+      (res) => {
+        console.log(res, 'see console');
+        window.location.reload();
+        this.isItemApproved = true;
+      },
+      (err) => {
+        console.error(err);
+      }
+    );
+  }
+
   deleteProducts() {
     if (confirm('Do you really want to delete this product')) {
       this.http
@@ -117,6 +140,10 @@ checkout(){
   this.router.navigateByUrl('/customer/checkout')
 }
 ///cart here 
+
+logOut(){
+  this['auth'].logout()
+}
 
 loadCart(): void {
   const cartData = localStorage.getItem('localCart');

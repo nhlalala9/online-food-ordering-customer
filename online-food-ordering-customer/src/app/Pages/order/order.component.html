@@ -47,232 +47,65 @@
               id="react-aria31190898-8-tabpane-Order"
               aria-labelledby="react-aria31190898-8-tab-Order"
               class="fade tab-pane active show"
-              *ngFor="let item of now"
+              *ngFor="let item of orders"
             >
               <div
                 (click)="selector(item?.id)"
-                class="orderin-bx d-flex align-items-center justify-content-between"
+                class="orderin-bx d-flex align-items-center justify-content-between click"
               >
                 <div>
-                  <h4>
-                    Order #
-                    {{ item?.id }}
-                  </h4>
-                  <span>June 1, 2020, 08:22 AM</span>
+                  <h4>Order #{{ item?.id }}</h4>
+                  <span>{{ item?.attributes.date }}</span>
                 </div>
                 <div class="d-flex align-items-center">
                   <h4 class="text-primary mb-0">
-                    R
-                    {{ item?.attributes.total }}
+                    R {{ item?.attributes.total }}
                   </h4>
+                  <a class="icon-bx" href="/react/demo/orders">
+                    </a>
                 </div>
               </div>
             </div>
-            <div
-              role="tabpanel"
-              id="react-aria31190898-8-tabpane-Prepared"
-              aria-labelledby="react-aria31190898-8-tab-Prepared"
-              class="fade tab-pane"
-            >
-              <div
-                class="orderin-bx d-flex align-items-center justify-content-between"
-              >
-                <div>
-                  <h4>Prepared</h4>
-                  <span>June 1, 2020, 08:22 AM</span>
-                </div>
-                <div class="d-flex align-items-center">
-                  <h4 class="text-primary mb-0">$202.00</h4>
-                </div>
-              </div>
-              <div
-                class="orderin-bx d-flex align-items-center justify-content-between"
-              >
-                <div>
-                  <h4>Prepared</h4>
-                  <span>June 1, 2020, 08:22 AM</span>
-                </div>
-                <div class="d-flex align-items-center">
-                  <h4 class="text-primary mb-0">$202.00</h4>
-                </div>
-              </div>
-              <div
-                class="orderin-bx d-flex align-items-center justify-content-between"
-              >
-                <div>
-                  <h4>Prepared</h4>
-                  <span>June 1, 2020, 08:22 AM</span>
-                </div>
-                <div class="d-flex align-items-center">
-                  <h4 class="text-primary mb-0">$202.00</h4>
-                </div>
-              </div>
-              <div
-                class="orderin-bx d-flex align-items-center justify-content-between"
-              >
-                <div>
-                  <h4>Prepared</h4>
-                  <span>June 1, 2020, 08:22 AM</span>
-                </div>
-                <div class="d-flex align-items-center">
-                  <h4 class="text-primary mb-0">$202.00</h4>
-                </div>
-              </div>
-              <div
-                class="orderin-bx d-flex align-items-center justify-content-between"
-              >
-                <div>
-                  <h4>Prepared</h4>
-                  <span>June 1, 2020, 08:22 AM</span>
-                </div>
-                <div class="d-flex align-items-center">
-                  <h4 class="text-primary mb-0">$202.00</h4>
-                </div>
-              </div>
-              <div
-                class="orderin-bx d-flex align-items-center justify-content-between"
-              >
-                <div>
-                  <h4>Prepared</h4>
-                  <span>June 1, 2020, 08:22 AM</span>
-                </div>
-                <div class="d-flex align-items-center">
-                  <h4 class="text-primary mb-0">$202.00</h4>
-                </div>
-              </div>
-            </div>
-            <div
-              role="tabpanel"
-              id="react-aria31190898-8-tabpane-Delivered"
-              aria-labelledby="react-aria31190898-8-tab-Delivered"
-              class="fade tab-pane"
-            >
-              <div
-                class="orderin-bx d-flex align-items-center justify-content-between"
-              >
-                <div>
-                  <h4>Delivered</h4>
-                  <span>June 1, 2020, 08:22 AM</span>
-                </div>
-                <div class="d-flex align-items-center">
-                  <h4 class="text-primary mb-0">$202.00</h4>
-                </div>
-              </div>
-              <div
-                class="orderin-bx d-flex align-items-center justify-content-between"
-              >
-                <div>
-                  <h4>Delivered</h4>
-                  <span>June 1, 2020, 08:22 AM</span>
-                </div>
-                <div class="d-flex align-items-center">
-                  <h4 class="text-primary mb-0">$202.00</h4>
-                </div>
-              </div>
-              <div
-                class="orderin-bx d-flex align-items-center justify-content-between"
-              >
-                <div>
-                  <h4>Delivered</h4>
-                  <span>June 1, 2020, 08:22 AM</span>
-                </div>
-                <div class="d-flex align-items-center">
-                  <h4 class="text-primary mb-0">$202.00</h4>
-                </div>
-              </div>
-              <div
-                class="orderin-bx d-flex align-items-center justify-content-between"
-              >
-                <div>
-                  <h4>Delivered</h4>
-                  <span>June 1, 2020, 08:22 AM</span>
-                </div>
-                <div class="d-flex align-items-center">
-                  <h4 class="text-primary mb-0">$202.00</h4>
-                </div>
-              </div>
-              <div
-                class="orderin-bx d-flex align-items-center justify-content-between"
-              >
-                <div>
-                  <h4>Delivered</h4>
-                  <span>June 1, 2020, 08:22 AM</span>
-                </div>
-                <div class="d-flex align-items-center">
-                  <h4 class="text-primary mb-0">$202.00</h4>
-                </div>
-              </div>
-              <div
-                class="orderin-bx d-flex align-items-center justify-content-between"
-              >
-                <div>
-                  <h4>Delivered</h4>
-                  <span>June 1, 2020, 08:22 AM</span>
-                </div>
-                <div class="d-flex align-items-center">
-                  <h4 class="text-primary mb-0">$202.00</h4>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
-        <div class="col-xl-8">
-            <div class="card border-0">
-                <h4 class="cate-title mb-sm-3 mb-2 mt-xl-0 mt-3">Order Details</h4>
-                <div class="card h-auto">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center justify-content-between border-bottom flex-wrap">
-                            <div class="mb-4">
-                                <h4 class="font-w500">Order #1</h4><span>June 1, 2020, 08:22 AM</span>
-                            </div>
-                            <div class="orders-img d-flex mb-4 ">
-                                <img src="https://cdn-icons-png.flaticon.com/512/25/25634.png" alt="" />
-                                <div>
-                                    <h6 class="font-w500">
-                                        {{order?.attributes?.name}}
-                                    </h6>
-                                    <span>
-                                        {{order?.attributes?.phoneNumber}}
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row border-bottom pb-2">
-                            <div class="col-xl-6">
-                                <div class="address-bx mt-3"><span class="d-block mb-2">Delivery Address</span>
-                                    <div class="d-flex align-items-center mb-2">
-                                        <i class="fas fa-map-marker-alt fa-2x"></i>
-                                        <h5 class="mb-0 ml-5">
-                                            {{order?.attributes?.address}}<br />
-                                        </h5>
-                                    </div>
-         
-                                </div>
-                            </div>
-
-                            <!-- <div class="col-xl-2"></div> -->
-                        </div>
-                        <div class="order-menu style-1 mt-3">
-                            <h4>Order Menu</h4>
-                            <div class="d-flex align-items-center mb-4" *ngFor="let item of cartDetails; let i = index">
-                                
-                                <img class="me-3"
-                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCWuuZizf8W3t9J7RpYZ7qYad9dDPz_uFqUQ&usqp=CAU"
-                                    alt="">
-                                <div>
-                                    <h4 class="font-w600 text-nowrap mb-0"><a href="/react/demo/orders"></a>
-                                        {{item?.attributes?.name}}
-                                    </h4>
-                                    <p class="mb-0">R
-                                         {{item?.attributes?.price}} x {{item?.attributes?.quantity}}
-
-                                    </p>
-                                </div>
-                                <h4 class="text-primary mb-0 ms-auto">
-                                    R {{item?.attributes?.quantity * item?.attributes?.price | number}}
-                                </h4>
-                            </div>
-
+      </div>
+    </div>
+    <div class="col-xl-8">
+      <div class="card border-0">
+        <h4 class="cate-title mb-sm-3 mb-2 mt-xl-0 mt-3">Order Details</h4>
+        <div class="card h-auto">
+          <div class="card-body">
+            <div
+              class="d-flex align-items-center justify-content-between border-bottom flex-wrap"
+            >
+              <div class="mb-4">
+                <h4 class="font-w500">Order #{{ order?.id }}</h4>
+                <span>{{ order?.attributes?.date }}</span>
+              </div>
+              <div class="orders-img d-flex mb-4">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/25/25634.png"
+                  alt=""
+                />
+                <div>
+                  <h6 class="font-w500">{{ order?.attributes?.name }}</h6>
+                  <span>{{ order?.attributes?.phoneNumber }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="row border-bottom pb-2">
+              <div class="col-xl-6">
+                <div class="address-bx mt-3">
+                  <span class="d-block mb-2">Delivery Address</span>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="fas fa-map-marker-alt fa-3x"></i>
+                    <h5 class="mb-0 ml-5">
+                      {{ order?.attributes?.address }}<br />
+                    </h5>
+                  </div>
+                </div>
+              </div>
 
               <div class="col-xl-2"></div>
             </div>
@@ -284,7 +117,7 @@
               >
                 <img
                   class="me-3"
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCWuuZizf8W3t9J7RpYZ7qYad9dDPz_uFqUQ&usqp=CAU"
+                  src="{{ item?.attributus?.Picture?.data?.attributes?.url }}"
                   alt=""
                 />
                 <div>
@@ -309,7 +142,9 @@
             <hr style="opacity: 0.7" />
             <div class="d-flex align-items-center justify-content-between">
               <h4 class="font-w500 mb-0">Total</h4>
-              <h4 class="cate-title text-primary">R</h4>
+              <h4 class="cate-title text-primary">
+                R {{ order?.attributes?.total }}
+              </h4>
             </div>
           </div>
         </div>
@@ -318,9 +153,15 @@
             class="btn btn-outline-danger me-sm-4 me-2"
             href="/react/demo/orders"
             >Reject Order</a
-          ><a class="btn btn-primary" href="/react/demo/orders">Accept Order</a>
+          >
+          <a
+            class="btn btn-primary"
+            *ngIf="order?.attributes?.status === 'Delivering'"
+            (click)="approveItem(order)"
+            >Accept Order</a>
         </div>
       </div>
     </div>
   </div>
 </div>
+

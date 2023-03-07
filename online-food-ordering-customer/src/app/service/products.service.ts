@@ -29,4 +29,9 @@ export class ProductsService {
   deleteProducts(productId: number): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/api/products/${productId}`);
   }
+  updateItemStatus(id: any, status: any) {
+    const url = `${this.apiUrl}/api/products/${id}`;
+    const data = { data: { status: status } };
+    return this.http.put(url, data);
+  }
 }

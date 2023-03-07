@@ -303,7 +303,31 @@ a {
   padding: 0rem 1rem;
   font-size: 1.5rem;
 }
+.btn-link.active, .btn-link:focus, .btn-link:hover, a, a.active, a:focus, a:hover {
+    text-decoration: none;}
+.card {
+    background-color: initial;
+    border: 0 solid transparent;
+    border: 1px solid rgba(0,0,0,.3);
+    border-radius: 0.5rem;
+    box-shadow: none;
+    height: calc(100% - 30px);
+    margin-bottom: 1.875rem;
+    position: relative;
+    transition: all .5s ease-in-out;
+} */
+.approved-icon {
+  /* Add any styles you want to apply to the icon when it's approved */
+  color: red;
+}
 
+.red {
+  color: red;
+}
+
+.black {
+  color: black;
+}
 .card {
   word-wrap: break-word;
   background-clip: initial;
@@ -317,7 +341,7 @@ a {
   margin-bottom: 1.875rem;
 }
 
-.card.dishe-bx.style-1 .c-heart {
+.card.dishe-bx.style-1 .fa-heart {
   margin: 0;
   position: absolute;
   right: 1.688rem;
@@ -327,7 +351,7 @@ a {
   font-size: 1.25rem;
   margin-top: 1.125rem;
 }
-.c-pointer {
+.c-heart {
   cursor: pointer;
 }
 .fa-solid,
