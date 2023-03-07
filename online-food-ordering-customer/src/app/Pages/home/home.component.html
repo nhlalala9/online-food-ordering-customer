@@ -23,6 +23,10 @@
         >View all <i class="fa-solid fa-angle-right ms-2"></i
       ></a>
     </div>
+    <div class="search-wrapper">
+      <span class="fas fa-search" ></span>
+      <input type="text" placeholder="search here" [(ngModel)]="searchTerm" (keyup)="search()"/>
+    </div>
     <div
       class="swiper swiper-initialized swiper-horizontal swiper-pointer-events mySwiper-2 swiper-backface-hidden"
     >
@@ -663,7 +667,7 @@
     ></div>
 
     <div class="row">
-      <div class="col-xl-4 col-xxl-4 col-sm-6" *ngFor="let item of product">
+      <div class="col-xl-4 col-xxl-4 col-sm-6" *ngFor="let item of filteredProducts">
         <div class="card dishe-bx b-hover style-1">
           <div class="card-body pb-0 pt-3">
             <div class="text-center mb-2">
