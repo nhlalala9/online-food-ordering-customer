@@ -2,7 +2,7 @@
     margin-top: 10rem;
     max-width: 85%;
     margin-right: 3rem;
-   border: 1px solid black;
+   /* border: 1px solid black; */
    border-radius: .5rem;
    padding-top: 2rem;
 }
@@ -306,6 +306,7 @@ header h2{
 
    
 }
+
 
 
 
