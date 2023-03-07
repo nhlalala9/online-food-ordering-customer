@@ -280,29 +280,29 @@ a {
   }
 }
 
-/* .card {
-
-.gap {
-    margin-top: 1.875rem;
-}
-.text-primary {
-    color: #fc8019!important;
-    color: var(--primary)!important;
+.search-wrapper{
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  height: 40px;
+ width: 30%;
+  margin-bottom: 10px;
 }
 
-.btn-link.active, .btn-link:focus, .btn-link:hover, a, a.active, a:focus, a:hover {
-    text-decoration: none;}
-.card {
-    background-color: initial;
-    border: 0 solid transparent;
-    border: 1px solid rgba(0,0,0,.3);
-    border-radius: 0.5rem;
-    box-shadow: none;
-    height: calc(100% - 30px);
-    margin-bottom: 1.875rem;
-    position: relative;
-    transition: all .5s ease-in-out;
-} */
+
+
+.search-wrapper input{
+  height: 100%;
+  padding: .5rem;
+  border: none;
+  outline: none;
+  
+}
+
+.search-wrapper span{
+  display: inline-block;
+  padding: 0rem 1rem;
+  font-size: 1.5rem;
+}
 
 .card {
   word-wrap: break-word;

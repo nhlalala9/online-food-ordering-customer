@@ -21,7 +21,8 @@ export class HomeComponent implements OnInit {
   getCartDetails: any[] = [];
   total: number = 0;
   cartNumber: number = 0;
-  
+  searchTerm: string = '';
+  filteredProducts: any[] = [];
 
   constructor(
     private http: HttpClient,
@@ -33,11 +34,20 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.ProductsService.getProducts().subscribe((product: any) => {
       this.product = product.data;
+      this.filteredProducts = this.product;
       console.log(product.data, "all products");
+      console.log(this.filteredProducts, " products");
+      
     });
     this.loadCart();
+    this.search();
   }
-
+  search() {
+    // console.log(this.product.attributes.name, "name")
+    this.filteredProducts = this.product.filter((product:any) =>
+      product.attributes.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+  }
   deleteProducts() {
     if (confirm('Do you really want to delete this product')) {
       this.http
@@ -49,6 +59,7 @@ export class HomeComponent implements OnInit {
   }
 
   itemsCart: any= [];
+  
   addtocart(category: any) {
     console.log(category); // log the category object
     console.log(category.id); // log the prodId property of category
