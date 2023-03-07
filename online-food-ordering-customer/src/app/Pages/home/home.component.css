@@ -303,7 +303,18 @@ a {
     position: relative;
     transition: all .5s ease-in-out;
 } */
+.approved-icon {
+  /* Add any styles you want to apply to the icon when it's approved */
+  color: red;
+}
 
+.red {
+  color: red;
+}
+
+.black {
+  color: black;
+}
 .card {
   word-wrap: break-word;
   background-clip: initial;
@@ -317,7 +328,7 @@ a {
   margin-bottom: 1.875rem;
 }
 
-.card.dishe-bx.style-1 .c-heart {
+.card.dishe-bx.style-1 .fa-heart {
   margin: 0;
   position: absolute;
   right: 1.688rem;
@@ -327,7 +338,7 @@ a {
   font-size: 1.25rem;
   margin-top: 1.125rem;
 }
-.c-pointer {
+.c-heart {
   cursor: pointer;
 }
 .fa-solid,
