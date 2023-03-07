@@ -37,6 +37,30 @@
   color: blue;
 }
 
+.log{
+    margin-bottom: 100%;
+    margin-top: 250%;
+}
+.log a{
+    padding-left: 1rem;
+    display: block;
+    color: black;
+    font-size: 1.1rem;
+   
+
+}
+.log li{
+    width: 100%;
+    margin-bottom: 1.7rem;
+    padding-left: 1rem;
+    text-decoration: none;
+}
+.log li a{
+    text-decoration: none;
+}
+
+
+
 /* 
 [data-sidebar-position=fixed][data-layout=vertical] .dlabnav {
     position: fixed;

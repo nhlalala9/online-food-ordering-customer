@@ -12,6 +12,7 @@ import { CartComponent } from './Pages/cart/cart.component';
 import { CheckoutComponent } from './Pages/checkout/checkout.component';
 import { OrderComponent } from './Pages/order/order.component';
 
+
 const routes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'customer/home', component: HomeComponent },
