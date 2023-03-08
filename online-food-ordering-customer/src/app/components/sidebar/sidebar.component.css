@@ -25,11 +25,11 @@
 } */
 
 
-position: fixed;
-top: 0;
+/* position: fixed; */
+top: -215px;
 margin-left: 66%;
-width: 40%;
-height: 100%;
+width: 35%;
+height: 117%;
 background-color: rgba(0, 0, 0, 0.5);
 display: flex;
 justify-content: center;
