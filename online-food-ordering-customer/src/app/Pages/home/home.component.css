@@ -1,11 +1,23 @@
-.dashboard {
-  height: 100%;
-  width: 95%;
-  padding-right: 450px;
-  padding-left: 100px;
-  margin-left: 8%;
+main {
+  margin-top: 85px;
+  padding: 2rem 1.5rem;
+  background: #f1f5f9;
+  min-height: calc(100vh - 90px);
+
 }
 
+.dashboard {
+  height: 100%;
+  width: 100%;
+  padding-right: 450px;
+  padding-left: 100px;
+  /* margin-left: 8%; */
+}
+.main-content {
+  margin-left: 345px;
+  transition: margin-left 300ms;
+  margin-top: 6rem;
+}
 .dashboard-banner {
   width: 100%;
   height: 300px;
@@ -295,7 +307,7 @@ a {
   padding: .5rem;
   border: none;
   outline: none;
-  
+
 }
 
 .search-wrapper span{

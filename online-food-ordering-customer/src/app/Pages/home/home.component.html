@@ -1,6 +1,6 @@
-<app-navbar></app-navbar>
+<!-- <app-navbar></app-navbar> -->
 <app-sidebar></app-sidebar>
-
+<div class="main-content">
 <div class="dashboard">
   <div class="dashboard-banner">
     <img
@@ -700,11 +700,11 @@
                 <p class="font-w500 mb-0 px-2"></p>
                 <i class="fa-brands fa-gratipay"
                 [ngClass]="{'approved-icon': item?.attributes?.status === 'True', 'red': isItemApproved, 'black': !isItemApproved}"
-     
+
                 (click)="approveItem(item)"></i>
                 <i class="fa-brands fa-gratipay"
                 [ngClass]="{'approved-icon': isItemApproved, 'red': isItemApproved, 'black': !isItemApproved}"
-        
+
                 (click)="approveItem(item)"></i>
               </div>
 
@@ -744,7 +744,7 @@
     </div>
   </div>
 
-  <div class="dashboard-order">
+  <!-- <div class="dashboard-order">
     <h3>Order Menu</h3>
     <div class="order-address">
       <p>Address Delivery</p>
@@ -801,5 +801,6 @@
       </p>
     </div>
     <button (click)="checkout()" class="checkout">Checkout</button>
-  </div>
+  </div> -->
+</div>
 </div>
