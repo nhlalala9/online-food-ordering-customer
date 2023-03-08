@@ -195,13 +195,8 @@
         </div>
         <div class="text-end">
           <a
-            class="btn btn-outline-danger me-sm-4 me-2"
-            href="/react/demo/orders"
-            >Reject Order</a
-          >
-          <a
             class="btn btn-primary"
-            *ngIf="order?.attributes?.status === 'Delivering'"
+            *ngIf="order?.attributes?.status === 'Approved'"
             (click)="approveItem(order)"
             >Accept Order</a>
         </div>
