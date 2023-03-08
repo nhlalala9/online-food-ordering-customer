@@ -21,11 +21,11 @@
     color: #fff;
     box-shadow: 0 0.2em 0.5em rgba(0,0,0,0.2);
   }
-  
+
   .badge i {
     margin-right: 0.25em;
   }
-  
+
 
 .logo{
     position: fixed;
@@ -57,6 +57,9 @@
 #cart:checked ~ .logo {
     padding-right: 0;
 } */
+/* .navbar{
+  height: 60px;
+} */
 
 .logo{
     position: fixed;
@@ -67,6 +70,9 @@
     padding: 15px 420px 15px 60px;
     top: 0;
     z-index:2;
+}
+.toka{
+  margin-right: 15px;
 }
 
 .label-cart a{
@@ -81,16 +87,16 @@
 }
 
 
-nav {
+ nav {
     background-color: #333;
-    height: 50px;
+    height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    margin-left: 50%;
+    /* margin-left: 50%; */
   }
-  
+
   ul {
     list-style-type: none;
     margin: 0;
@@ -98,24 +104,24 @@ nav {
     display: flex;
     align-items: center;
   }
-  
+
   li {
     margin-right: 20px;
   }
-  
+
   li.notification-icon {
     position: relative;
     cursor: pointer;
   }
-  
+
   .notification-count {
     position: absolute;
-    top: -10px;
-    right: -10px;
+    top: .5;
+    margin-right: 15px;
     background-color: red;
     color: white;
     border-radius: 50%;
-    padding: 5px;
+    /* padding: 5px; */
   }
   .coin{
     display: flex;
@@ -137,25 +143,24 @@ nav {
    background-color: blue;
    color: #fff;
   }
-  
+
   .modal h3 {
     color: white;
     font-size: 44px;
   }
-  
+
   .modal ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    
+
   }
-  
-  .modal li {
+
+ li {
     width: 30rem;
     margin-bottom: 10px;
     padding: 10px;
-    background-color: white;
-    color: #333;
+    background-color: lightgray;
+    color: White;
     border-radius: 5px;
   }
-  

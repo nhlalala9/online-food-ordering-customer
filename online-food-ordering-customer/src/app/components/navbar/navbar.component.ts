@@ -20,15 +20,15 @@ export class NavbarComponent implements OnInit {
   public username = localStorage.getItem('s_username');
 
   constructor(private cartService : CartService, private bookingServices: BookingsService) { }
-  showNotificationModal: boolean = false;
+  // showNotificationModal: boolean = false;
 
-  openNotificationModal() {
-    this.showNotificationModal = true;
-  }
+  // openNotificationModal() {
+  //   this.showNotificationModal = true;
+  // }
 
-  closeNotificationModal() {
-    this.showNotificationModal = false;
-  }
+  // closeNotificationModal() {
+  //   this.showNotificationModal = false;
+  // }
   ngOnInit(): void {
 
 
