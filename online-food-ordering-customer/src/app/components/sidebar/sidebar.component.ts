@@ -20,6 +20,7 @@ export class SidebarComponent implements OnInit {
   nothing: any[] = [];
   final: any[] = [];
   public username = localStorage.getItem('s_username');
+  
   constructor(private auth: AuthenticationService,private router: Router,private cartService : CartService, private bookingServices: BookingsService) { }
 
 
