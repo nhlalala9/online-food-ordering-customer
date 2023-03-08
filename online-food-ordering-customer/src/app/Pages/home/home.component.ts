@@ -39,13 +39,12 @@ export class HomeComponent implements OnInit {
       this.filteredProducts = this.product;
       console.log(product.data, "all products");
       console.log(this.filteredProducts, " products");
-      
+
     });
     this.loadCart();
     this.search();
   }
   search() {
-    // console.log(this.product.attributes.name, "name")
     this.filteredProducts = this.product.filter((product:any) =>
       product.attributes.name.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
@@ -58,7 +57,7 @@ export class HomeComponent implements OnInit {
     const status = 'True';
     const index = this.product.findIndex((r: any) => r.id === booking.id);
     console.log(index);
-   
+
     this.ProductsService.updateItemStatus(id, status).subscribe(
       (res) => {
         console.log(res, 'see console');
@@ -74,7 +73,7 @@ export class HomeComponent implements OnInit {
   // markAsFavorite(product: any): void {
   //   product.attributes.favorite = true;
   //   console.log(product.attributes.favorite,"please");
-  
+
   //   this.ProductsService.updateProduct(product.id, product).subscribe(
   //     (response) => {
   //       console.log('Product marked as favorite', response);
@@ -98,7 +97,7 @@ export class HomeComponent implements OnInit {
   }
 
 
-  
+
   deleteProducts() {
     if (confirm('Do you really want to delete this product')) {
       this.http
@@ -110,7 +109,7 @@ export class HomeComponent implements OnInit {
   }
 
   itemsCart: any= [];
-  
+
   addtocart(category: any) {
     console.log(category); // log the category object
     console.log(category.id); // log the prodId property of category
@@ -136,7 +135,7 @@ export class HomeComponent implements OnInit {
         if (parseInt(category.id) === parseInt(this.itemsCart[i].id)) {
           this.itemsCart[i].attributes.quantity += category.attributes.quantity;
           index = i;
-          
+
           break;
         }
       }
@@ -149,7 +148,7 @@ export class HomeComponent implements OnInit {
     }
     this.cartNumberFunc();
   }
-  
+
   cartNumber1: number = 0;
   cartNumberFunc() {
     const cartData = localStorage.getItem('localCart');
@@ -167,7 +166,7 @@ export class HomeComponent implements OnInit {
 checkout(){
   this.router.navigateByUrl('/customer/checkout')
 }
-///cart here 
+///cart here
 
 logOut(){
   this['auth'].logout()
