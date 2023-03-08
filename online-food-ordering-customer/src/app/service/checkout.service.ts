@@ -23,4 +23,8 @@ export class CheckoutService {
     }}
     return this.http.post<any>(`${this.apiUrl}/api/orders` , data);
   }
+
+  makePayment(stripeToken:any){
+
+  }
 }
