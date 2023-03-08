@@ -12,6 +12,10 @@
    border-radius: .5rem;
    padding-top: 2rem;
 }
+.main-content {
+  margin-left: 150px;
+  transition: margin-left 300ms;
+}
 
 .log{
     margin-bottom: 100%;
@@ -23,7 +27,7 @@
     display: block;
     color: #fff;
     font-size: 1.1rem;
-   
+
 
 }
 
@@ -177,7 +181,7 @@ a, a.active, a:focus, a:hover {
 
 
 .sidebar:hover .sidebar-brand,
-.sidebar:hover li 
+.sidebar:hover li
 {
     padding-left: 2rem  ;
     text-align: left;
@@ -195,12 +199,12 @@ a, a.active, a:focus, a:hover {
 
 .sidebar:hover .sidebar-brand h2 span:last-child,
 .sidebar:hover li a span:last-child{
-    display: inline; 
+    display: inline;
 
 }
 
 
-    
+
 }
 
 
@@ -261,7 +265,7 @@ header h2{
          display: inline-block;
          height: 40px;
          width: 40px;
-         justify-content: center !important; 
+         justify-content: center !important;
          /* text-align: center; */
          border-radius: 50%;
          color: #fff;
@@ -275,7 +279,7 @@ header h2{
         grid-template-columns: 100%;
     }
 
-   
+
 }
 
 

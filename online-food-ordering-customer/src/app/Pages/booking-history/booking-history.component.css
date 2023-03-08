@@ -35,3 +35,9 @@ a{
     text-decoration: none;
     color: white;
 }
+.main-content {
+  margin-top: 8rem;
+  margin-left: 180px;
+  transition: margin-left 300ms;
+  margin-right: 50px;
+}
