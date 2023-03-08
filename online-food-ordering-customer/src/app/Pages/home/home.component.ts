@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  [x: string]: any;
 
   product: any;
   me: any;
@@ -21,6 +22,8 @@ export class HomeComponent implements OnInit {
   getCartDetails: any[] = [];
   total: number = 0;
   cartNumber: number = 0;
+  searchTerm: string = '';
+  filteredProducts: any[] = [];
   isItemApproved: boolean = false;
 
   constructor(
@@ -33,9 +36,19 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.ProductsService.getProducts().subscribe((product: any) => {
       this.product = product.data;
+      this.filteredProducts = this.product;
       console.log(product.data, "all products");
+      console.log(this.filteredProducts, " products");
+      
     });
     this.loadCart();
+    this.search();
+  }
+  search() {
+    // console.log(this.product.attributes.name, "name")
+    this.filteredProducts = this.product.filter((product:any) =>
+      product.attributes.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
   }
 
 
@@ -58,6 +71,34 @@ export class HomeComponent implements OnInit {
     );
   }
 
+  // markAsFavorite(product: any): void {
+  //   product.attributes.favorite = true;
+  //   console.log(product.attributes.favorite,"please");
+  
+  //   this.ProductsService.updateProduct(product.id, product).subscribe(
+  //     (response) => {
+  //       console.log('Product marked as favorite', response);
+  //     },
+  //     (error) => {
+  //       console.error('Error marking product as favorite', error);
+  //     }
+  //   );
+  // }
+  markAsFavorite(item :any): void {
+    // const id = this.product.id;
+    const id = item.id;
+    console.log(id)
+    const favorite = !item.attributes.favorite;
+    const url = `http://localhost:1337/api/products/${id}`;
+
+    this.http.patch(url, { favorite }).subscribe((response) => {
+      console.log('Favorite updated:', response);
+      item.attributes.favorite = favorite;
+    });
+  }
+
+
+  
   deleteProducts() {
     if (confirm('Do you really want to delete this product')) {
       this.http
@@ -69,6 +110,7 @@ export class HomeComponent implements OnInit {
   }
 
   itemsCart: any= [];
+  
   addtocart(category: any) {
     console.log(category); // log the category object
     console.log(category.id); // log the prodId property of category
@@ -126,6 +168,10 @@ checkout(){
   this.router.navigateByUrl('/customer/checkout')
 }
 ///cart here 
+
+logOut(){
+  this['auth'].logout()
+}
 
 loadCart(): void {
   const cartData = localStorage.getItem('localCart');

@@ -7,6 +7,7 @@ import { StorageService } from '../../service/storage.service';
 import { ToastService } from '../../service/toast.service';
 import { Observable } from 'rxjs';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,7 +16,7 @@ import { Observable } from 'rxjs';
 export class LoginComponent implements OnDestroy {
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required]],
+    password: ['', [Validators.required,Validators.minLength(6), Validators.maxLength(40)]],
   });
 
   private loginSub: Subscription | undefined;

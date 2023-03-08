@@ -20,6 +20,13 @@ export class BookingsService {
   getBookings(name:string): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/api/bookings?filters[name][$eq]=${this.username}&populate=*`);
   }
-
+  getBooking(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/api/bookings`);
+  }
+  updateItemStatus(id: any, camel: any) {
+    const url = `${this.apiUrl}/api/bookings/${id}`;
+    const data = { data: { camel: camel } };
+    return this.http.put(url, data);
+  }
  
 }
