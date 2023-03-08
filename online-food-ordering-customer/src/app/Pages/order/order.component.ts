@@ -36,7 +36,7 @@ export class OrderComponent implements OnInit {
   ngOnInit(): void {
     this.orderService.getOrders().subscribe((booking: any) => {
       this.orders = booking.data;
-      this.orders = booking.data.filter((order: any) => order.attributes.status === "Pending");
+      // this.orders = booking.data.filter((order: any) => order.attributes.name === this.username);
       this.approved = booking.data.filter((order: any) => order.attributes.status === "Approved");
     this.complete = booking.data.filter((order: any) => order.attributes.status === "Completed");
     this.Delivering = booking.data.filter((order: any) => order.attributes.status === "Delivering");
