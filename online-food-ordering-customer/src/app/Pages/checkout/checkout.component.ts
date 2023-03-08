@@ -11,6 +11,7 @@ import { DatePipe } from '@angular/common';
 })
 export class CheckoutComponent implements OnInit {
   paymentHandler: any = null;
+  checkout: any;
 
   constructor(private datePipe: DatePipe,private cartService : CartService,private fb: FormBuilder,private checkoutService : CheckoutService) { }
   public checkoutForm: FormGroup = this.fb.group({
@@ -105,8 +106,17 @@ export class CheckoutComponent implements OnInit {
       token: function (stripeToken: any) {
         console.log(stripeToken);
         alert('Stripe token generated!');
+
+        paymentStripe(stripeToken)
       },
     });
+     
+    const paymentStripe = (stripeToken:any) =>{
+      this.checkout.makePayment(stripeToken).subscribe((data:any) =>{
+        console.log(data)
+      })
+    }
+
     paymentHandler.open({
       name: 'Positronx',
       description: '3 widgets',
