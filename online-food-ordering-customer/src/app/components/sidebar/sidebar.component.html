@@ -29,7 +29,6 @@
     </div>
 </div> -->
 
-
 <!-- <app-loader *ngIf="isLoading"></app-loader> -->
 <input type="checkbox" id="nav-toggle" />
 
@@ -94,38 +93,36 @@
       </label>
     </h1>
 
-
     <div class="user-wrapper">
       <div
-
-  class="modal"
-  [hidden]="!showNotificationModal"
-  (click)="closeNotificationModal()"
->
-
-  <div class="d-flex flex-column mb-3">
-    <ul *ngFor="let item of orders">
-    <li *ngIf="item?.attributes?.camel === null">
-      {{ item?.attributes?.notification }}
-      <button
-        class="d-flex justify-content-end mt-3"
+        class="modal"
+        [hidden]="!showNotificationModal"
         (click)="closeNotificationModal()"
-        (click)="approveItem(item)"
       >
-        close
-      </button>
-    </li>
-  </ul>
-  </div>
+        <div class="d-flex flex-column mb-3">
+          <ul *ngFor="let item of orders">
+            <li *ngIf="item?.attributes?.camel === null">
+              {{ item?.attributes?.notification }}
+              <button
+                class="d-flex justify-content-end mt-3"
+                (click)="closeNotificationModal()"
+                (click)="approveItem(item)"
+              >
+                close
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-</div>
-
-  <ul>
-    <li class="notification-icon" (click)="openNotificationModal()">
-      <i class="fa fa-bell"></i>
-      <span class="notification-count">{{ final.length }}</span>
-    </li>
-  </ul>
+      <ul class="why">
+        <li class="notification-icon" (click)="openNotificationModal()">
+          <i class="las la-bell m"></i>
+          <span class="notification-count">{{ final.length }}</span>
+        </li>
+        <li><a href="customer/cart"><span class="fa-solid fa-cart-shopping"><span class="badge badge-info">{{getCartDetails.length}}</span></span>
+        </a></li>
+      </ul>
 
       <img
         src="https://cdn-icons-png.flaticon.com/512/25/25634.png"
@@ -139,4 +136,4 @@
       </div>
     </div>
   </header>
-
+</div>
