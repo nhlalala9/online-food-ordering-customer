@@ -9,13 +9,17 @@ import { OrdersService } from 'src/app/service/orders.service';
 export class OrderComponent implements OnInit {
   orders: any[] = [];
   now: any[] = [];
+  toka: any[] = [];
   order: any;
   cartDetails: any;
   bookings: any;
   complete:any[] = [];
   Delivering:any[] = [];
   approved:any[] = []
-  public username = localStorage.getItem('s_username');
+  // matchedProducts: any[] = [];
+  username:any;
+
+  // public username = localStorage.getItem('s_username');
 
   constructor(private orderService: OrdersService) {}
 
@@ -34,9 +38,10 @@ export class OrderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.orderService.getOrders().subscribe((booking: any) => {
+    this.orderService.getOrders(this.username).subscribe((booking: any) => {
       this.orders = booking.data;
-      this.orders = booking.data.filter((order: any) => order.attributes.status === "Pending");
+this.toka = this.orders
+      // this.orders = booking.data.filter((order: any) => order.attributes.name === this.username);
       this.approved = booking.data.filter((order: any) => order.attributes.status === "Approved");
     this.complete = booking.data.filter((order: any) => order.attributes.status === "Completed");
     this.Delivering = booking.data.filter((order: any) => order.attributes.status === "Delivering");
@@ -44,22 +49,22 @@ export class OrderComponent implements OnInit {
       console.log(this.approved,"approved");
       console.log(this.complete,"complete");
       console.log(this.Delivering,"on going");
-      const matchedRatings = this.check();
-      this.now = matchedRatings;
-      console.log(matchedRatings, 'toka');
+      // const matchedRatings = this.check();
+      // this.now = matchedRatings;
+      // console.log(matchedRatings, 'toka');
     });
   }
 
   check() {
-    const matchedProducts = [];
+    const matchedProducts: any[] = [];
     const productName = this.orders;
     console.log(productName, 'why');
-    for (const order of this.orders) {
+    for (const order of this.toka) {
       if (order.attributes.name === this.username) {
         matchedProducts.push(order);
-        console.log(order);
+
       }
-    }
+    }console.log(matchedProducts,"user");
     return matchedProducts;
   }
 

@@ -17,7 +17,8 @@
                 class="nav-link active"
                 tabindex="0"
                 (click)="setTab('order')"
-                >Order in</a
+                style="color: blue;"
+                >Orders</a
               ><a
                 id="react-aria31190898-8-tab-Prepared"
                 role="tab"
@@ -27,7 +28,8 @@
                 tabindex="-1"
                 class="nav-link"
                 (click)="setTab('prepared')"
-                >Prepared</a
+                style="color: orange;"
+                >Delivering</a
               ><a
                 id="react-aria31190898-8-tab-Delivered"
                 role="tab"
@@ -37,11 +39,17 @@
                 tabindex="-1"
                 class="nav-link"
                 (click)="setTab('completed')"
-                >Delivered</a
+                style="color: green;"
+                >Recieved</a
               >
             </div>
           </nav>
+
+
+
+
           <div class="tab-content">
+            <div *ngIf="tab === 'order'">
             <div
               role="tabpanel"
               id="react-aria31190898-8-tabpane-Order"
@@ -54,7 +62,7 @@
                 class="orderin-bx d-flex align-items-center justify-content-between click"
               >
                 <div>
-                  <h4>Order #{{ item?.id }}</h4>
+                  <h4 style="color: blue;">Order #{{ item?.id }}</h4>
                   <span>{{ item?.attributes.date }}</span>
                 </div>
                 <div class="d-flex align-items-center">
@@ -66,6 +74,43 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div *ngIf="tab === 'prepared'">
+            <div
+
+            >
+              <div
+                class="orderin-bx d-flex align-items-center justify-content-between" *ngFor="let item of Delivering"
+                (click)="selector(item?.id)"
+              >
+                <div>
+                  <h4 style="color: orange;"><i class="las la-spinner"></i> Delivering </h4>
+                  <h6 style="color: blue;">Order #{{ item?.id }}</h6>
+                  <span>{{ item?.attributes.date }}</span>
+                </div>
+                <div class="d-flex align-items-center">
+                  <h4 class="text-primary mb-0">R {{ item?.attributes.total }}</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="tab === 'completed'">
+            <div>
+              <div
+                class="orderin-bx d-flex align-items-center justify-content-between"*ngFor="let item of complete" (click)="selector(item?.id)"
+              >
+                <div>
+                  <h4 style="color: green;"><i class="las la-list-alt"></i> Recieved</h4>
+                  <h6 style="color: blue;">Order #{{ item?.id }}</h6>
+                  <span>{{ item?.attributes.date }}</span>
+                </div>
+                <div class="d-flex align-items-center">
+                  <h4 class="text-primary mb-0">R {{ item?.attributes.total }}</h4>
+                </div>
+              </div>
+            </div>
+          </div>
 
           </div>
         </div>
@@ -80,7 +125,7 @@
               class="d-flex align-items-center justify-content-between border-bottom flex-wrap"
             >
               <div class="mb-4">
-                <h4 class="font-w500">Order #{{ order?.id }}</h4>
+                <h4 class="font-w500" style="color: blue;">Order #{{ order?.id }}</h4>
                 <span>{{ order?.attributes?.date }}</span>
               </div>
               <div class="orders-img d-flex mb-4">
@@ -121,7 +166,7 @@
                   alt=""
                 />
                 <div>
-                  <h4 class="font-w600 text-nowrap mb-0">
+                  <h4 class="font-w600 text-nowrap mb-0" style="color: blue;">
                     <a href="/react/demo/orders"></a>
                     {{ item?.attributes?.name }}
                   </h4>
@@ -150,13 +195,8 @@
         </div>
         <div class="text-end">
           <a
-            class="btn btn-outline-danger me-sm-4 me-2"
-            href="/react/demo/orders"
-            >Reject Order</a
-          >
-          <a
             class="btn btn-primary"
-            *ngIf="order?.attributes?.status === 'Delivering'"
+            *ngIf="order?.attributes?.status === 'Approved'"
             (click)="approveItem(order)"
             >Accept Order</a>
         </div>

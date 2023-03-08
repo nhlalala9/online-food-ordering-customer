@@ -94,27 +94,6 @@
     </h1>
 
     <div class="user-wrapper">
-      <div
-        class="modal"
-        [hidden]="!showNotificationModal"
-        (click)="closeNotificationModal()"
-      >
-        <div class="d-flex flex-column mb-3">
-          <ul *ngFor="let item of orders">
-            <li *ngIf="item?.attributes?.camel === null">
-              {{ item?.attributes?.notification }}
-              <button
-                class="d-flex justify-content-end mt-3"
-                (click)="closeNotificationModal()"
-                (click)="approveItem(item)"
-              >
-                close
-              </button>
-            </li>
-          </ul>
-        </div>
-      </div>
-
       <ul class="why">
         <li class="notification-icon" (click)="openNotificationModal()">
           <i class="las la-bell m"></i>
@@ -131,9 +110,31 @@
         alt=""
       />
       <div>
-        <h4>Toka</h4>
-        <small>Addmin</small>
+        <small class="mb-4">{{username}}</small>
+        <!-- <small>Addmin</small> -->
       </div>
     </div>
   </header>
+</div>
+<div
+class="modal"
+[hidden]="!showNotificationModal"
+(click)="closeNotificationModal()"
+>
+<div class="d-flex flex-column mb-3">
+  <ul *ngFor="let item of orders">
+    <div class="d-flex justify-content-end">
+    <li  class="sho" *ngIf="item?.attributes?.camel === null">
+      {{ item?.attributes?.notification }}
+      <button
+        class="d-flex justify-content-end mt-3"
+        (click)="closeNotificationModal()"
+        (click)="approveItem(item)"
+      >
+        close
+      </button>
+    </li>
+    </div>
+  </ul>
+</div>
 </div>
