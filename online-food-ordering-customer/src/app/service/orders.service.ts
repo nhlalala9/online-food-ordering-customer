@@ -12,8 +12,12 @@ export class OrdersService {
   public username = localStorage.getItem('s_username');
   constructor(private http: HttpClient) { }
 
-  getOrders(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+  // getOrders(): Observable<any[]> {
+  //   return this.http.get<any[]>(this.apiUrl);
+  // }
+
+  getOrders(name:string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}?filters[name][$eq]=${this.username}&populate=*`);
   }
 
   getOrderByName(id:number): Observable<any[]> {
@@ -25,3 +29,4 @@ export class OrdersService {
     return this.http.put(url, data);
   }
 }
+
