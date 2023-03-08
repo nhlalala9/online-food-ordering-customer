@@ -18,20 +18,20 @@ export class NavbarComponent implements OnInit {
   nothing: any[] = [];
   final: any[] = [];
   public username = localStorage.getItem('s_username');
-  
+
   constructor(private cartService : CartService, private bookingServices: BookingsService) { }
-  showNotificationModal: boolean = false;
+  // showNotificationModal: boolean = false;
 
-  openNotificationModal() {
-    this.showNotificationModal = true;
-  }
+  // openNotificationModal() {
+  //   this.showNotificationModal = true;
+  // }
 
-  closeNotificationModal() {
-    this.showNotificationModal = false;
-  }
+  // closeNotificationModal() {
+  //   this.showNotificationModal = false;
+  // }
   ngOnInit(): void {
 
-    
+
     // this.bookingServices.getBooking().subscribe((booking: any) => {
     //   this.bookings = booking.data;
     //   // this.orders = booking.data.filter((order: any) => order.attributes.status === "Approved");
@@ -46,11 +46,11 @@ export class NavbarComponent implements OnInit {
       this.nothing = booking.data.filter((order: any) => order.attributes.camel === null && order.attributes.name === this.username);
       this.orders = this.nothing;
       this.final = this.nothing;
-      console.log(this.orders);
+      console.log(this.orders,"toka");
       console.log(this.final,"null");
     });
-    
-      
+
+
     this.loadCart();
   }
   approveItem(item: any) {
@@ -74,8 +74,8 @@ export class NavbarComponent implements OnInit {
     const cartData = localStorage.getItem('localCart');
     console.log(cartData,"me");
 
-    
-    
+
+
     if (cartData) {
       this.getCartDetails = JSON.parse(cartData);
       console.log(this.getCartDetails,"why");
