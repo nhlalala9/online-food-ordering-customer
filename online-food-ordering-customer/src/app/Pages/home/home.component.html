@@ -1,7 +1,33 @@
-<app-navbar></app-navbar>
-<!-- <app-sidebar></app-sidebar> -->
+<!-- <app-navbar></app-navbar> -->
+<app-sidebar></app-sidebar>
 <div class="main-content">
 <div class="dashboard">
+  <div class="input-group search-area2 style-1 w-50 mb-4">
+    <span class="input-group-text p-0"
+      ><a href="/react/demo/customer-reviews"
+        ><svg
+          class="me-1"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M27.414 24.586L22.337 19.509C23.386 17.928 24 16.035 24 14C24 8.486 19.514 4 14 4C8.486 4 4 8.486 4 14C4 19.514 8.486 24 14 24C16.035 24 17.928 23.386 19.509 22.337L24.586 27.414C25.366 28.195 26.634 28.195 27.414 27.414C28.195 26.633 28.195 25.367 27.414 24.586ZM7 14C7 10.14 10.14 7 14 7C17.86 7 21 10.14 21 14C21 17.86 17.86 21 14 21C10.14 21 7 17.86 7 14Z"
+            fill="#FC8019"
+          ></path></svg></a></span
+    ><input
+      type="text"
+      class="form-control p-0"
+      placeholder="What do you want eat today..."
+      [(ngModel)]="searchTerm" (keyup)="search()"
+    />
+  </div>
+  <!-- <div class="search-wrapper">
+    <span class="fas fa-search" ></span>
+    <input type="text" placeholder="search here" [(ngModel)]="searchTerm" (keyup)="search()"/>
+  </div> -->
   <div class="dashboard-banner">
     <img
       src="https://images.firsttable.net/1170x655/public/restaurant/3079/c6ff65b79b/00022.jpg"
@@ -19,14 +45,8 @@
   <h3 class="dashboard-title">Recommended Food For You</h3>
   <div class="col-xl-12">
     <div class="d-flex align-items-center justify-content-between mb-2 gap">
-      <a class="text-primary" href="/react/demo/favorite-menu"
-        >View all <i class="fa-solid fa-angle-right ms-2"></i
-      ></a>
     </div>
-    <div class="search-wrapper">
-      <span class="fas fa-search" ></span>
-      <input type="text" placeholder="search here" [(ngModel)]="searchTerm" (keyup)="search()"/>
-    </div>
+
     <div
       class="swiper swiper-initialized swiper-horizontal swiper-pointer-events mySwiper-2 swiper-backface-hidden"
     >
