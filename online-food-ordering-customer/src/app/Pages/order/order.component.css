@@ -1,3 +1,9 @@
+.main-content {
+    margin-left: 190px;
+    transition: margin-left 300ms;
+    margin-top: 7rem;
+    width: 90%;
+  }
 .container {
     margin-top: 10rem;
     max-width: 85%;

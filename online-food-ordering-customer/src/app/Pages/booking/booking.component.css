@@ -3,6 +3,11 @@
   padding: 0;
   margin: 0;
 }
+.main-content {
+  margin-left: 190px;
+  transition: margin-left 300ms;
+  width: 90%;
+}
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -21,6 +26,7 @@ body {
 }
 .card-container {
   width: 80%;
+  margin-left: 35px;
 }
 
 .banner h2 {
@@ -38,6 +44,7 @@ body {
 
 .card-content {
   background: #fff;
+  margin-left: 15px;
   /* height: 330px; */
 }
 .card-content h3 {
