@@ -1,7 +1,85 @@
 
 
-<input type="checkbox" id="cart">
+<!-- <input type="checkbox" id="cart">
 <label for="cart" class="label-cart">
     <a href="customer/cart"><span class="fa-solid fa-cart-shopping"><span class="badge badge-info">{{getCartDetails.length}}</span></span>
     </a></label>
-<h3 class="logo">Food</h3> 
+<h3 class="logo">Food</h3>  -->
+
+<!-- <nav>
+  <ul>
+    <li>
+      <a routerLink="/">Home</a>
+    </li>
+    <li>
+      <a routerLink="/about">About</a>
+    </li>
+    <li class="notification-icon" (click)="openNotificationModal()">
+      <i class="fa fa-bell"></i>
+      <span class="notification-count">{{ final.length }}</span>
+    </li>
+  </ul>
+</nav> -->
+
+<!-- <div
+
+  class="modal"
+  [hidden]="!showNotificationModal"
+  (click)="closeNotificationModal()"
+>
+
+  <div class="d-flex flex-column mb-3">
+    <ul *ngFor="let item of orders">
+    <li *ngIf="item?.attributes?.camel === null">
+      {{ item?.attributes?.notification }}
+      <button
+        class="d-flex justify-content-end mt-3"
+        (click)="closeNotificationModal()"
+        (click)="approveItem(item)"
+      >
+        close
+      </button>
+    </li>
+  </ul>
+  </div>
+
+</div> -->
+
+<nav class="navbar navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"></a>
+    <div class="toka">
+       <a class="toka" href="customer/cart"><span class="fa-solid fa-cart-shopping">
+        <span class="badge badge-info">{{getCartDetails.length}}</span></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+
+      <i class="fa fa-bell"></i>
+      <span class="notification-count">{{ final.length }}</span>
+
+    </button>
+    </div>
+
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Notifications <i class="fa fa-bell"></i></h5>
+      </div>
+      <div class="d-flex flex-column mb-3">
+        <ul *ngFor="let item of orders">
+          <li style="color: black;" *ngIf="item?.attributes?.camel === null">
+            {{ item?.attributes?.notification }}
+            <button
+              class="d-flex justify-content-end mt-3"
+
+              (click)="approveItem(item)"
+            >
+              close
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- (click)="approveItem(order)" -->
+<!-- <h3 class="logo">Food</h3>  -->

@@ -71,6 +71,34 @@ export class HomeComponent implements OnInit {
     );
   }
 
+  // markAsFavorite(product: any): void {
+  //   product.attributes.favorite = true;
+  //   console.log(product.attributes.favorite,"please");
+  
+  //   this.ProductsService.updateProduct(product.id, product).subscribe(
+  //     (response) => {
+  //       console.log('Product marked as favorite', response);
+  //     },
+  //     (error) => {
+  //       console.error('Error marking product as favorite', error);
+  //     }
+  //   );
+  // }
+  markAsFavorite(item :any): void {
+    // const id = this.product.id;
+    const id = item.id;
+    console.log(id)
+    const favorite = !item.attributes.favorite;
+    const url = `http://localhost:1337/api/products/${id}`;
+
+    this.http.patch(url, { favorite }).subscribe((response) => {
+      console.log('Favorite updated:', response);
+      item.attributes.favorite = favorite;
+    });
+  }
+
+
+  
   deleteProducts() {
     if (confirm('Do you really want to delete this product')) {
       this.http

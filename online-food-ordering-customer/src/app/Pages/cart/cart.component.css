@@ -4,7 +4,12 @@
     width: 33.33333%;
   }
 }
-
+.main-content {
+  margin-top: 8rem;
+  margin-left: 380px;
+  transition: margin-left 300ms;
+  margin-right: 50px;
+}
 @media (min-width: 1200px) {
   .col-xl-12 {
     flex: 0 0 auto;

@@ -1,6 +1,6 @@
-<app-navbar></app-navbar>
+<!-- <app-navbar></app-navbar> -->
 <app-sidebar></app-sidebar>
-
+<div class="main-content">
 <div class="dashboard">
   <div class="dashboard-banner">
     <img
@@ -669,6 +669,9 @@
     <div class="row">
       <div class="col-xl-4 col-xxl-4 col-sm-6" *ngFor="let item of filteredProducts">
         <div class="card dishe-bx b-hover style-1">
+          <i class="fa-solid fa-heart ms-auto c-heart c-pointer" [class.text-danger]="item.attributes.favorite"
+          (click)="markAsFavorite(item)"></i>
+
           <div class="card-body pb-0 pt-3">
             <div class="text-center mb-2">
               <a href="customer/food/{{ item.id }}">
@@ -697,11 +700,11 @@
                 <p class="font-w500 mb-0 px-2"></p>
                 <i class="fa-brands fa-gratipay"
                 [ngClass]="{'approved-icon': item?.attributes?.status === 'True', 'red': isItemApproved, 'black': !isItemApproved}"
-     
+
                 (click)="approveItem(item)"></i>
                 <i class="fa-brands fa-gratipay"
                 [ngClass]="{'approved-icon': isItemApproved, 'red': isItemApproved, 'black': !isItemApproved}"
-        
+
                 (click)="approveItem(item)"></i>
               </div>
 
@@ -741,7 +744,7 @@
     </div>
   </div>
 
-  <div class="dashboard-order">
+  <!-- <div class="dashboard-order">
     <h3>Order Menu</h3>
     <div class="order-address">
       <p>Address Delivery</p>
@@ -798,5 +801,6 @@
       </p>
     </div>
     <button (click)="checkout()" class="checkout">Checkout</button>
-  </div>
+  </div> -->
+</div>
 </div>
