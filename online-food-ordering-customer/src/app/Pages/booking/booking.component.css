@@ -3,6 +3,11 @@
   padding: 0;
   margin: 0;
 }
+.main-content {
+  margin-left: 190px;
+  transition: margin-left 300ms;
+  width: 90%;
+}
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -24,10 +29,10 @@ body {
 }
 .card-container {
   width: 80%;
+  margin-left: 35px;
 }
 
 .banner h2 {
-  /* padding-bottom: 40px; */
   margin-bottom: 20px;
   margin-top: 50px;
 }
@@ -35,13 +40,12 @@ body {
   margin-top: 50px;
   margin-bottom: 20px;
   display: flex;
-  /* align-items: center; */
   justify-content: center;
 }
 
 .card-content {
   background: #fff;
-  /* height: 330px; */
+  margin-left: 15px;
 }
 .card-content h3 {
   text-align: center;
