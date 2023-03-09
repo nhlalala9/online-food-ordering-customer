@@ -9,7 +9,9 @@ import { BookingsService } from 'src/app/service/bookings.service';
 export class BookingHistoryComponent implements OnInit {
   bookings: any;
   username:any;
-  
+
+  pageSize = 10;
+currentPage = 1;
 
   constructor(private bookingServices:BookingsService) { }
 
