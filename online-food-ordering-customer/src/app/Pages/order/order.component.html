@@ -63,7 +63,7 @@
               >
                 <div>
                   <h4 style="color: blue;">Order #{{ item?.id }}</h4>
-                  <span>{{ item?.attributes.date }}</span>
+                  <span>{{ item?.attributes.date | date: "dd MMM yyyy"}}</span>
                 </div>
                 <div class="d-flex align-items-center">
                   <h4 class="text-primary mb-0">
@@ -111,7 +111,7 @@
                 <div>
                   <h4 style="color: green;"><i class="las la-list-alt"></i> Recieved</h4>
                   <h6 style="color: blue;">Order #{{ item?.id }}</h6>
-                  <span>{{ item?.attributes.date }}</span>
+                  <span>{{ item?.attributes.date | date: "dd MMM yyyy" }}</span>
                 </div>
                 <div class="d-flex align-items-center">
                   <h4 class="text-primary mb-0">R {{ item?.attributes.total }}</h4>
@@ -137,7 +137,7 @@
             >
               <div class="mb-4">
                 <h4 class="font-w500" style="color: blue;">Order #{{ order?.id }}</h4>
-                <span>{{ order?.attributes?.date }}</span>
+                <span>{{ order?.attributes?.date | date: "dd MMM yyyy" }}</span>
               </div>
               <div class="orders-img d-flex mb-4">
                 <img
