@@ -11,8 +11,6 @@
 }
 
 .card {
-    /* background-color: initial; */
-    /* border: 0 solid transparent; */
     border: 1px solid rgba(0,0,0,.3);
     border-radius: 0.5rem;
     box-shadow: none;
@@ -27,13 +25,10 @@
     justify-content: center;
     height: 100vh;
     align-items: center ;
-    /* background-color: whitesmoke; */
 }
 
 .card {
     word-wrap: break-word;
-    /* background-clip: initial; */
-    /* background-color: #fff; */
     border: 1px solid rgba(0,0,0,.125);
     border-radius: 0.75rem;
     display: flex;

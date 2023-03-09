@@ -33,7 +33,6 @@ body {
 }
 
 .banner h2 {
-  /* padding-bottom: 40px; */
   margin-bottom: 20px;
   margin-top: 50px;
 }
@@ -41,14 +40,12 @@ body {
   margin-top: 50px;
   margin-bottom: 20px;
   display: flex;
-  /* align-items: center; */
   justify-content: center;
 }
 
 .card-content {
   background: #fff;
   margin-left: 15px;
-  /* height: 330px; */
 }
 .card-content h3 {
   text-align: center;
