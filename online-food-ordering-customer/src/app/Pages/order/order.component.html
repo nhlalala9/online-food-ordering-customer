@@ -85,8 +85,10 @@
               >
                 <div>
                   <h4 style="color: orange;"><i class="las la-spinner"></i> Delivering </h4>
+                  <h6 style="color: blue;"><i class="las la-car"></i> {{ item?.attributes?.driver}}</h6>
                   <h6 style="color: blue;">Order #{{ item?.id }}</h6>
-                  <span>{{ item?.attributes.date }}</span>
+
+                  <span>{{ item?.attributes.date  | date: "dd MMM yyyy" }}</span>
                 </div>
                 <div class="d-flex align-items-center">
                   <h4 class="text-primary mb-0">R {{ item?.attributes.total }}</h4>
@@ -149,6 +151,12 @@
                       {{ order?.attributes?.address }}<br />
                     </h5>
                   </div>
+                  <div class="d-flex align-items-center mb-2" *ngIf="order?.attributes?.status === 'Completed'">
+                    <i class="las la-car fa-3x"></i>
+                    <h5 class="mb-0 ml-5">
+                      {{ order?.attributes?.driver }}<br />
+                    </h5>
+                  </div>
                 </div>
               </div>
 
@@ -196,9 +204,14 @@
         <div class="text-end">
           <a
             class="btn btn-primary"
-            *ngIf="order?.attributes?.status === 'Approved'"
+            *ngIf="order?.attributes?.status === 'Delivering'"
             (click)="approveItem(order)"
-            >Accept Order</a>
+            >Finish Order</a>
+            <a
+            class="btn btn-primary"
+            *ngIf="order?.attributes?.status === 'Completed'"
+            (click)="approveItem(order)"
+            >Order Again</a>
         </div>
       </div>
     </div>
