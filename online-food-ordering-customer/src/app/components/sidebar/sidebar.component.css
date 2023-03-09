@@ -13,19 +13,6 @@
   font-size: 1;
 }
 .modal {
-  /* position: fixed;
-  top: 0;
-  margin-left: 60%;
-  width: 40%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
-
-/* position: fixed; */
 top: -215px;
 margin-left: 66%;
 width: 35%;
@@ -43,7 +30,7 @@ align-items: center;
     color: White;
     border-radius: 5px;
     margin-top: 55px;
-    /* margin-right: 0; */
+
 }
 button{
  background-color: blue;
@@ -61,14 +48,6 @@ button{
   padding: 0;
 
 }
-/* li {
-  width: 30rem;
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: lightgray;
-  color: White;
-  border-radius: 5px;
-} */
 
 .badge {
   display: inline-block;
@@ -102,8 +81,6 @@ header {
   z-index: 100;
   transition: left 300ms;
   background: #fff;
-  /* transition: left 300ms; */
-  /* height: 50px; */
 }
 .notification-icon {
   position: relative;
@@ -118,7 +95,6 @@ header {
   background-color: red;
   color: white;
   border-radius: 50%;
-  /* padding: 3px; */
 }
 
 .log {
@@ -212,7 +188,6 @@ header label span {
 .user-wrapper img {
   border-radius: 50%;
   margin-right: 1rem;
-  /* height: inherit; */
 }
 
 .user-wrapper h4 {
@@ -222,7 +197,6 @@ header label span {
 .user-wrapper small {
   display: inline-block;
   color: gray;
-  /* margin-top: ; */
 }
 
 main {
@@ -234,7 +208,6 @@ main {
 
 .cards {
   display: grid;
-  /* justify-content: space-between; */
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
   margin-top: 1rem;
@@ -247,10 +220,6 @@ main {
   padding: 2rem;
   border-radius: 10px;
 }
-
-/* .cards-single h1 + span {
-    color: gray;
-} */
 
 .cards-single div:first-child span {
   color: gray;
@@ -269,7 +238,6 @@ main {
 .cards-single:last-child div:first-child span,
 .cards-single:last-child div:last-child span {
   color: #fff;
-  /* 21.31 */
 }
 
 .recent-grid {
@@ -372,7 +340,6 @@ table {
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
-  /* font-family: 'Poppins', sans-serif; */
 }
 
 .sidebar {
@@ -381,7 +348,6 @@ table {
   left: 0;
   top: 0;
   height: 100%;
-  /* text-decoration: none; */
   background: blue;
   z-index: 100;
   transition: width 300ms;
@@ -391,7 +357,6 @@ table {
   height: 90px;
   padding: 1rem 0rem 1rem 2rem;
   color: #fff;
-  /* text-decoration: none; */
 }
 
 .sidebar-menu {
@@ -419,7 +384,6 @@ table {
   display: block;
   color: #fff;
   font-size: 1.1rem;
-  /* text-decoration: none; */
 }
 
 .sidebar-menu a.active {
