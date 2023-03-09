@@ -20,7 +20,7 @@ export class SidebarComponent implements OnInit {
   nothing: any[] = [];
   final: any[] = [];
   public username = localStorage.getItem('s_username');
-  
+
   constructor(private auth: AuthenticationService,private router: Router,private cartService : CartService, private bookingServices: BookingsService) { }
 
 
@@ -37,16 +37,6 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
 
-
-    // this.bookingServices.getBooking().subscribe((booking: any) => {
-    //   this.bookings = booking.data;
-    //   // this.orders = booking.data.filter((order: any) => order.attributes.status === "Approved");
-    //   this.nothing = booking.data.filter((order: any) => order.attributes.camel === null);
-    //   this.orders = this.nothing.data.filter((order: any) => order.attributes.name === this.username);
-    //   this.final = this.nothing
-    //   console.log(this.orders);
-    //   console.log(this.final,"null");
-    // });
     this.bookingServices.getBooking().subscribe((booking: any) => {
       this.bookings = booking.data;
       this.nothing = booking.data.filter((order: any) => order.attributes.camel === null && order.attributes.name === this.username);
@@ -59,6 +49,9 @@ export class SidebarComponent implements OnInit {
 
     this.loadCart();
   }
+
+
+
   approveItem(item: any) {
     const id = item.id;
     const camel = 'Approved';

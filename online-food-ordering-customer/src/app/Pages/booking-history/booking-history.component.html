@@ -19,17 +19,19 @@
             </tr>
           </thead>
          <tbody>
-           <tr *ngFor="let booking of bookings">
+           <tr *ngFor="let booking of bookings | paginate: { itemsPerPage: pageSize, currentPage: currentPage }">
             <td>{{booking.attributes.name}}</td>
             <td>{{booking.attributes.phone}}</td>
             <td>{{booking.attributes.email}}</td>
-            <td>{{booking.attributes.time}}</td>
+            <td>{{booking.attributes.time | date: "dd MMM YYYY"}}</td>
             <td>{{booking.attributes.guests}}</td>
             <td>{{booking.attributes.message}}</td>
             <td>{{booking.attributes.status}}</td>
            </tr>
          </tbody>
         </table>
-
+        <div class="pagination">
+          <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+        </div>
     </div>
   </div>

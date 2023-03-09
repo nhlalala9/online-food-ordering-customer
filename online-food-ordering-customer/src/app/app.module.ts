@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClient, HttpClientModule, HttpParams } from '@angular/common/http';  
+import { HttpClient, HttpClientModule, HttpParams } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -19,6 +19,8 @@ import { CartComponent } from './Pages/cart/cart.component';
 import { DatePipe } from '@angular/common';
 import { CheckoutComponent } from './Pages/checkout/checkout.component';
 import { OrderComponent } from './Pages/order/order.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 
 
@@ -43,7 +45,7 @@ import { OrderComponent } from './Pages/order/order.component';
     CartComponent,
     CheckoutComponent,
     OrderComponent,
-   
+
   ],
   imports: [
     BrowserModule,
@@ -51,6 +53,7 @@ import { OrderComponent } from './Pages/order/order.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    NgxPaginationModule
     // NgxStarRatingModule
     // StarRatingModule
   ],
