@@ -19,6 +19,9 @@ export class OrderComponent implements OnInit {
   // matchedProducts: any[] = [];
   username: any;
 
+  pageSize = 10;
+currentPage = 1;
+
   // public username = localStorage.getItem('s_username');
 
   constructor(private orderService: OrdersService) {}
