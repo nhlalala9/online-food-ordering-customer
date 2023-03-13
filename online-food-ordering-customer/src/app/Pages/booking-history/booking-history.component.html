@@ -1,36 +1,159 @@
 <app-sidebar></app-sidebar>
-<div class="main-content">
-<div class="card-body mt-5 ">
+<!-- <div class="main-content">
+  <div class="card-body mt-5">
     <div class="book-btn">
-        <button class="btn-book"><a href="customer/booking">BOOK NOW</a></button>
+      <button class="btn-book"><a href="customer/booking">BOOK NOW</a></button>
     </div>
     <h2>RESERVATION HISTORY</h2>
-        <table class="table table-dark table-striped">
-          <thead>
-            <tr>
-              <td >Name</td>
-              <td >Phone</td>
-              <td >Email</td>
-              <td>Date</td>
-              <td>Guests</td>
-              <td>Message</td>
-              <td>Status</td>
-            </tr>
-          </thead>
-         <tbody>
-           <tr *ngFor="let booking of bookings | paginate: { itemsPerPage: pageSize, currentPage: currentPage }">
-            <td>{{booking.attributes.name}}</td>
-            <td>{{booking.attributes.phone}}</td>
-            <td>{{booking.attributes.email}}</td>
-            <td>{{booking.attributes.time | date: "dd MMM YYYY"}}</td>
-            <td>{{booking.attributes.guests}}</td>
-            <td>{{booking.attributes.message}}</td>
-            <td>{{booking.attributes.status}}</td>
-           </tr>
-         </tbody>
-        </table>
-        <div class="pagination">
-          <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
-        </div>
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Phone</td>
+          <td>Email</td>
+          <td>Date</td>
+          <td>Guests</td>
+          <td>Message</td>
+          <td>Status</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let booking of bookings
+              | paginate : { itemsPerPage: pageSize, currentPage: currentPage }
+          "
+        >
+          <td>{{ booking.attributes.name }}</td>
+          <td>{{ booking.attributes.phone }}</td>
+          <td>{{ booking.attributes.email }}</td>
+          <td>{{ booking.attributes.time | date : "dd MMM YYYY" }}</td>
+          <td>{{ booking.attributes.guests }}</td>
+          <td>{{ booking.attributes.message }}</td>
+          <td>{{ booking.attributes.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pagination">
+      <pagination-controls
+        (pageChange)="currentPage = $event"
+      ></pagination-controls>
     </div>
   </div>
+</div> -->
+
+<div class="main-content">
+  <div class="container">
+    <div class="book-btn">
+      <button class="btn-book"><a href="customer/booking">BOOK NOW</a></button>
+    </div>
+  <div class="card">
+    <div class="card-header"><h4 class="card-title">RESERVATION HISTORY</h4></div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <div class="dataTables_wrapper">
+          <table role="table" class="table dataTable display">
+            <thead>
+              <tr role="row">
+                <th
+                  colspan="1"
+                  role="columnheader"
+                  title="Toggle SortBy"
+                  style="cursor: pointer"
+                >
+                Name<span class="ml-1"
+                    ><i class="fa fa-sort ms-2 fs-14" style="opacity: 0.3"></i
+                  ></span>
+                </th>
+                <th
+                  colspan="1"
+                  role="columnheader"
+                  title="Toggle SortBy"
+                  style="cursor: pointer"
+                >
+                Phone<span class="ml-1"
+                    ><i class="fa fa-sort ms-2 fs-14" style="opacity: 0.3"></i
+                  ></span>
+                </th>
+                <th
+                  colspan="1"
+                  role="columnheader"
+                  title="Toggle SortBy"
+                  style="cursor: pointer"
+                >
+                Email<span class="ml-1"
+                    ><i
+                      class="fa fa-arrow-down ms-2 fs-14"
+                      style="opacity: 0.7"
+                    ></i
+                  ></span>
+                </th>
+                <th
+                  colspan="1"
+                  role="columnheader"
+                  title="Toggle SortBy"
+                  style="cursor: pointer"
+                >
+                  Date<span class="ml-1"
+                    ><i class="fa fa-sort ms-2 fs-14" style="opacity: 0.3"></i
+                  ></span>
+                </th>
+                <th
+                  colspan="1"
+                  role="columnheader"
+                  title="Toggle SortBy"
+                  style="cursor: pointer"
+                >
+                Guests<span class="ml-1"
+                    ><i class="fa fa-sort ms-2 fs-14" style="opacity: 0.3"></i
+                  ></span>
+                </th>
+                <th
+                  colspan="1"
+                  role="columnheader"
+                  title="Toggle SortBy"
+                  style="cursor: pointer"
+                >
+                Message<span class="ml-1"
+                    ><i class="fa fa-sort ms-2 fs-14" style="opacity: 0.3"></i
+                  ></span>
+                </th>
+                <th
+                  colspan="1"
+                  role="columnheader"
+                  title="Toggle SortBy"
+                  style="cursor: pointer"
+                >
+                Status<span class="ml-1"
+                    ><i class="fa fa-sort ms-2 fs-14" style="opacity: 0.3"></i
+                  ></span>
+                </th>
+              </tr>
+            </thead>
+            <tbody role="rowgroup">
+              <tr role="row" *ngFor="
+              let booking of bookings
+                | paginate : { itemsPerPage: pageSize, currentPage: currentPage }
+            ">
+
+                <td role="cell">{{ booking.attributes.name }}</td>
+          <td role="cell">{{ booking.attributes.phone }}</td>
+          <td role="cell">{{ booking.attributes.email }}</td>
+          <td role="cell">{{ booking.attributes.time | date : "dd MMM YYYY" }}</td>
+          <td role="cell">{{ booking.attributes.guests }}</td>
+          <td role="cell">{{ booking.attributes.message }}</td>
+          <td role="cell">{{ booking.attributes.status }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="pagination">
+            <pagination-controls
+              (pageChange)="currentPage = $event"
+            ></pagination-controls>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

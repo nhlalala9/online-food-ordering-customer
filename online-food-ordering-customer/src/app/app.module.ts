@@ -20,6 +20,10 @@ import { DatePipe } from '@angular/common';
 import { CheckoutComponent } from './Pages/checkout/checkout.component';
 import { OrderComponent } from './Pages/order/order.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+// import { NgCircleProgressModule } from 'ng-circle-progress';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgxUiLoaderModule } from "ngx-ui-loader";
+// import { NgxSpinnerModule } from "ngx-spinner";
 
 
 
@@ -53,9 +57,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    NgxPaginationModule
-    // NgxStarRatingModule
-    // StarRatingModule
+    NgxPaginationModule,
+    NgxUiLoaderModule,
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

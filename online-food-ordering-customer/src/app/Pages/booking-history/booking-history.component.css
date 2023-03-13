@@ -1,13 +1,15 @@
+
+/* .card-body {
+    margin-left: 10%;
+    width: 90%;
+} */
 .main-content {
     margin-left: 250px;
     transition: margin-left 300ms;
     margin-top: 7rem;
     width: 90%;
   }
-.card-body {
-    margin-left: 10%;
-    width: 80%;
-}
+
 
 h2 {
     padding-bottom: 40px;
