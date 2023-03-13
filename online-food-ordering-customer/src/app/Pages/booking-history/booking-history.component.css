@@ -3,11 +3,18 @@
     margin-left: 10%;
     width: 90%;
 } */
+.main-content {
+    margin-left: 250px;
+    transition: margin-left 300ms;
+    margin-top: 7rem;
+    width: 90%;
+  }
+
 
 h2 {
     padding-bottom: 40px;
     margin-bottom: 20px;
-    margin-top: 50px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
 }

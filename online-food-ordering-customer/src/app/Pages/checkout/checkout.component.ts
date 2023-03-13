@@ -76,7 +76,6 @@ export class CheckoutComponent implements OnInit {
       name: this.username,
       date: new Date(),
       phoneNumber: this.checkoutForm.value.phoneNumber,
-      // total: this.Granttotal,
       email: this.email,
       address: this.checkoutForm.value.address,
       cartDetails: this.getCartDetails,

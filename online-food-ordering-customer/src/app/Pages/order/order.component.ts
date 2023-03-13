@@ -16,7 +16,6 @@ export class OrderComponent implements OnInit {
   complete: any[] = [];
   Delivering: any[] = [];
   approved: any[] = [];
-  // matchedProducts: any[] = [];
   username: any;
 
   pageSize = 10;
@@ -60,9 +59,6 @@ currentPage = 1;
       console.log(this.approved, 'approved');
       console.log(this.complete, 'complete');
       console.log(this.Delivering, 'on going');
-      // const matchedRatings = this.check();
-      // this.now = matchedRatings;
-      // console.log(matchedRatings, 'toka');
     });
   }
 
